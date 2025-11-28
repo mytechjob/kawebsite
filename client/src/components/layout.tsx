@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import WaitlistDialog from "@/components/waitlist-dialog";
+import WaitlistDialog from "./waitlist-dialog";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();

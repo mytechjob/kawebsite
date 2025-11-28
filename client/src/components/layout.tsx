@@ -1,9 +1,11 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import WaitlistDialog from "./waitlist-dialog";
+import logoNoTag from "@assets/KnowledgeAgents-logo-notagline_1764370916520.png";
+import logoTag from "@assets/KnowledgeAgent-tagline_1764370916521.png";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -25,14 +27,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="sticky top-0 z-50 glass-nav py-4">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 text-primary hover:opacity-90 transition-opacity">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
-              <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
-              <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
-              <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
-              <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
-            </svg>
-            <span className="font-display font-semibold text-xl">Knowledge Agents</span>
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img 
+              src={logoNoTag} 
+              alt="Knowledge Agents" 
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Links */}
@@ -105,14 +105,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-1">
-              <div className="flex items-center gap-2 mb-4 text-primary">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                  <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
-                  <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
-                  <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
-                  <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
-                </svg>
-                <span className="font-display font-semibold text-lg">Knowledge Agents</span>
+              <div className="flex items-center gap-2 mb-4">
+                <img 
+                  src={logoTag} 
+                  alt="Knowledge Agents" 
+                  className="h-24 w-auto object-contain -ml-2"
+                />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Enterprise AI platform for intelligent document analysis and knowledge orchestration.

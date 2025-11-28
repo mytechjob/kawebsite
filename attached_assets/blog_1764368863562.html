@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Resources - Knowledge Agents Insights</title>
+    <meta name="description" content="Expert insights on AI automation, document intelligence, compliance automation, and enterprise knowledge management from the Knowledge Agents team.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-hero {
+            text-align: center;
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(20, 184, 166, 0.05));
+        }
+        
+        .blog-categories {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .category-tag {
+            padding: 0.5rem 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .category-tag:hover,
+        .category-tag.active {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .featured-post {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--space-2xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        
+        .featured-image {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(20, 184, 166, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            min-height: 400px;
+        }
+        
+        .featured-content {
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+        
+        .post-title {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .post-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .post-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .post-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(10, 37, 64, 0.08);
+        }
+        
+        .post-thumbnail {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(20, 184, 166, 0.1));
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .post-body {
+            padding: var(--space-lg);
+        }
+        
+        .post-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--surface-light);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .post-card-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--border);
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-details {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--primary);
+        }
+        
+        .post-date {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                    <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                    <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Knowledge Agents</span>
+            </div>
+            <div class="nav-links">
+                <a href="product.html">Product</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Resources</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+                <a href="contact.html" class="btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Resources & Insights</h1>
+                <p class="hero-subtitle">
+                    Expert perspectives on AI automation, document intelligence, and enterprise knowledge management
+                </p>
+                
+                <div class="blog-categories">
+                    <div class="category-tag active">All Articles</div>
+                    <div class="category-tag">AI & Automation</div>
+                    <div class="category-tag">Compliance</div>
+                    <div class="category-tag">Best Practices</div>
+                    <div class="category-tag">Case Studies</div>
+                    <div class="category-tag">Product Updates</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="featured-post">
+                    <div class="featured-image">📊</div>
+                    <div class="featured-content">
+                        <div class="post-meta">
+                            <span>AI & Automation</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h2 class="post-title">The Future of Enterprise Document Intelligence</h2>
+                        <p class="post-excerpt">
+                            How AI agents are transforming the way organizations process, validate, and act on 
+                            document-based information. Learn why leading enterprises are adopting intelligent 
+                            automation for knowledge work.
+                        </p>
+                        <a href="#" class="btn-primary">Read Article</a>
+                    </div>
+                </div>
+
+                <div class="posts-grid">
+                    <div class="post-card">
+                        <div class="post-thumbnail">⚖️</div>
+                        <div class="post-body">
+                            <div class="post-category">Compliance</div>
+                            <h3 class="post-card-title">Automating Compliance: A Complete Guide</h3>
+                            <p class="post-excerpt">
+                                Step-by-step framework for implementing AI-powered compliance automation in 
+                                regulated industries.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">SM</div>
+                                <div class="author-details">
+                                    <div class="author-name">Sarah Mitchell</div>
+                                    <div class="post-date">November 15, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-thumbnail">🎯</div>
+                        <div class="post-body">
+                            <div class="post-category">Best Practices</div>
+                            <h3 class="post-card-title">Building Effective Knowledge Agents</h3>
+                            <p class="post-excerpt">
+                                Best practices for designing, training, and deploying AI agents that deliver 
+                                measurable business value.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">JC</div>
+                                <div class="author-details">
+                                    <div class="author-name">James Chen</div>
+                                    <div class="post-date">November 12, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-thumbnail">💼</div>
+                        <div class="post-body">
+                            <div class="post-category">Case Studies</div>
+                            <h3 class="post-card-title">How Fortune 500 Reduced Compliance Costs by 75%</h3>
+                            <p class="post-excerpt">
+                                Real-world case study: How a financial services giant transformed their compliance 
+                                operations with Knowledge Agents.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">AR</div>
+                                <div class="author-details">
+                                    <div class="author-name">Alex Rodriguez</div>
+                                    <div class="post-date">November 8, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-thumbnail">🤖</div>
+                        <div class="post-body">
+                            <div class="post-category">AI & Automation</div>
+                            <h3 class="post-card-title">Document AI vs Traditional OCR: What's the Difference?</h3>
+                            <p class="post-excerpt">
+                                Understanding the technology behind intelligent document processing and why AI 
+                                agents outperform legacy systems.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">LP</div>
+                                <div class="author-details">
+                                    <div class="author-name">Lisa Park</div>
+                                    <div class="post-date">November 5, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-thumbnail">🔐</div>
+                        <div class="post-body">
+                            <div class="post-category">Best Practices</div>
+                            <h3 class="post-card-title">Enterprise AI Security: A Comprehensive Guide</h3>
+                            <p class="post-excerpt">
+                                Essential security considerations for deploying AI agents in regulated environments 
+                                and handling sensitive data.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">MJ</div>
+                                <div class="author-details">
+                                    <div class="author-name">Michael Johnson</div>
+                                    <div class="post-date">November 1, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-thumbnail">📈</div>
+                        <div class="post-body">
+                            <div class="post-category">Product Updates</div>
+                            <h3 class="post-card-title">Introducing Advanced Analytics Dashboard</h3>
+                            <p class="post-excerpt">
+                                New features for visualizing agent performance, document processing metrics, and 
+                                business intelligence insights.
+                            </p>
+                            <div class="author-info">
+                                <div class="author-avatar">KA</div>
+                                <div class="author-details">
+                                    <div class="author-name">Knowledge Agents Team</div>
+                                    <div class="post-date">October 28, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Get Started?</h2>
+                    <p class="cta-subtitle">
+                        See how Knowledge Agents can transform your document workflows
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-primary btn-lg">Request a Demo</a>
+                        <a href="contact.html" class="btn-secondary btn-lg">Talk to Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                            <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                            <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                            <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                        </svg>
+                        <span>Knowledge Agents</span>
+                    </div>
+                    <p class="footer-description">Enterprise AI platform for intelligent document analysis.</p>
+                    <div class="footer-social">
+                        <a href="#">in</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">gh</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Platform</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions-compliance.html">Compliance</a></li>
+                        <li><a href="solutions-legal.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Knowledge Agents. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

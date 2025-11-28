@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Knowledge Agents Plans</title>
+    <meta name="description" content="Choose the right Knowledge Agents plan for your enterprise. Flexible pricing for teams of all sizes with transparent, scalable options.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-hero {
+            text-align: center;
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(20, 184, 166, 0.05));
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-xl);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(10, 37, 64, 0.15);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .plan-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: var(--font-display);
+        }
+        
+        .price-period {
+            color: var(--text-tertiary);
+            font-size: 1rem;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: var(--space-lg) 0;
+            padding: var(--space-lg) 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .plan-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .plan-features li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .faq-section {
+            background: var(--surface-light);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            font-size: 1.125rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                    <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                    <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Knowledge Agents</span>
+            </div>
+            <div class="nav-links">
+                <a href="product.html">Product</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Resources</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+                <a href="contact.html" class="btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pricing-hero">
+            <div class="container">
+                <h1>Simple, Transparent Pricing</h1>
+                <p class="hero-subtitle">
+                    Choose the plan that fits your team's needs. Scale as you grow.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Professional</h3>
+                        <p class="plan-description">For small teams getting started with AI automation</p>
+                        
+                        <div class="plan-price">
+                            <span class="price-amount">$499</span>
+                            <span class="price-period">per month</span>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li>Up to 5 agents</li>
+                            <li>10,000 documents/month</li>
+                            <li>Basic compliance templates</li>
+                            <li>Email support</li>
+                            <li>API access</li>
+                            <li>Standard integrations</li>
+                            <li>Basic analytics</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn-secondary" style="width: 100%;">Get Started</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <h3 class="plan-name">Enterprise</h3>
+                        <p class="plan-description">For growing teams scaling AI operations</p>
+                        
+                        <div class="plan-price">
+                            <span class="price-amount">$1,499</span>
+                            <span class="price-period">per month</span>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li>Unlimited agents</li>
+                            <li>50,000 documents/month</li>
+                            <li>Advanced compliance library</li>
+                            <li>Priority support</li>
+                            <li>Full API access</li>
+                            <li>All integrations</li>
+                            <li>Advanced analytics</li>
+                            <li>Custom workflows</li>
+                            <li>SSO & SAML</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn-primary" style="width: 100%;">Request Demo</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Custom</h3>
+                        <p class="plan-description">For large enterprises with specific requirements</p>
+                        
+                        <div class="plan-price">
+                            <span class="price-amount">Custom</span>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li>Unlimited everything</li>
+                            <li>Dedicated infrastructure</li>
+                            <li>Custom compliance rules</li>
+                            <li>24/7 dedicated support</li>
+                            <li>White-label options</li>
+                            <li>Custom integrations</li>
+                            <li>On-premise deployment</li>
+                            <li>SLA guarantees</li>
+                            <li>Training & onboarding</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn-secondary" style="width: 100%;">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">How do document limits work?</div>
+                        <div class="faq-answer">
+                            Document limits refer to the number of unique documents processed per month. 
+                            If you exceed your plan's limit, you can upgrade or purchase additional capacity.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I change plans later?</div>
+                        <div class="faq-answer">
+                            Yes, you can upgrade or downgrade your plan at any time. Changes take effect at 
+                            the start of your next billing cycle.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is there a free trial?</div>
+                        <div class="faq-answer">
+                            We offer a 14-day free trial for the Professional plan. Contact our sales team 
+                            for Enterprise or Custom plan trials.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What payment methods do you accept?</div>
+                        <div class="faq-answer">
+                            We accept all major credit cards, ACH transfers, and wire transfers for annual 
+                            subscriptions. Enterprise customers can also pay via invoice.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is my data secure?</div>
+                        <div class="faq-answer">
+                            Yes, we are SOC 2 Type II certified and use enterprise-grade encryption. Your data 
+                            is encrypted at rest and in transit, and we never train models on customer data.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer annual discounts?</div>
+                        <div class="faq-answer">
+                            Yes, annual subscriptions receive a 20% discount. Contact our sales team to learn more 
+                            about volume discounts for enterprise agreements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Still Have Questions?</h2>
+                    <p class="cta-subtitle">
+                        Our team is here to help you find the right plan for your needs
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-primary btn-lg">Talk to Sales</a>
+                        <a href="contact.html" class="btn-secondary btn-lg">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                            <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                            <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                            <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                        </svg>
+                        <span>Knowledge Agents</span>
+                    </div>
+                    <p class="footer-description">Enterprise AI platform for intelligent document analysis.</p>
+                    <div class="footer-social">
+                        <a href="#">in</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">gh</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Platform Overview</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions-compliance.html">Compliance</a></li>
+                        <li><a href="solutions-legal.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Knowledge Agents. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

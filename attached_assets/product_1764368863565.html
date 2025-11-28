@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Knowledge Agents Orchestration Platform</title>
+    <meta name="description" content="The complete knowledge orchestration platform: Multi-model AI, incident-to-SOP loops, democratized knowledge creation, and built-in observability.">
+    <meta name="keywords" content="knowledge orchestration platform, multi-model AI, incident management, SOP automation, knowledge analytics">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(20, 184, 166, 0.05));
+            padding: var(--space-3xl) 0 var(--space-2xl);
+        }
+        
+        .product-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+        
+        .module-card {
+            padding: var(--space-xl);
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition);
+        }
+        
+        .module-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(10, 37, 64, 0.1);
+        }
+        
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .module-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .module-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+        
+        .module-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .module-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+        
+        .module-features li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .screenshot-section {
+            background: var(--surface-light);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .screenshot-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(10, 37, 64, 0.15);
+        }
+        
+        .screenshot-header {
+            padding: 1rem 1.5rem;
+            background: var(--primary);
+            color: var(--surface);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .screenshot-body {
+            padding: var(--space-xl);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03), rgba(20, 184, 166, 0.03));
+        }
+        
+        .screenshot-placeholder {
+            text-align: center;
+            color: var(--text-tertiary);
+        }
+        
+        .integrations-section {
+            padding: var(--space-3xl) 0;
+        }
+        
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-2xl);
+        }
+        
+        .integration-card {
+            padding: var(--space-lg);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .integration-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        
+        .integration-name {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: var(--space-sm);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                    <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                    <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Knowledge Agents</span>
+            </div>
+            <div class="nav-links">
+                <a href="product.html">Product</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Resources</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+                <a href="contact.html" class="btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <div class="product-hero-content">
+                    <h1>The Knowledge Orchestration Platform</h1>
+                    <p class="hero-subtitle">
+                        Ingest, understand, synthesize, create, improve, and automate—all in one unified engine.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="modules-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Platform Capabilities</h2>
+                    <p class="section-subtitle">Everything you need to orchestrate enterprise knowledge</p>
+                </div>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-icon">🧠</div>
+                        <h3 class="module-title">Multi-Model Intelligence</h3>
+                        <p class="module-description">
+                            Compare OpenAI, Claude, and Gemini side-by-side on every query. Get the best 
+                            answer from the best model—no vendor lock-in.
+                        </p>
+                        <ul class="module-features">
+                            <li>Simultaneous 3-model comparison</li>
+                            <li>Model performance analytics</li>
+                            <li>Cost optimization by model</li>
+                            <li>Custom model routing rules</li>
+                            <li>Consensus-based answers</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">🔄</div>
+                        <h3 class="module-title">Incident → SOP → Mitigation Loop</h3>
+                        <p class="module-description">
+                            Turn real-world incidents (text or voice) into updated, governed procedures 
+                            automatically. Close the loop from problem to prevention.
+                        </p>
+                        <ul class="module-features">
+                            <li>Voice & text incident capture</li>
+                            <li>Automatic SOP updates</li>
+                            <li>Approval workflows</li>
+                            <li>Version control & governance</li>
+                            <li>Impact tracking</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">📝</div>
+                        <h3 class="module-title">Democratized Knowledge Creation</h3>
+                        <p class="module-description">
+                            Convert AI answers directly into approved wiki content. One-click transformation 
+                            from chat to organizational knowledge asset.
+                        </p>
+                        <ul class="module-features">
+                            <li>Chat-to-wiki conversion</li>
+                            <li>Structured content generation</li>
+                            <li>Editorial review workflows</li>
+                            <li>Knowledge categorization</li>
+                            <li>Auto-linking related content</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">📊</div>
+                        <h3 class="module-title">Built-In Observability</h3>
+                        <p class="module-description">
+                            Analytics on what users ask, where knowledge breaks, sentiment trends, and stale 
+                            SOPs. See exactly what your organization needs to know.
+                        </p>
+                        <ul class="module-features">
+                            <li>Query analytics dashboard</li>
+                            <li>Knowledge gap detection</li>
+                            <li>Sentiment analysis</li>
+                            <li>Stale content alerts</li>
+                            <li>Usage heatmaps</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">✓</div>
+                        <h3 class="module-title">API-Based SLA & Invoice Validation</h3>
+                        <p class="module-description">
+                            Automate contract compliance checks with Pass/Fail/Review logic. Validate invoices 
+                            and SLAs programmatically through our API.
+                        </p>
+                        <ul class="module-features">
+                            <li>RESTful validation API</li>
+                            <li>Contract rule engine</li>
+                            <li>Pass/Fail/Review logic</li>
+                            <li>Webhook notifications</li>
+                            <li>Audit trail generation</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">🤝</div>
+                        <h3 class="module-title">Shared Team Knowledge</h3>
+                        <p class="module-description">
+                            Answers become organizational knowledge—not lost in personal chat windows. 
+                            Break down silos and democratize expertise.
+                        </p>
+                        <ul class="module-features">
+                            <li>Team knowledge repositories</li>
+                            <li>Cross-functional visibility</li>
+                            <li>Knowledge ownership</li>
+                            <li>Collaborative editing</li>
+                            <li>Permission-based access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screenshot-section" id="screenshots">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Platform in Action</h2>
+                    <p class="section-subtitle">See how Knowledge Agents orchestrates your organization's intelligence</p>
+                </div>
+                
+                <div class="screenshot-container">
+                    <div class="screenshot-header">
+                        <span>Knowledge Orchestration Platform</span>
+                        <span>Multi-Model View</span>
+                    </div>
+                    <div class="screenshot-body">
+                        <div class="screenshot-placeholder">
+                            <h3>See the Platform in Action</h3>
+                            <p>Request a personalized demo to explore multi-model comparison, incident tracking, and knowledge analytics</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Schedule Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="integrations-section" id="integrations">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ingest From Anywhere</h2>
+                    <p class="section-subtitle">Connect to the knowledge sources you already use</p>
+                </div>
+                
+                <div class="integrations-grid">
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">🧠</div>
+                        <div class="integration-name">OpenAI GPT-4</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">🧠</div>
+                        <div class="integration-name">Claude</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">🧠</div>
+                        <div class="integration-name">Gemini</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📁</div>
+                        <div class="integration-name">SharePoint</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📁</div>
+                        <div class="integration-name">Google Drive</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📁</div>
+                        <div class="integration-name">Dropbox</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📄</div>
+                        <div class="integration-name">Confluence</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📄</div>
+                        <div class="integration-name">Notion</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">💬</div>
+                        <div class="integration-name">Slack</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">💬</div>
+                        <div class="integration-name">Teams</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">🌐</div>
+                        <div class="integration-name">Web Content</div>
+                    </div>
+                    <div class="integration-card">
+                        <div style="font-size: 2rem;">📊</div>
+                        <div class="integration-name">Custom APIs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Deploy Your Knowledge Orchestrator in Minutes</h2>
+                    <p class="cta-subtitle">
+                        Fast to deploy, built to scale. See how Knowledge Agents transforms scattered information into intelligence.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-primary btn-lg">Request a Demo</a>
+                        <a href="pricing.html" class="btn-secondary btn-lg">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                            <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                            <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                            <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                        </svg>
+                        <span>Knowledge Agents</span>
+                    </div>
+                    <p class="footer-description">
+                        The first AI-native knowledge orchestrator. Transform scattered documents and incidents into intelligent, self-improving knowledge.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#">in</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">gh</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Platform Overview</a></li>
+                        <li><a href="product.html#features">Features</a></li>
+                        <li><a href="product.html#integrations">Integrations</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions-compliance.html">Incident Management</a></li>
+                        <li><a href="solutions-legal.html">Decision Support</a></li>
+                        <li><a href="solutions-finance.html">Contract Validation</a></li>
+                        <li><a href="solutions-operations.html">Training & Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Knowledge Agents. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

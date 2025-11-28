@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Knowledge Agents Mission & Team</title>
+    <meta name="description" content="Learn about Knowledge Agents' mission to orchestrate enterprise knowledge through multi-model AI intelligence. Meet our team and discover our vision.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(20, 184, 166, 0.05));
+        }
+        
+        .mission-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+        
+        .mission-content {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .value-card {
+            padding: var(--space-xl);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .member-role {
+            color: var(--text-tertiary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .member-bio {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                    <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                    <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Knowledge Agents</span>
+            </div>
+            <div class="nav-links">
+                <a href="product.html">Product</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Resources</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+                <a href="contact.html" class="btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1>Orchestrating Enterprise Knowledge</h1>
+                <p class="hero-subtitle">
+                    We're building the first AI-native knowledge orchestrator—where documents, incidents, and tribal knowledge become intelligent, self-improving systems
+                </p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Mission</h2>
+            </div>
+            <p class="mission-content">
+                At Knowledge Agents, we believe knowledge shouldn't be scattered across PDFs, SharePoint folders, 
+                and siloed chatbots. We're on a mission to create the first AI-native knowledge orchestration 
+                layer—where documents, real-world incidents, and tribal knowledge converge into intelligent, 
+                self-improving systems that amplify human expertise.
+            </p>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0; background: var(--surface-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Values</h2>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3 class="value-title">Customer Success</h3>
+                        <p class="value-description">
+                            We measure our success by the tangible business value we deliver to our customers. 
+                            Every feature, every decision starts with their needs.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">🔐</div>
+                        <h3 class="value-title">Security First</h3>
+                        <p class="value-description">
+                            Enterprise data security isn't optional—it's foundational. We build with security 
+                            and compliance at the core, never as an afterthought.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="value-description">
+                            We push the boundaries of what's possible with AI while maintaining production-grade 
+                            reliability that enterprises demand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Leadership Team</h2>
+                    <p class="section-subtitle">
+                        Experienced leaders from AI, enterprise software, and regulated industries
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">AS</div>
+                        <h3 class="member-name">Alex Sullivan</h3>
+                        <div class="member-role">Co-Founder & CEO</div>
+                        <p class="member-bio">
+                            Former VP of Product at enterprise AI company. Stanford CS graduate with 15 years 
+                            building enterprise software.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">SC</div>
+                        <h3 class="member-name">Sarah Chen</h3>
+                        <div class="member-role">Co-Founder & CTO</div>
+                        <p class="member-bio">
+                            ML Research lead from leading tech company. PhD in Machine Learning, specialized 
+                            in NLP and document understanding.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">MP</div>
+                        <h3 class="member-name">Michael Park</h3>
+                        <div class="member-role">VP of Engineering</div>
+                        <p class="member-bio">
+                            20 years building scalable enterprise systems. Previously led engineering at 
+                            compliance software unicorn.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">JR</div>
+                        <h3 class="member-name">Jennifer Rodriguez</h3>
+                        <div class="member-role">VP of Customer Success</div>
+                        <p class="member-bio">
+                            Former Chief Compliance Officer at Fortune 500 financial services. Deep expertise 
+                            in regulatory requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0; background: var(--surface-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Knowledge Agents?</h2>
+                </div>
+                
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="comparison-table" style="grid-template-columns: 1fr;">
+                        <div class="comparison-column automated" style="border: none; background: var(--surface);">
+                            <ul class="comparison-list">
+                                <li class="comparison-item positive">
+                                    Purpose-built for enterprise compliance and validation workflows
+                                </li>
+                                <li class="comparison-item positive">
+                                    SOC 2 Type II certified with enterprise-grade security
+                                </li>
+                                <li class="comparison-item positive">
+                                    99.7% accuracy backed by production deployments at Fortune 500 companies
+                                </li>
+                                <li class="comparison-item positive">
+                                    Dedicated customer success and 24/7 support for enterprise customers
+                                </li>
+                                <li class="comparison-item positive">
+                                    Built by a team with deep expertise in regulated industries
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Join Us in Transforming Enterprise Knowledge Work</h2>
+                    <p class="cta-subtitle">
+                        Talk to our team to learn how Knowledge Agents can help your organization
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-primary btn-lg">Request a Demo</a>
+                        <a href="contact.html" class="btn-secondary btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                            <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                            <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                            <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                        </svg>
+                        <span>Knowledge Agents</span>
+                    </div>
+                    <p class="footer-description">Enterprise AI platform for intelligent document analysis.</p>
+                    <div class="footer-social">
+                        <a href="#">in</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">gh</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Platform</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions-compliance.html">Compliance</a></li>
+                        <li><a href="solutions-legal.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Knowledge Agents. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

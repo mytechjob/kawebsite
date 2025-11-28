@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch with Knowledge Agents</title>
+    <meta name="description" content="Contact Knowledge Agents for demos, sales inquiries, or support. Our team is ready to help transform your document workflows.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-hero {
+            text-align: center;
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(20, 184, 166, 0.05));
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-xl);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--primary);
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            transition: var(--transition);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+        
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-xl);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact-details {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .contact-link {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                    <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                    <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Knowledge Agents</span>
+            </div>
+            <div class="nav-links">
+                <a href="product.html">Product</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Resources</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+                <a href="contact.html" class="btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p class="hero-subtitle">
+                    Let's discuss how Knowledge Agents can transform your document workflows
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <h2 style="margin-bottom: var(--space-lg);">Send us a message</h2>
+                        <div class="contact-form">
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Full Name *</label>
+                                    <input type="text" id="name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Work Email *</label>
+                                    <input type="email" id="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="company">Company Name *</label>
+                                    <input type="text" id="company" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="role">Your Role *</label>
+                                    <select id="role" class="form-select" required>
+                                        <option value="">Select your role</option>
+                                        <option value="executive">Executive / C-Level</option>
+                                        <option value="manager">Manager / Director</option>
+                                        <option value="analyst">Analyst / Specialist</option>
+                                        <option value="it">IT / Technical</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="interest">What are you interested in? *</label>
+                                    <select id="interest" class="form-select" required>
+                                        <option value="">Select an option</option>
+                                        <option value="demo">Request a Demo</option>
+                                        <option value="pricing">Pricing Information</option>
+                                        <option value="partnership">Partnership Opportunities</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="message">Message *</label>
+                                    <textarea id="message" class="form-textarea" required placeholder="Tell us about your needs and how we can help..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3 class="contact-title">Email Us</h3>
+                            <div class="contact-details">
+                                <p><strong>Sales:</strong> <a href="mailto:sales@knowledgeagents.ai" class="contact-link">sales@knowledgeagents.ai</a></p>
+                                <p><strong>Support:</strong> <a href="mailto:support@knowledgeagents.ai" class="contact-link">support@knowledgeagents.ai</a></p>
+                                <p><strong>General:</strong> <a href="mailto:info@knowledgeagents.ai" class="contact-link">info@knowledgeagents.ai</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">💼</div>
+                            <h3 class="contact-title">Sales Team</h3>
+                            <div class="contact-details">
+                                <p>Schedule a personalized demo with our sales team to see Knowledge Agents in action.</p>
+                                <p style="margin-top: var(--space-md);">
+                                    <strong>Hours:</strong> Monday - Friday<br>
+                                    9:00 AM - 6:00 PM EST
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">🏢</div>
+                            <h3 class="contact-title">Headquarters</h3>
+                            <div class="contact-details">
+                                <p>
+                                    Knowledge Agents Inc.<br>
+                                    123 Innovation Drive<br>
+                                    San Francisco, CA 94105<br>
+                                    United States
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">🌐</div>
+                            <h3 class="contact-title">Follow Us</h3>
+                            <div class="contact-details">
+                                <p>Stay updated on product news and industry insights:</p>
+                                <div class="footer-social" style="margin-top: var(--space-md); justify-content: flex-start;">
+                                    <a href="#">in</a>
+                                    <a href="#">𝕏</a>
+                                    <a href="#">gh</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.9"/>
+                            <rect x="18" y="4" width="10" height="10" rx="2" fill="currentColor" opacity="0.7"/>
+                            <rect x="4" y="18" width="10" height="10" rx="2" fill="currentColor" opacity="0.5"/>
+                            <rect x="18" y="18" width="10" height="10" rx="2" fill="currentColor"/>
+                        </svg>
+                        <span>Knowledge Agents</span>
+                    </div>
+                    <p class="footer-description">Enterprise AI platform for intelligent document analysis.</p>
+                    <div class="footer-social">
+                        <a href="#">in</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">gh</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Platform</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions-compliance.html">Compliance</a></li>
+                        <li><a href="solutions-legal.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Knowledge Agents. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

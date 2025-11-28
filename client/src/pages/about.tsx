@@ -4,10 +4,9 @@ import { Link } from "wouter";
 
 export default function About() {
   const team = [
-    { name: "Alex Sullivan", role: "Co-Founder & CEO", bio: "Former VP of Product at enterprise AI company. Stanford CS graduate with 15 years building enterprise software.", initials: "AS" },
-    { name: "Sarah Chen", role: "Co-Founder & CTO", bio: "ML Research lead from leading tech company. PhD in Machine Learning, specialized in NLP and document understanding.", initials: "SC" },
-    { name: "Michael Park", role: "VP of Engineering", bio: "20 years building scalable enterprise systems. Previously led engineering at compliance software unicorn.", initials: "MP" },
-    { name: "Jennifer Rodriguez", role: "VP of Customer Success", bio: "Former Chief Compliance Officer at Fortune 500 financial services. Deep expertise in regulatory requirements.", initials: "JR" }
+    { name: "Atif Kanji", role: "Coordinator", bio: "Responsible for overall direction of the company. 20+ years of experience in Fortune 500, Strategy Consulting, and Entrepreneurship.", initials: "AK" },
+    { name: "Jimmy Bijlani", role: "Rainmaker", bio: "Carries out the message of Knowledge Agents to the world. Helps customers understand the potential and value of the platform. Past experience in Strategy Consulting, Big Tech, and Entrepreneurship.", initials: "JB" },
+    { name: "Kirk Rohani", role: "AI Guy", bio: "Advises on platform, product, and ensures we keep up with the latest and greatest when it comes to AI.", initials: "KR" }
   ];
 
   const values = [

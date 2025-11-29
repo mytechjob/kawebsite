@@ -4,8 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import WaitlistDialog from "./waitlist-dialog";
-import logoNoTag from "@assets/KnowledgeAgents-logo-notagline_1764370916520.png";
-import logoTag from "@assets/KnowledgeAgent-tagline_1764370916521.png";
+import logoRectangle from "@assets/rectangle-logo_1764394470172.png";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -29,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <img 
-              src={logoNoTag} 
+              src={logoRectangle} 
               alt="Knowledge Agents" 
               className="h-10 w-auto object-contain"
             />
@@ -107,9 +106,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <img 
-                  src={logoTag} 
+                  src={logoRectangle} 
                   alt="Knowledge Agents" 
-                  className="h-24 w-auto object-contain -ml-2"
+                  className="h-12 w-auto object-contain"
                 />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">

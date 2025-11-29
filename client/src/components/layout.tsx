@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import WaitlistDialog from "./waitlist-dialog";
-import logoNew from "@assets/new-logo_1764395275202.png";
+import logoNew from "@assets/new-logo-white_1764395423707.png";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();

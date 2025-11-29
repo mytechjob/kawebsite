@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <img 
               src={logoNew} 
               alt="Knowledge Agents" 
-              className="h-12 w-auto object-contain"
+              className="h-12 w-auto object-contain logo-blend"
             />
           </Link>
 
@@ -108,7 +108,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <img 
                   src={logoNew} 
                   alt="Knowledge Agents" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain logo-blend"
                 />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">

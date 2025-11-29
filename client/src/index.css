@@ -169,4 +169,8 @@
   .glass-nav {
     @apply bg-white/90 backdrop-blur-md border-b border-border/50;
   }
+  
+  .logo-blend {
+    mix-blend-mode: multiply;
+  }
 }

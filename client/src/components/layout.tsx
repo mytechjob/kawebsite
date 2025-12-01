@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 glass-nav py-4">
+      <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50 py-4">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link

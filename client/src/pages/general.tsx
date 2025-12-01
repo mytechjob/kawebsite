@@ -19,12 +19,20 @@ export default function General() {
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-32 md:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50 mb-8 mx-auto max-w-2xl">
+              <p className="text-lg font-medium">
+                "The old way of managing knowledge through silos doesn't work and
+                becomes a competitive disadvantage."
+              </p>
+            </div>
             <Badge className="mb-6" variant="outline">
               Proactive Knowledge Intelligence
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               Make your knowledge available <br />
-              24 hours a day
+              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                24 hours a day
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Empower your business with always-on intelligence to support
@@ -54,12 +62,6 @@ export default function General() {
             key areas—employees, customers, and operations—are severely
             impacted.
           </p>
-          <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50">
-            <p className="text-lg font-medium">
-              "The old way of managing knowledge through silos doesn't work and
-              becomes a competitive disadvantage."
-            </p>
-          </div>
         </div>
       </section>
 

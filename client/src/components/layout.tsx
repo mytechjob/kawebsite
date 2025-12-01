@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import WaitlistDialog from "./waitlist-dialog";
 import logoLight from "@assets/logo-light-v2-nospace_1764604731793.png";
@@ -67,12 +67,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" asChild className="hidden lg:flex">
-              <Link href="/contact">Talk to Sales</Link>
+            <Button className="gap-2" asChild>
+              <Link href="/contact">
+                Start Free Trial <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
-            <WaitlistDialog>
-              <Button>Request a Demo</Button>
-            </WaitlistDialog>
           </div>
 
           {/* Mobile Menu */}
@@ -97,15 +96,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   ))}
                   <div className="flex flex-col gap-3 mt-4">
                     <Button
-                      variant="outline"
+                      className="w-full gap-2"
                       asChild
-                      className="w-full justify-center"
                     >
-                      <Link href="/contact">Talk to Sales</Link>
+                      <Link href="/contact">
+                        Start Free Trial <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </Button>
-                    <WaitlistDialog>
-                      <Button className="w-full">Request a Demo</Button>
-                    </WaitlistDialog>
                   </div>
                 </div>
               </SheetContent>

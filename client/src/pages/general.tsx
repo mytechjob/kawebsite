@@ -10,6 +10,9 @@ import {
   Building2,
   Headset,
   ArrowRight,
+  UserX,
+  TrendingDown,
+  AlertCircle,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -54,17 +57,67 @@ export default function General() {
       </section>
 
       {/* The Problem Section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            When Knowledge Breaks Down
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 text-center max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            When Knowledge Breaks Down, <br />
+            <span className="bg-gradient-to-r from-orange-400 via-primary to-purple-600 bg-clip-text text-transparent">
+              Everything Suffers
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            When people are not able to get the information that they need, it
-            causes churn, loss of revenue, and loss of productivity. All three
-            key areas—employees, customers, and operations—are severely
-            impacted.
+          <p className="text-lg text-muted-foreground mb-16 max-w-3xl mx-auto">
+            Siloed knowledge creates competitive disadvantages that impact every
+            aspect of your business.
           </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <Card className="bg-background border shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-8 pb-8 px-6 text-left">
+                <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center mb-6 text-red-500">
+                  <UserX className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Customer Turnover</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  When customers can't find the information they need, frustration
+                  leads to churn and lost revenue.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background border shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-8 pb-8 px-6 text-left">
+                <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center mb-6 text-red-500">
+                  <TrendingDown className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Lost Productivity</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Employees waste valuable time searching for information instead
+                  of focusing on high-impact work.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background border shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-8 pb-8 px-6 text-left">
+                <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center mb-6 text-red-500">
+                  <AlertCircle className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Operational Delays</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Critical operations grind to a halt when knowledge is siloed or
+                  inaccessible.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="bg-red-50 border border-red-100 rounded-xl p-8 md:p-10">
+            <p className="text-lg md:text-xl font-medium text-red-900/80">
+              <span className="font-bold text-red-600">The result?</span>{" "}
+              Increased turnover, revenue loss, decreased productivity, and a
+              business that can't operate at its full potential.
+            </p>
+          </div>
         </div>
       </section>
 

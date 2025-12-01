@@ -111,6 +111,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
 
+      {/* Use Cases Bar */}
+      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 py-2 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-6 text-sm whitespace-nowrap">
+            <span className="font-semibold text-muted-foreground">See Use Cases For:</span>
+            {[
+              "Professional Services",
+              "B2B",
+              "Front line operations",
+              "Enterprise",
+              "Sales",
+              "SMB",
+              "Solo Experts",
+            ].map((item) => (
+              <Link
+                key={item}
+                href={`/solutions?type=${item.toLowerCase().replace(/ /g, "-")}`}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
       <main className="flex-1">{children}</main>
 

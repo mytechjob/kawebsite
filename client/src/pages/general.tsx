@@ -27,8 +27,8 @@ export default function General() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50 mb-8 mx-auto max-w-2xl">
               <p className="text-lg font-medium">
-                "The old way of managing knowledge through silos doesn't work and
-                becomes a competitive disadvantage."
+                "The old way of managing knowledge through silos doesn't work
+                and becomes a competitive disadvantage."
               </p>
             </div>
             <Badge className="mb-6" variant="outline">
@@ -80,8 +80,8 @@ export default function General() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Customer Turnover</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  When customers can't find the information they need, frustration
-                  leads to churn and lost revenue.
+                  When customers can't find the information they need,
+                  frustration leads to churn and lost revenue.
                 </p>
               </CardContent>
             </Card>
@@ -93,8 +93,8 @@ export default function General() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Lost Productivity</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Employees waste valuable time searching for information instead
-                  of focusing on high-impact work.
+                  Employees waste valuable time searching for information
+                  instead of focusing on high-impact work.
                 </p>
               </CardContent>
             </Card>
@@ -106,8 +106,8 @@ export default function General() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Operational Delays</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Critical operations grind to a halt when knowledge is siloed or
-                  inaccessible.
+                  Critical operations grind to a halt when knowledge is siloed
+                  or inaccessible.
                 </p>
               </CardContent>
             </Card>
@@ -128,7 +128,7 @@ export default function General() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Three Ways Knowledge Agents <br />
+              How Knowledge Agents <br />
               <span className="bg-gradient-to-r from-orange-400 via-primary to-purple-600 bg-clip-text text-transparent">
                 Transform Your Business
               </span>
@@ -237,8 +237,9 @@ export default function General() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Operations Support</h3>
                 <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  Keep your operations running smoothly with proactive monitoring
-                  and instant access to operational knowledge and procedures.
+                  Keep your operations running smoothly with proactive
+                  monitoring and instant access to operational knowledge and
+                  procedures.
                 </p>
 
                 {/* Screenshot Placeholder */}

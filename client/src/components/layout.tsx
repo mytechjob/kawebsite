@@ -2,13 +2,25 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WaitlistDialog from "./waitlist-dialog";
-import logoNew from "@assets/KnowledgeAgents-wavelogo_1764437904526.png";
+import logoLight from "@assets/logo-light-v2-nospace_1764604731793.png";
+import logoDark from "@assets/logo-dark-v2-nospace_1764604731794.png";
+import { useTheme } from "next-themes";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Default to light logo during server-side rendering or before mounting to avoid mismatch
+  // but since we are client-side only, we can just wait for mount
+  const logoSrc = mounted && (theme === 'dark' || resolvedTheme === 'dark') ? logoDark : logoLight;
 
   const navLinks = [
     { href: "/product", label: "Product" },
@@ -32,9 +44,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             className="flex items-center gap-3 hover:opacity-90 transition-opacity"
           >
             <img
-              src={logoNew}
+              src={logoSrc}
               alt="Knowledge Agents"
-              className="h-12 w-auto object-contain logo-blend"
+              className="h-12 w-auto object-contain"
             />
           </Link>
 
@@ -112,9 +124,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <img
-                  src={logoNew}
+                  src={logoSrc}
                   alt="Knowledge Agents"
-                  className="h-14 w-auto object-contain logo-blend"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">

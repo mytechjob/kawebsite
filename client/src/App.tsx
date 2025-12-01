@@ -13,6 +13,7 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Solutions from "@/pages/solutions";
 import General from "@/pages/general";
+import { ThemeProvider } from "next-themes";
 
 function Router() {
   return (
@@ -34,12 +35,14 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="light" attribute="class">
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ArrowRight } from "lucide-react";
+import { Menu, ArrowRight, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import WaitlistDialog from "./waitlist-dialog";
 import logoLight from "@assets/logo-light-v2-nospace_1764604731793.png";
@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, resolvedTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -70,6 +70,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
             <Button className="gap-2" asChild>
               <Link href="/contact">
                 Start Free Trial <ArrowRight className="w-4 h-4" />
@@ -97,6 +106,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       {link.label}
                     </Link>
                   ))}
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-lg font-medium">Theme</span>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    >
+                      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                      <span className="sr-only">Toggle theme</span>
+                    </Button>
+                  </div>
                   <div className="flex flex-col gap-3 mt-4">
                     <Button className="w-full gap-2" asChild>
                       <Link href="/contact">

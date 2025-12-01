@@ -13,6 +13,8 @@ import {
   UserX,
   TrendingDown,
   AlertCircle,
+  Briefcase,
+  Settings,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -121,52 +123,153 @@ export default function General() {
         </div>
       </section>
 
-      {/* Three Pillars Section */}
-      <section className="py-16 md:py-24">
+      {/* Three Ways Section */}
+      <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Three Ways Knowledge Agents <br />
+              <span className="bg-gradient-to-r from-orange-400 via-primary to-purple-600 bg-clip-text text-transparent">
+                Transform Your Business
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              From frontline support to behind-the-scenes operations, Knowledge
+              Agents play a crucial role in your success.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-background border-none shadow-lg">
-              <CardContent className="pt-8 pb-8 px-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
+            {/* Customer Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
                   <Headset className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  Support Your Customers
-                </h3>
-                <p className="text-muted-foreground">
-                  Provide instant, accurate answers to customer inquiries around
-                  the clock, improving satisfaction and reducing wait times.
+                <h3 className="text-xl font-bold mb-3">Customer Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Deliver instant, accurate answers to customer inquiries 24/7.
+                  Reduce response times and increase satisfaction scores.
                 </p>
+
+                {/* Screenshot Placeholder */}
+                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
+                  <div className="flex flex-col items-center text-muted-foreground/40">
+                    <Headset className="w-8 h-8 mb-2 opacity-50" />
+                    <span className="text-xs font-medium">
+                      Screenshot Placeholder
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Instant response to customer queries",
+                      "Reduced support ticket volume",
+                      "Higher customer satisfaction scores",
+                      "24/7 availability without additional staff",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-background border-none shadow-lg">
-              <CardContent className="pt-8 pb-8 px-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
-                  <Zap className="w-6 h-6" />
+            {/* Employee Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                  <Briefcase className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  Smoother Operations
-                </h3>
-                <p className="text-muted-foreground">
-                  Keep your business running efficiently by ensuring operational
-                  knowledge is accessible instantly when needed.
+                <h3 className="text-xl font-bold mb-3">Employee Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Empower your team with instant access to policies, procedures,
+                  and best practices. Boost productivity and reduce onboarding
+                  time.
                 </p>
+
+                {/* Screenshot Placeholder */}
+                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
+                  <div className="flex flex-col items-center text-muted-foreground/40">
+                    <Briefcase className="w-8 h-8 mb-2 opacity-50" />
+                    <span className="text-xs font-medium">
+                      Screenshot Placeholder
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Faster onboarding for new employees",
+                      "Instant access to company knowledge",
+                      "Reduced time spent searching for information",
+                      "Improved employee productivity and morale",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-background border-none shadow-lg">
-              <CardContent className="pt-8 pb-8 px-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
-                  <Users className="w-6 h-6" />
+            {/* Operations Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
+                  <Settings className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  Productive Employees
-                </h3>
-                <p className="text-muted-foreground">
-                  Eliminate time spent searching for information. Empower your
-                  team with immediate access to the knowledge they need.
+                <h3 className="text-xl font-bold mb-3">Operations Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Keep your operations running smoothly with proactive monitoring
+                  and instant access to operational knowledge and procedures.
                 </p>
+
+                {/* Screenshot Placeholder */}
+                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
+                  <div className="flex flex-col items-center text-muted-foreground/40">
+                    <Settings className="w-8 h-8 mb-2 opacity-50" />
+                    <span className="text-xs font-medium">
+                      Screenshot Placeholder
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Reduced operational downtime",
+                      "Proactive issue detection and resolution",
+                      "Streamlined process documentation",
+                      "Better cross-team coordination",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>

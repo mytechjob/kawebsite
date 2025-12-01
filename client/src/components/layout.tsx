@@ -20,12 +20,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   // Default to light logo during server-side rendering or before mounting to avoid mismatch
   // but since we are client-side only, we can just wait for mount
-  const logoSrc = mounted && (theme === 'dark' || resolvedTheme === 'dark') ? logoDark : logoLight;
+  const logoSrc =
+    mounted && (theme === "dark" || resolvedTheme === "dark")
+      ? logoDark
+      : logoLight;
 
   const navLinks = [
-    { href: "/product", label: "For Enterprises" },
-    { href: "/solutions", label: "Solutions" },
     { href: "/", label: "General" },
+    { href: "/solutions", label: "Solutions" },
+    { href: "/product", label: "For Enterprises" },
     { href: "/pricing", label: "Pricing" },
     { href: "/blog", label: "Resources" },
     { href: "/about", label: "About" },
@@ -95,10 +98,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </Link>
                   ))}
                   <div className="flex flex-col gap-3 mt-4">
-                    <Button
-                      className="w-full gap-2"
-                      asChild
-                    >
+                    <Button className="w-full gap-2" asChild>
                       <Link href="/contact">
                         Start Free Trial <ArrowRight className="w-4 h-4" />
                       </Link>

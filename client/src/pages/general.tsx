@@ -31,8 +31,26 @@ export default function General() {
         </div>
       </section>
 
-      {/* Three Pillars Section */}
+      {/* The Problem Section */}
       <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            When Knowledge Breaks Down
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            When people are not able to get the information that they need, it causes churn, loss of revenue, and loss of productivity. 
+            All three key areas—employees, customers, and operations—are severely impacted.
+          </p>
+          <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50">
+            <p className="text-lg font-medium">
+              "The old way of managing knowledge through silos doesn't work and becomes a competitive disadvantage."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Three Pillars Section */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-background border-none shadow-lg">
@@ -75,7 +93,7 @@ export default function General() {
       </section>
 
       {/* Use Cases Section with Placeholder */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -100,10 +118,10 @@ export default function General() {
             </div>
             <div className="relative">
               {/* Screenshot Placeholder */}
-              <div className="aspect-video rounded-xl bg-muted border-2 border-dashed border-muted-foreground/25 flex items-center justify-center relative overflow-hidden group">
+              <div className="aspect-video rounded-xl bg-background border-2 border-dashed border-muted-foreground/25 flex items-center justify-center relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50" />
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-background shadow-sm flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary shadow-sm flex items-center justify-center">
                     <span className="text-2xl font-bold text-muted-foreground">1</span>
                   </div>
                   <p className="font-medium text-muted-foreground">Screenshot Placeholder</p>
@@ -111,24 +129,6 @@ export default function General() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Problem Section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            When Knowledge Breaks Down
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            When people are not able to get the information that they need, it causes churn, loss of revenue, and loss of productivity. 
-            All three key areas—employees, customers, and operations—are severely impacted.
-          </p>
-          <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50">
-            <p className="text-lg font-medium">
-              "The old way of managing knowledge through silos doesn't work and becomes a competitive disadvantage."
-            </p>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Menu, ArrowRight, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import WaitlistDialog from "./waitlist-dialog";
 import logoLight from "@assets/logo-light-v2-nospace_1764604731793.png";
-import logoDark from "@assets/logo-dark-v2-nospace_1764604731794.png";
+import logoDark from "@/assets/logo.png";
 import { useTheme } from "next-themes";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

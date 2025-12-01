@@ -19,14 +19,14 @@ function Router() {
   return (
     <Layout>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" component={General} />
         <Route path="/product" component={Product} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/blog" component={Blog} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/solutions" component={Solutions} />
-        <Route path="/general" component={General} />
+        <Route path="/general" component={Home} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

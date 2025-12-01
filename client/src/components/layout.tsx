@@ -23,9 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const logoSrc = mounted && (theme === 'dark' || resolvedTheme === 'dark') ? logoDark : logoLight;
 
   const navLinks = [
-    { href: "/product", label: "Product" },
+    { href: "/product", label: "For Enterprises" },
     { href: "/solutions", label: "Solutions" },
-    { href: "/general", label: "General" },
+    { href: "/", label: "General" },
     { href: "/pricing", label: "Pricing" },
     { href: "/blog", label: "Resources" },
     { href: "/about", label: "About" },

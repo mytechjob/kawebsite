@@ -80,7 +80,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="sr-only">Toggle theme</span>
             </Button>
             <Button className="gap-2" asChild>
-              <Link href="/contact">
+              <Link href="/pricing">
                 Start Free Trial <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -120,7 +120,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </div>
                   <div className="flex flex-col gap-3 mt-4">
                     <Button className="w-full gap-2" asChild>
-                      <Link href="/contact">
+                      <Link href="/pricing">
                         Start Free Trial <ArrowRight className="w-4 h-4" />
                       </Link>
                     </Button>

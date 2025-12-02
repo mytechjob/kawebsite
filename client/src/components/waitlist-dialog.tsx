@@ -13,19 +13,31 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 
+interface WaitlistFormData {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+}
+
 export default function WaitlistDialog({ children }: { children: React.ReactNode }) {
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState<WaitlistFormData>({
+    firstName: "",
+    lastName: "",
+    company: "",
+    email: "",
+  });
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
 
   const mutation = useMutation({
-    mutationFn: async (email: string) => {
+    mutationFn: async (data: WaitlistFormData) => {
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify(data),
       });
       
       if (!response.ok) {
@@ -40,7 +52,7 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
         description: "We'll be in touch shortly with early access details.",
       });
       setOpen(false);
-      setEmail("");
+      setFormData({ firstName: "", lastName: "", company: "", email: "" });
     },
     onError: () => {
       toast({
@@ -53,7 +65,11 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    mutation.mutate(email);
+    mutation.mutate(formData);
+  };
+
+  const updateField = (field: keyof WaitlistFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -69,18 +85,57 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="firstName">First Name</Label>
+              <Input
+                id="firstName"
+                type="text"
+                placeholder="John"
+                value={formData.firstName}
+                onChange={(e) => updateField("firstName", e.target.value)}
+                required
+                data-testid="input-firstName"
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="lastName">Last Name</Label>
+              <Input
+                id="lastName"
+                type="text"
+                placeholder="Doe"
+                value={formData.lastName}
+                onChange={(e) => updateField("lastName", e.target.value)}
+                required
+                data-testid="input-lastName"
+              />
+            </div>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="company">Company Name</Label>
+            <Input
+              id="company"
+              type="text"
+              placeholder="Acme Inc."
+              value={formData.company}
+              onChange={(e) => updateField("company", e.target.value)}
+              required
+              data-testid="input-company"
+            />
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Work Email</Label>
             <Input
               id="email"
               type="email"
-              placeholder="name@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="john@company.com"
+              value={formData.email}
+              onChange={(e) => updateField("email", e.target.value)}
               required
+              data-testid="input-email"
             />
           </div>
-          <Button type="submit" className="w-full" disabled={mutation.isPending}>
+          <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit">
             {mutation.isPending ? "Joining..." : "Join Waitlist"}
           </Button>
         </form>

@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/solutions", label: "Solutions" },
     { href: "/product", label: "For Enterprises" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/blog", label: "Resources" },
+    // { href: "/blog", label: "Resources" },
     { href: "/about", label: "About" },
   ];
 
@@ -111,7 +111,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <Button
                       variant="ghost"
                       size="icon"
-                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                      onClick={() =>
+                        setTheme(theme === "dark" ? "light" : "dark")
+                      }
                     >
                       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                       <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -136,7 +138,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-2 overflow-x-auto no-scrollbar">
           <div className="flex items-center gap-6 text-sm whitespace-nowrap">
-            <span className="font-semibold text-muted-foreground">See Use Cases For:</span>
+            <span className="font-semibold text-muted-foreground">
+              See Use Cases For:
+            </span>
             {[
               "Professional Services",
               "B2B",
@@ -150,7 +154,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 key={item}
                 href={`/${item.toLowerCase().replace(/ /g, "-")}`}
                 className={`text-muted-foreground hover:text-primary transition-colors ${
-                  isActive(`/${item.toLowerCase().replace(/ /g, "-")}`) ? "text-primary font-semibold" : ""
+                  isActive(`/${item.toLowerCase().replace(/ /g, "-")}`)
+                    ? "text-primary font-semibold"
+                    : ""
                 }`}
               >
                 {item}

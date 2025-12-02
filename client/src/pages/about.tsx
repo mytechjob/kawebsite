@@ -10,18 +10,6 @@ export default function About() {
       bio: "Responsible for overall direction of the company. 20+ years of experience in Fortune 500, Strategy Consulting, and Entrepreneurship.",
       initials: "AK",
     },
-    {
-      name: "Jimmy Bijlani",
-      role: "Rainmaker",
-      bio: "Carries out the message of Knowledge Agents to the world. Past experience in Strategy Consulting, Big Tech, and Entrepreneurship.",
-      initials: "JB",
-    },
-    {
-      name: "Kirk Rohani",
-      role: "AI Guy",
-      bio: "Advises on platform, product, and ensures we keep up with the latest and greatest when it comes to AI.",
-      initials: "KR",
-    },
   ];
 
   const values = [

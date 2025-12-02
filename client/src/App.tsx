@@ -16,6 +16,13 @@ import General from "@/pages/general";
 import EmployeeSupport from "@/pages/employee-support";
 import CustomerSupport from "@/pages/customer-support";
 import OperationsSupport from "@/pages/operations-support";
+import ProfessionalServices from "@/pages/professional-services";
+import B2B from "@/pages/b2b";
+import FrontLineOperations from "@/pages/front-line-operations";
+import Enterprise from "@/pages/enterprise";
+import Sales from "@/pages/sales";
+import SMB from "@/pages/smb";
+import SoloExperts from "@/pages/solo-experts";
 import { ThemeProvider } from "next-themes";
 
 function Router() {
@@ -33,6 +40,16 @@ function Router() {
         <Route path="/employee-support" component={EmployeeSupport} />
         <Route path="/customer-support" component={CustomerSupport} />
         <Route path="/operations-support" component={OperationsSupport} />
+        
+        {/* New Use Case Routes */}
+        <Route path="/professional-services" component={ProfessionalServices} />
+        <Route path="/b2b" component={B2B} />
+        <Route path="/front-line-operations" component={FrontLineOperations} />
+        <Route path="/enterprise" component={Enterprise} />
+        <Route path="/sales" component={Sales} />
+        <Route path="/smb" component={SMB} />
+        <Route path="/solo-experts" component={SoloExperts} />
+
         <Route component={NotFound} />
       </Switch>
     </Layout>

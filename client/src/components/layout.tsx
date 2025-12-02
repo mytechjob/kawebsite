@@ -148,8 +148,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ].map((item) => (
               <Link
                 key={item}
-                href={`/solutions?type=${item.toLowerCase().replace(/ /g, "-")}`}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                href={`/${item.toLowerCase().replace(/ /g, "-")}`}
+                className={`text-muted-foreground hover:text-primary transition-colors ${
+                  isActive(`/${item.toLowerCase().replace(/ /g, "-")}`) ? "text-primary font-semibold" : ""
+                }`}
               >
                 {item}
               </Link>

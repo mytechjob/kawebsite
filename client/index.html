@@ -23,5 +23,35 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Chat Widget Integration (Simple Mode) -->
+    <!-- Secured by browser CORS, easy to embed -->
+    <div id="kb-chat-widget"></div>
+    <script>
+      (function() {
+        const projectId = "445bf037-2104-410b-9bbb-8ca826b5f325";
+        const apiUrl = "https://9164b327-0e18-471e-b229-2e644431bb88-00-q9w8znn9mffn.worf.replit.dev/api/widget/" + projectId + "/chat";
+        
+        // Load widget script
+        const script = document.createElement('script');
+        script.src = "https://9164b327-0e18-471e-b229-2e644431bb88-00-q9w8znn9mffn.worf.replit.dev/widget.js";
+        script.async = true;
+        script.onload = function() {
+          if (window.KBChatWidget) {
+            window.KBChatWidget.init({
+              projectId: projectId,
+              apiUrl: apiUrl,
+              securityMode: "simple",
+              position: "bottom-right",
+              style: "bubble",
+              primaryColor: "#00D4FF",
+              accentColor: "#00D4FF",
+              welcomeMessage: "Hello! How can I help you today?"
+            });
+          }
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
   </body>
 </html>

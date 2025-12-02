@@ -151,6 +151,12 @@ export default function General() {
                   Deliver instant, accurate answers to customer inquiries 24/7.
                   Reduce response times and increase satisfaction scores.
                 </p>
+                
+                <Button variant="link" className="p-0 h-auto mb-6 text-orange-600 hover:text-orange-700 font-semibold" asChild>
+                  <Link href="/customer-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
 
                 {/* Screenshot Placeholder */}
                 <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
@@ -197,6 +203,12 @@ export default function General() {
                   time.
                 </p>
 
+                <Button variant="link" className="p-0 h-auto mb-6 text-blue-600 hover:text-blue-700 font-semibold" asChild>
+                  <Link href="/employee-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
+
                 {/* Screenshot Placeholder */}
                 <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
                   <div className="flex flex-col items-center text-muted-foreground/40">
@@ -241,6 +253,12 @@ export default function General() {
                   monitoring and instant access to operational knowledge and
                   procedures.
                 </p>
+
+                <Button variant="link" className="p-0 h-auto mb-6 text-purple-600 hover:text-purple-700 font-semibold" asChild>
+                  <Link href="/operations-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
 
                 {/* Screenshot Placeholder */}
                 <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">

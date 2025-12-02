@@ -13,6 +13,9 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Solutions from "@/pages/solutions";
 import General from "@/pages/general";
+import EmployeeSupport from "@/pages/employee-support";
+import CustomerSupport from "@/pages/customer-support";
+import OperationsSupport from "@/pages/operations-support";
 import { ThemeProvider } from "next-themes";
 
 function Router() {
@@ -27,6 +30,9 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/solutions" component={Solutions} />
         <Route path="/general" component={Home} />
+        <Route path="/employee-support" component={EmployeeSupport} />
+        <Route path="/customer-support" component={CustomerSupport} />
+        <Route path="/operations-support" component={OperationsSupport} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

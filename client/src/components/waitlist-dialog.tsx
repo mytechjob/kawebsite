@@ -11,21 +11,49 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
 
 export default function WaitlistDialog({ children }: { children: React.ReactNode }) {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
 
+  const mutation = useMutation({
+    mutationFn: async (email: string) => {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to join waitlist");
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "You're on the list!",
+        description: "We'll be in touch shortly with early access details.",
+      });
+      setOpen(false);
+      setEmail("");
+    },
+    onError: () => {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock submission
-    toast({
-      title: "You're on the list!",
-      description: "We'll be in touch shortly with early access details.",
-    });
-    setOpen(false);
-    setEmail("");
+    mutation.mutate(email);
   };
 
   return (
@@ -52,7 +80,9 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
               required
             />
           </div>
-          <Button type="submit" className="w-full">Join Waitlist</Button>
+          <Button type="submit" className="w-full" disabled={mutation.isPending}>
+            {mutation.isPending ? "Joining..." : "Join Waitlist"}
+          </Button>
         </form>
       </DialogContent>
     </Dialog>

@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -32,13 +33,40 @@ export default function Contact() {
     }
   });
 
+  const mutation = useMutation({
+    mutationFn: async (values: z.infer<typeof formSchema>) => {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit contact form");
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message Sent",
+        description: "Thank you for contacting us. We'll be in touch shortly."
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We'll be in touch shortly."
-    });
-    form.reset();
+    mutation.mutate(values);
   }
 
   return (
@@ -167,7 +195,9 @@ export default function Contact() {
                       )}
                     />
 
-                    <Button type="submit" className="w-full h-12 text-base">Send Message</Button>
+                    <Button type="submit" className="w-full h-12 text-base" disabled={mutation.isPending}>
+                      {mutation.isPending ? "Sending..." : "Send Message"}
+                    </Button>
                   </form>
                 </Form>
               </div>

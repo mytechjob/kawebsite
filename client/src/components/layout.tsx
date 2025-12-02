@@ -32,6 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/pricing", label: "Pricing" },
     // { href: "/blog", label: "Resources" },
     { href: "/about", label: "About" },
+    { href: "/knowledge", label: "Knowledge" },
   ];
 
   const isActive = (path: string) => location === path;

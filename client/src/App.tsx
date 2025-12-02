@@ -23,6 +23,7 @@ import Enterprise from "@/pages/enterprise";
 import Sales from "@/pages/sales";
 import SMB from "@/pages/smb";
 import SoloExperts from "@/pages/solo-experts";
+import Knowledge from "@/pages/knowledge";
 import { ThemeProvider } from "next-themes";
 
 function Router() {
@@ -34,6 +35,7 @@ function Router() {
         <Route path="/pricing" component={Pricing} />
         <Route path="/blog" component={Blog} />
         <Route path="/about" component={About} />
+        <Route path="/knowledge" component={Knowledge} />
         <Route path="/contact" component={Contact} />
         <Route path="/solutions" component={Solutions} />
         <Route path="/general" component={Home} />

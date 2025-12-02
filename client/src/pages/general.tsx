@@ -17,6 +17,11 @@ import {
   Settings,
 } from "lucide-react";
 import { Link } from "wouter";
+import portalScreenshot from "@assets/screenshot-1-portal_1764651843370.png";
+import wikiScreenshot from "@assets/screenshot-1-wiki_1764651843365.png";
+import dashScreenshot from "@assets/screenshot-1-dash_1764651843368.png";
+import homeScreenshot from "@assets/screenshot-1-home_1764651843370.png";
+import studioScreenshot from "@assets/screenshot-1-knowledge-studio_1764651843369.png";
 
 export default function General() {
   return (
@@ -158,14 +163,12 @@ export default function General() {
                   </Link>
                 </Button>
 
-                {/* Screenshot Placeholder */}
-                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
-                  <div className="flex flex-col items-center text-muted-foreground/40">
-                    <Headset className="w-8 h-8 mb-2 opacity-50" />
-                    <span className="text-xs font-medium">
-                      Screenshot Placeholder
-                    </span>
-                  </div>
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img 
+                    src={portalScreenshot} 
+                    alt="Customer Support Portal Interface" 
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
 
                 <div>
@@ -209,14 +212,12 @@ export default function General() {
                   </Link>
                 </Button>
 
-                {/* Screenshot Placeholder */}
-                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
-                  <div className="flex flex-col items-center text-muted-foreground/40">
-                    <Briefcase className="w-8 h-8 mb-2 opacity-50" />
-                    <span className="text-xs font-medium">
-                      Screenshot Placeholder
-                    </span>
-                  </div>
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img 
+                    src={wikiScreenshot} 
+                    alt="Employee Knowledge Base Interface" 
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
 
                 <div>
@@ -260,14 +261,12 @@ export default function General() {
                   </Link>
                 </Button>
 
-                {/* Screenshot Placeholder */}
-                <div className="aspect-video rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8">
-                  <div className="flex flex-col items-center text-muted-foreground/40">
-                    <Settings className="w-8 h-8 mb-2 opacity-50" />
-                    <span className="text-xs font-medium">
-                      Screenshot Placeholder
-                    </span>
-                  </div>
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img 
+                    src={dashScreenshot} 
+                    alt="Operations Dashboard Interface" 
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
 
                 <div>
@@ -321,22 +320,12 @@ export default function General() {
               </ul>
             </div>
             <div className="relative">
-              {/* Screenshot Placeholder */}
-              <div className="aspect-video rounded-xl bg-background border-2 border-dashed border-muted-foreground/25 flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50" />
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary shadow-sm flex items-center justify-center">
-                    <span className="text-2xl font-bold text-muted-foreground">
-                      1
-                    </span>
-                  </div>
-                  <p className="font-medium text-muted-foreground">
-                    Screenshot Placeholder
-                  </p>
-                  <p className="text-sm text-muted-foreground/60 mt-2">
-                    Dashboard View
-                  </p>
-                </div>
+              <div className="rounded-xl bg-background border-2 border-muted-foreground/10 flex items-center justify-center relative overflow-hidden shadow-2xl">
+                <img 
+                  src={homeScreenshot} 
+                  alt="Knowledge Agents Dashboard View" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
@@ -348,22 +337,12 @@ export default function General() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
             <div className="order-2 lg:order-1 relative">
-              {/* Screenshot Placeholder */}
-              <div className="aspect-square md:aspect-video lg:aspect-square rounded-xl bg-muted border-2 border-dashed border-muted-foreground/25 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tl from-primary/5 to-transparent opacity-50" />
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-background shadow-sm flex items-center justify-center">
-                    <span className="text-2xl font-bold text-muted-foreground">
-                      2
-                    </span>
-                  </div>
-                  <p className="font-medium text-muted-foreground">
-                    Screenshot Placeholder
-                  </p>
-                  <p className="text-sm text-muted-foreground/60 mt-2">
-                    Agent Interface
-                  </p>
-                </div>
+              <div className="rounded-xl bg-muted border-2 border-muted-foreground/10 flex items-center justify-center relative overflow-hidden shadow-2xl">
+                <img 
+                  src={studioScreenshot} 
+                  alt="Knowledge Studio Agent Interface" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
 

@@ -80,11 +80,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button className="gap-2" asChild>
-              <Link href="/pricing">
+            <WaitlistDialog>
+              <Button className="gap-2" data-testid="button-start-free-trial">
                 Start Free Trial <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
+              </Button>
+            </WaitlistDialog>
           </div>
 
           {/* Mobile Menu */}
@@ -122,11 +122,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </Button>
                   </div>
                   <div className="flex flex-col gap-3 mt-4">
-                    <Button className="w-full gap-2" asChild>
-                      <Link href="/pricing">
+                    <WaitlistDialog>
+                      <Button className="w-full gap-2" data-testid="button-start-free-trial-mobile">
                         Start Free Trial <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
+                      </Button>
+                    </WaitlistDialog>
                   </div>
                 </div>
               </SheetContent>

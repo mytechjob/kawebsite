@@ -48,101 +48,101 @@
 }
 
 :root {
-  /* Brand Colors from styles.css */
-  /* Primary #0A2540 -> HSL 210 73% 15% */
-  /* Accent #00D4FF -> HSL 190 100% 50% */
-  /* Teal #14B8A6 -> HSL 173 80% 40% */
+  /* Theme inspired by Knowledge Agents logo rainbow palette */
+  /* Primary: Deep Purple #5B21B6 -> HSL 271 81% 42% */
+  /* Accent: Coral Orange #F97316 -> HSL 25 95% 53% */
+  /* Teal accent: #14B8A6 -> HSL 173 80% 40% */
   
-  --background: 0 0% 100%;
-  --foreground: 210 73% 15%; /* Primary Dark Blue */
+  --background: 40 33% 98%;
+  --foreground: 271 50% 20%;
 
   --card: 0 0% 100%;
-  --card-foreground: 210 73% 15%;
+  --card-foreground: 271 50% 20%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 210 73% 15%;
+  --popover-foreground: 271 50% 20%;
 
-  --primary: 210 73% 15%;
+  --primary: 271 81% 42%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 210 20% 96%; /* Surface Light */
-  --secondary-foreground: 210 73% 15%;
+  --secondary: 40 25% 94%;
+  --secondary-foreground: 271 50% 20%;
 
-  --muted: 210 20% 96%;
-  --muted-foreground: 215 16% 47%; /* Text Secondary */
+  --muted: 40 20% 93%;
+  --muted-foreground: 271 20% 45%;
 
-  --accent: 190 100% 50%;
-  --accent-foreground: 210 73% 15%;
+  --accent: 25 95% 53%;
+  --accent-foreground: 271 50% 15%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 190 100% 50%; /* Accent Color */
+  --border: 40 20% 88%;
+  --input: 40 20% 88%;
+  --ring: 25 95% 53%;
 
   --radius: 0.75rem;
 
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --chart-1: 25 95% 53%;
+  --chart-2: 173 80% 40%;
+  --chart-3: 271 81% 42%;
+  --chart-4: 45 93% 58%;
+  --chart-5: 350 80% 55%;
 
-  --sidebar: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 220 13% 91%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar: 40 25% 96%;
+  --sidebar-foreground: 271 50% 20%;
+  --sidebar-primary: 271 81% 42%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 40 20% 92%;
+  --sidebar-accent-foreground: 271 50% 20%;
+  --sidebar-border: 40 20% 88%;
+  --sidebar-ring: 25 95% 53%;
 }
 
 .dark {
-  /* Using darker versions for potential dark mode, though not explicitly in static files */
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
+  /* Dark theme with deep purple base and vibrant coral accents */
+  --background: 271 50% 6%;
+  --foreground: 40 20% 95%;
 
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
+  --card: 271 40% 10%;
+  --card-foreground: 40 20% 95%;
 
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
+  --popover: 271 40% 10%;
+  --popover-foreground: 40 20% 95%;
 
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
+  --primary: 25 95% 58%;
+  --primary-foreground: 271 50% 8%;
 
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 271 30% 15%;
+  --secondary-foreground: 40 20% 95%;
 
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
+  --muted: 271 25% 18%;
+  --muted-foreground: 40 15% 65%;
 
-  --accent: 190 100% 50%;
-  --accent-foreground: 240 5.9% 10%;
+  --accent: 173 80% 45%;
+  --accent-foreground: 271 50% 10%;
 
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 70% 45%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
+  --border: 271 25% 18%;
+  --input: 271 25% 18%;
+  --ring: 25 95% 58%;
 
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
+  --chart-1: 25 95% 58%;
+  --chart-2: 173 80% 45%;
+  --chart-3: 271 70% 60%;
+  --chart-4: 45 93% 58%;
+  --chart-5: 350 75% 55%;
 
-  --sidebar: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar: 271 45% 8%;
+  --sidebar-foreground: 40 20% 95%;
+  --sidebar-primary: 25 95% 58%;
+  --sidebar-primary-foreground: 271 50% 8%;
+  --sidebar-accent: 271 30% 15%;
+  --sidebar-accent-foreground: 40 20% 95%;
+  --sidebar-border: 271 25% 18%;
+  --sidebar-ring: 25 95% 58%;
 }
 
 @layer base {
@@ -159,18 +159,27 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-br from-[hsl(190,100%,50%)] to-[hsl(173,80%,40%)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-[hsl(271,81%,42%)] to-[hsl(25,95%,53%)] bg-clip-text text-transparent;
   }
   
   .hero-bg-gradient {
-    background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.08), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(91, 33, 182, 0.06), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent 50%);
   }
 
   .glass-nav {
     @apply bg-white/90 backdrop-blur-md border-b border-border/50;
   }
   
+  .dark .glass-nav {
+    @apply bg-[hsl(271,40%,10%)]/90;
+  }
+  
   .logo-blend {
     mix-blend-mode: multiply;
+  }
+  
+  .dark .logo-blend {
+    mix-blend-mode: normal;
   }
 }

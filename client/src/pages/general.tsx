@@ -30,9 +30,6 @@ export default function General() {
       <section className="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6" variant="outline">
-              Proactive Knowledge Intelligence
-            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 Self Service Knowledge Platform

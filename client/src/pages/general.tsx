@@ -27,15 +27,9 @@ export default function General() {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-16 md:pt-32 md:pb-24">
+      <section className="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="p-6 bg-background rounded-lg border shadow-sm text-left border-l-4 border-l-destructive/50 mb-8 mx-auto max-w-2xl">
-              <p className="text-lg font-medium">
-                "The old way of managing knowledge through silos doesn't work
-                and becomes a competitive disadvantage."
-              </p>
-            </div>
             <Badge className="mb-6" variant="outline">
               Proactive Knowledge Intelligence
             </Badge>
@@ -45,7 +39,8 @@ export default function General() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Helps you find, analyze, organize, and proactively update information quickly.
+              Helps you find, analyze, organize, and proactively update
+              information quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="gap-2" asChild>
@@ -57,6 +52,184 @@ export default function General() {
                 <Link href="/solutions">Watch Demo</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three Ways Section */}
+      <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              How Knowledge Agents <br />
+              <span className="bg-gradient-to-r from-orange-400 via-primary to-purple-600 bg-clip-text text-transparent">
+                Transform Your Business
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              From frontline support to behind-the-scenes operations, Knowledge
+              Agents play a crucial role in your success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Customer Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+                  <Headset className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Customer Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Deliver instant, accurate answers to customer inquiries 24/7.
+                  Reduce response times and increase satisfaction scores.
+                </p>
+
+                <Button
+                  variant="link"
+                  className="p-0 h-auto mb-6 text-orange-600 hover:text-orange-700 font-semibold"
+                  asChild
+                >
+                  <Link href="/customer-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
+
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img
+                    src={portalScreenshot}
+                    alt="Customer Support Portal Interface"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Instant response to customer queries",
+                      "Reduced support ticket volume",
+                      "Higher customer satisfaction scores",
+                      "24/7 availability without additional staff",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Employee Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Employee Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Empower your team with instant access to policies, procedures,
+                  and best practices. Boost productivity and reduce onboarding
+                  time.
+                </p>
+
+                <Button
+                  variant="link"
+                  className="p-0 h-auto mb-6 text-blue-600 hover:text-blue-700 font-semibold"
+                  asChild
+                >
+                  <Link href="/employee-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
+
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img
+                    src={wikiScreenshot}
+                    alt="Employee Knowledge Base Interface"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Faster onboarding for new employees",
+                      "Instant access to company knowledge",
+                      "Reduced time spent searching for information",
+                      "Improved employee productivity and morale",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Operations Support */}
+            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
+              <CardContent className="pt-8 pb-8 px-6 flex-grow">
+                <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
+                  <Settings className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Operations Support</h3>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Keep your operations running smoothly with proactive
+                  monitoring and instant access to operational knowledge and
+                  procedures.
+                </p>
+
+                <Button
+                  variant="link"
+                  className="p-0 h-auto mb-6 text-purple-600 hover:text-purple-700 font-semibold"
+                  asChild
+                >
+                  <Link href="/operations-support">
+                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
+
+                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
+                  <img
+                    src={dashScreenshot}
+                    alt="Operations Dashboard Interface"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Reduced operational downtime",
+                      "Proactive issue detection and resolution",
+                      "Streamlined process documentation",
+                      "Better cross-team coordination",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -126,172 +299,6 @@ export default function General() {
         </div>
       </section>
 
-      {/* Three Ways Section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              How Knowledge Agents <br />
-              <span className="bg-gradient-to-r from-orange-400 via-primary to-purple-600 bg-clip-text text-transparent">
-                Transform Your Business
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              From frontline support to behind-the-scenes operations, Knowledge
-              Agents play a crucial role in your success.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Customer Support */}
-            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
-              <CardContent className="pt-8 pb-8 px-6 flex-grow">
-                <div className="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
-                  <Headset className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Customer Support</h3>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  Deliver instant, accurate answers to customer inquiries 24/7.
-                  Reduce response times and increase satisfaction scores.
-                </p>
-                
-                <Button variant="link" className="p-0 h-auto mb-6 text-orange-600 hover:text-orange-700 font-semibold" asChild>
-                  <Link href="/customer-support">
-                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </Button>
-
-                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
-                  <img 
-                    src={portalScreenshot} 
-                    alt="Customer Support Portal Interface" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {[
-                      "Instant response to customer queries",
-                      "Reduced support ticket volume",
-                      "Higher customer satisfaction scores",
-                      "24/7 availability without additional staff",
-                    ].map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Employee Support */}
-            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
-              <CardContent className="pt-8 pb-8 px-6 flex-grow">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-                  <Briefcase className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Employee Support</h3>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  Empower your team with instant access to policies, procedures,
-                  and best practices. Boost productivity and reduce onboarding
-                  time.
-                </p>
-
-                <Button variant="link" className="p-0 h-auto mb-6 text-blue-600 hover:text-blue-700 font-semibold" asChild>
-                  <Link href="/employee-support">
-                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </Button>
-
-                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
-                  <img 
-                    src={wikiScreenshot} 
-                    alt="Employee Knowledge Base Interface" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {[
-                      "Faster onboarding for new employees",
-                      "Instant access to company knowledge",
-                      "Reduced time spent searching for information",
-                      "Improved employee productivity and morale",
-                    ].map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Operations Support */}
-            <Card className="bg-background border-none shadow-lg flex flex-col h-full">
-              <CardContent className="pt-8 pb-8 px-6 flex-grow">
-                <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
-                  <Settings className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Operations Support</h3>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  Keep your operations running smoothly with proactive
-                  monitoring and instant access to operational knowledge and
-                  procedures.
-                </p>
-
-                <Button variant="link" className="p-0 h-auto mb-6 text-purple-600 hover:text-purple-700 font-semibold" asChild>
-                  <Link href="/operations-support">
-                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </Button>
-
-                <div className="rounded-lg bg-secondary/50 border border-border/50 flex items-center justify-center relative overflow-hidden mb-8 shadow-md">
-                  <img 
-                    src={dashScreenshot} 
-                    alt="Operations Dashboard Interface" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {[
-                      "Reduced operational downtime",
-                      "Proactive issue detection and resolution",
-                      "Streamlined process documentation",
-                      "Better cross-team coordination",
-                    ].map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Use Cases Section with Placeholder */}
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
@@ -319,9 +326,9 @@ export default function General() {
             </div>
             <div className="relative">
               <div className="rounded-xl bg-background border-2 border-muted-foreground/10 flex items-center justify-center relative overflow-hidden shadow-2xl">
-                <img 
-                  src={homeScreenshot} 
-                  alt="Knowledge Agents Dashboard View" 
+                <img
+                  src={homeScreenshot}
+                  alt="Knowledge Agents Dashboard View"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -336,9 +343,9 @@ export default function General() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
             <div className="order-2 lg:order-1 relative">
               <div className="rounded-xl bg-muted border-2 border-muted-foreground/10 flex items-center justify-center relative overflow-hidden shadow-2xl">
-                <img 
-                  src={studioScreenshot} 
-                  alt="Knowledge Studio Agent Interface" 
+                <img
+                  src={studioScreenshot}
+                  alt="Knowledge Studio Agent Interface"
                   className="w-full h-auto object-cover"
                 />
               </div>

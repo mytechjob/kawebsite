@@ -40,14 +40,12 @@ export default function General() {
               Proactive Knowledge Intelligence
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Make your knowledge available <br />
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                24 hours a day
+                Self Service Knowledge Platform
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Empower your business with always-on intelligence to support
-              customers, streamline operations, and boost employee productivity.
+              Helps you find, analyze, organize, and proactively update information quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="gap-2" asChild>

@@ -9,23 +9,44 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 
 interface WaitlistFormData {
-  firstName: string;
-  lastName: string;
-  company: string;
+  fullName: string;
   email: string;
+  company: string;
+  role: string;
+  automationGoal: string;
 }
+
+const roleOptions = [
+  "Finance / Accounting",
+  "Legal",
+  "Compliance",
+  "Internal Audit / Risk",
+  "Private Equity / M&A",
+  "Operations",
+  "IT / Data",
+  "Other",
+];
 
 export default function WaitlistDialog({ children }: { children: React.ReactNode }) {
   const [formData, setFormData] = useState<WaitlistFormData>({
-    firstName: "",
-    lastName: "",
-    company: "",
+    fullName: "",
     email: "",
+    company: "",
+    role: "",
+    automationGoal: "",
   });
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
@@ -48,11 +69,11 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
     },
     onSuccess: () => {
       toast({
-        title: "You're on the list!",
-        description: "We'll be in touch shortly with early access details.",
+        title: "Thanks — you're on the Early Access list",
+        description: "We'll reach out shortly.",
       });
       setOpen(false);
-      setFormData({ firstName: "", lastName: "", company: "", email: "" });
+      setFormData({ fullName: "", email: "", company: "", role: "", automationGoal: "" });
     },
     onError: () => {
       toast({
@@ -79,48 +100,22 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Join the Waitlist</DialogTitle>
+          <DialogTitle>Join Early Access</DialogTitle>
           <DialogDescription>
-            Get early access to the first AI-Native Knowledge Orchestrator.
+            Get product updates, demo access, and first priority onboarding.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="firstName">First Name</Label>
-              <Input
-                id="firstName"
-                type="text"
-                placeholder="John"
-                value={formData.firstName}
-                onChange={(e) => updateField("firstName", e.target.value)}
-                required
-                data-testid="input-firstName"
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="lastName">Last Name</Label>
-              <Input
-                id="lastName"
-                type="text"
-                placeholder="Doe"
-                value={formData.lastName}
-                onChange={(e) => updateField("lastName", e.target.value)}
-                required
-                data-testid="input-lastName"
-              />
-            </div>
-          </div>
           <div className="grid gap-2">
-            <Label htmlFor="company">Company Name</Label>
+            <Label htmlFor="fullName">Full Name</Label>
             <Input
-              id="company"
+              id="fullName"
               type="text"
-              placeholder="Acme Inc."
-              value={formData.company}
-              onChange={(e) => updateField("company", e.target.value)}
+              placeholder="John Doe"
+              value={formData.fullName}
+              onChange={(e) => updateField("fullName", e.target.value)}
               required
-              data-testid="input-company"
+              data-testid="input-fullName"
             />
           </div>
           <div className="grid gap-2">
@@ -135,9 +130,55 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
               data-testid="input-email"
             />
           </div>
-          <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit">
-            {mutation.isPending ? "Joining..." : "Join Waitlist"}
+          <div className="grid gap-2">
+            <Label htmlFor="company">Company</Label>
+            <Input
+              id="company"
+              type="text"
+              placeholder="Acme Inc."
+              value={formData.company}
+              onChange={(e) => updateField("company", e.target.value)}
+              required
+              data-testid="input-company"
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="role">Role</Label>
+            <Select
+              value={formData.role}
+              onValueChange={(value) => updateField("role", value)}
+              required
+            >
+              <SelectTrigger data-testid="select-role">
+                <SelectValue placeholder="Select your role" />
+              </SelectTrigger>
+              <SelectContent>
+                {roleOptions.map((role) => (
+                  <SelectItem key={role} value={role}>
+                    {role}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="automationGoal">What are you hoping to automate?</Label>
+            <Textarea
+              id="automationGoal"
+              placeholder="Describe your use case..."
+              value={formData.automationGoal}
+              onChange={(e) => updateField("automationGoal", e.target.value)}
+              className="resize-none"
+              rows={3}
+              data-testid="input-automationGoal"
+            />
+          </div>
+          <Button type="submit" className="w-full" disabled={mutation.isPending || !formData.role} data-testid="button-submit">
+            {mutation.isPending ? "Submitting..." : "Request Early Access"}
           </Button>
+          <p className="text-xs text-muted-foreground text-center">
+            We'll only use this to contact you about Early Access and onboarding. No spam.
+          </p>
         </form>
       </DialogContent>
     </Dialog>

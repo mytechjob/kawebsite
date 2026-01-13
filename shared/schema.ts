@@ -5,10 +5,11 @@ import { z } from "zod";
 
 export const waitlistEntries = pgTable("waitlist_entries", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
-  company: text("company").notNull(),
+  fullName: text("full_name").notNull(),
   email: text("email").notNull(),
+  company: text("company").notNull(),
+  role: text("role").notNull(),
+  automationGoal: text("automation_goal"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 

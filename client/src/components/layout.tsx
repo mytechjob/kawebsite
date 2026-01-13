@@ -26,13 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       : logoLight;
 
   const navLinks = [
-    { href: "/", label: "General" },
-    { href: "/solutions", label: "Solutions" },
-    { href: "/product", label: "For Enterprises" },
-    { href: "/pricing", label: "Pricing" },
-    // { href: "/blog", label: "Resources" },
-    { href: "/about", label: "About" },
-    { href: "/knowledge", label: "Knowledge" },
+    { href: "/product", label: "Product" },
+    { href: "/knowledge", label: "Knowledge Management" },
+    { href: "/#use-cases", label: "Use Cases" },
+    { href: "/#how-it-works", label: "How it Works" },
+    { href: "/#faq", label: "FAQ" },
   ];
 
   const isActive = (path: string) => location === path;
@@ -81,8 +79,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="sr-only">Toggle theme</span>
             </Button>
             <WaitlistDialog>
-              <Button className="gap-2" data-testid="button-start-free-trial">
-                Start Free Trial <ArrowRight className="w-4 h-4" />
+              <Button className="gap-2" data-testid="button-early-access">
+                Early Access <ArrowRight className="w-4 h-4" />
               </Button>
             </WaitlistDialog>
           </div>
@@ -123,8 +121,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </div>
                   <div className="flex flex-col gap-3 mt-4">
                     <WaitlistDialog>
-                      <Button className="w-full gap-2" data-testid="button-start-free-trial-mobile">
-                        Start Free Trial <ArrowRight className="w-4 h-4" />
+                      <Button className="w-full gap-2" data-testid="button-early-access-mobile">
+                        Early Access <ArrowRight className="w-4 h-4" />
                       </Button>
                     </WaitlistDialog>
                   </div>
@@ -135,37 +133,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
 
-      {/* Use Cases Bar */}
-      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-2 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-6 text-sm whitespace-nowrap">
-            <span className="font-semibold text-muted-foreground">
-              See Use Cases For:
-            </span>
-            {[
-              "Professional Services",
-              "B2B",
-              "Front line operations",
-              "Enterprise",
-              "Sales",
-              "SMB",
-              "Solo Experts",
-            ].map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                className={`text-muted-foreground hover:text-primary transition-colors ${
-                  isActive(`/${item.toLowerCase().replace(/ /g, "-")}`)
-                    ? "text-primary font-semibold"
-                    : ""
-                }`}
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <main className="flex-1">{children}</main>
@@ -173,8 +140,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="border-t bg-secondary/30 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-1 md:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div>
               <div className="flex items-center gap-2 mb-4">
                 <img
                   src={logoSrc}
@@ -182,71 +149,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className="h-14 w-auto object-contain"
                 />
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Enterprise AI platform for intelligent document analysis and
-                knowledge orchestration.
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+                A new Knowledge Management system for actioning and decisioning on enterprise knowledge.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link href="/product" className="hover:text-primary">
-                    Platform
+                    Product
                   </Link>
                 </li>
                 <li>
-                  <Link href="/solutions" className="hover:text-primary">
-                    Solutions
+                  <Link href="/knowledge" className="hover:text-primary">
+                    Knowledge Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing" className="hover:text-primary">
-                    Pricing
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/about" className="hover:text-primary">
-                    About Us
+                  <Link href="/#use-cases" className="hover:text-primary">
+                    Use Cases
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-primary">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-primary">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    GitHub
-                  </a>
+                  <WaitlistDialog>
+                    <span className="hover:text-primary cursor-pointer">
+                      Early Access
+                    </span>
+                  </WaitlistDialog>
                 </li>
               </ul>
             </div>
@@ -254,17 +185,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
-              &copy; {new Date().getFullYear()} Knowledge Agents Inc. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Knowledge Agents. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </footer>

@@ -560,7 +560,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">How it works</p>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Connect → Configure → Operate</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Connect → Configure → Operate</h2>
+            <p className="text-xl font-semibold text-primary mb-2">Get Started in Minutes — Just Connect Your Data</p>
             <p className="text-lg text-muted-foreground">
               Get from document piles to governed decisions in three steps.
             </p>

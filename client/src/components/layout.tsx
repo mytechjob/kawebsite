@@ -26,14 +26,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       : logoLight;
 
   const navLinks = [
-    { href: "#product", label: "Product", isAnchor: true },
-    { href: "#new-km", label: "Knowledge Management", isAnchor: true },
-    { href: "#use-cases", label: "Use Cases", isAnchor: true },
-    { href: "#how-it-works", label: "How it Works", isAnchor: true },
-    { href: "#faq", label: "FAQ", isAnchor: true },
+    { id: "product", label: "Product" },
+    { id: "new-km", label: "Knowledge Management" },
+    { id: "use-cases", label: "Use Cases" },
+    { id: "how-it-works", label: "How it Works" },
+    { id: "faq", label: "FAQ" },
   ];
 
-  const isActive = (path: string) => location === path;
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    scrollToSection(id);
+    setIsOpen(false);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -55,13 +66,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              <button
+                key={link.id}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground bg-transparent border-none cursor-pointer"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -94,14 +105,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <SheetContent>
                 <div className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="text-lg font-medium text-foreground hover:text-primary"
+                    <button
+                      key={link.id}
+                      onClick={(e) => handleNavClick(e, link.id)}
+                      className="text-lg font-medium text-foreground hover:text-primary bg-transparent border-none cursor-pointer text-left"
                     >
                       {link.label}
-                    </a>
+                    </button>
                   ))}
                   <div className="flex items-center justify-between py-2">
                     <span className="text-lg font-medium">Theme</span>
@@ -156,19 +166,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#product" className="hover:text-primary">
+                  <button onClick={() => scrollToSection("product")} className="hover:text-primary bg-transparent border-none cursor-pointer p-0">
                     Product
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#new-km" className="hover:text-primary">
+                  <button onClick={() => scrollToSection("new-km")} className="hover:text-primary bg-transparent border-none cursor-pointer p-0">
                     Knowledge Management
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#use-cases" className="hover:text-primary">
+                  <button onClick={() => scrollToSection("use-cases")} className="hover:text-primary bg-transparent border-none cursor-pointer p-0">
                     Use Cases
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <WaitlistDialog>

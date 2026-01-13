@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* New Knowledge Management */}
-      <section className="py-24">
+      <section id="new-km" className="py-24 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">New Knowledge Management</p>
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* Product */}
-      <section className="py-24 bg-secondary/30">
+      <section id="product" className="py-24 bg-secondary/30 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">Product</p>
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases */}
-      <section id="use-cases" className="py-24">
+      <section id="use-cases" className="py-24 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">Use Cases</p>
@@ -385,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 bg-secondary/30">
+      <section id="how-it-works" className="py-24 bg-secondary/30 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">How it works</p>
@@ -449,7 +449,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24">
+      <section id="faq" className="py-24 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">FAQ</p>

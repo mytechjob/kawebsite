@@ -26,11 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       : logoLight;
 
   const navLinks = [
-    { href: "/product", label: "Product" },
-    { href: "/knowledge", label: "Knowledge Management" },
-    { href: "/#use-cases", label: "Use Cases" },
-    { href: "/#how-it-works", label: "How it Works" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "#product", label: "Product", isAnchor: true },
+    { href: "#new-km", label: "Knowledge Management", isAnchor: true },
+    { href: "#use-cases", label: "Use Cases", isAnchor: true },
+    { href: "#how-it-works", label: "How it Works", isAnchor: true },
+    { href: "#faq", label: "FAQ", isAnchor: true },
   ];
 
   const isActive = (path: string) => location === path;
@@ -55,15 +55,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.href) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -96,14 +94,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <SheetContent>
                 <div className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
-                    <Link
+                    <a
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
                       className="text-lg font-medium text-foreground hover:text-primary"
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   ))}
                   <div className="flex items-center justify-between py-2">
                     <span className="text-lg font-medium">Theme</span>
@@ -158,19 +156,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <Link href="/product" className="hover:text-primary">
+                  <a href="#product" className="hover:text-primary">
                     Product
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/knowledge" className="hover:text-primary">
+                  <a href="#new-km" className="hover:text-primary">
                     Knowledge Management
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/#use-cases" className="hover:text-primary">
+                  <a href="#use-cases" className="hover:text-primary">
                     Use Cases
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <WaitlistDialog>

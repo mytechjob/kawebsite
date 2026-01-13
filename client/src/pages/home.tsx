@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, MessageSquare, Table, ClipboardCheck, BookOpen, Settings, Shield, FileText, Receipt, Scale, Briefcase, RefreshCw } from "lucide-react";
+import { ArrowRight, Check, MessageSquare, Table, ClipboardCheck, BookOpen, Settings, Shield, FileText, Receipt, Scale, Briefcase, RefreshCw, Zap, Lightbulb, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
 import WaitlistDialog from "@/components/waitlist-dialog";
 import {
@@ -27,6 +27,45 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-0">
+      {/* Empowerment Intro */}
+      <section className="py-16 bg-gradient-to-b from-accent/5 to-transparent">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-8">
+              Empower your teams with <span className="text-gradient">Knowledge Agents</span>
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Zap className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold">Boost Productivity</h3>
+                <p className="text-muted-foreground text-sm">Automate repetitive knowledge work so teams can focus on high-value activities</p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Lightbulb className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold">Unlock Creativity</h3>
+                <p className="text-muted-foreground text-sm">Free your experts from manual review to innovate and solve complex problems</p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                  <TrendingUp className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold">Increase Value</h3>
+                <p className="text-muted-foreground text-sm">Drive measurable outcomes and ROI across your entire organization</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full hero-bg-gradient -z-10" />

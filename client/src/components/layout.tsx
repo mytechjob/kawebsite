@@ -77,8 +77,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="sr-only">Toggle theme</span>
             </Button>
             <WaitlistDialog>
-              <Button className="gap-2" data-testid="button-early-access">
-                Early Access <ArrowRight className="w-4 h-4" />
+              <Button className="gap-2" data-testid="button-learn-more">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Button>
             </WaitlistDialog>
           </div>
@@ -119,8 +119,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </div>
                   <div className="flex flex-col gap-3 mt-4">
                     <WaitlistDialog>
-                      <Button className="w-full gap-2" data-testid="button-early-access-mobile">
-                        Early Access <ArrowRight className="w-4 h-4" />
+                      <Button className="w-full gap-2" data-testid="button-learn-more-mobile">
+                        Learn More <ArrowRight className="w-4 h-4" />
                       </Button>
                     </WaitlistDialog>
                   </div>
@@ -173,7 +173,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <WaitlistDialog>
                     <span className="hover:text-primary cursor-pointer">
-                      Early Access
+                      Learn More
                     </span>
                   </WaitlistDialog>
                 </li>

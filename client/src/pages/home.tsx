@@ -55,8 +55,8 @@ export default function Home() {
               
               <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4 pt-4">
                 <WaitlistDialog>
-                  <Button size="lg" className="text-base px-8 h-12" data-testid="button-get-early-access">
-                    Get Early Access
+                  <Button size="lg" className="text-base px-8 h-12" data-testid="button-learn-more-hero">
+                    Learn More
                   </Button>
                 </WaitlistDialog>
                 <Button variant="outline" size="lg" className="text-base px-8 h-12" asChild>
@@ -176,11 +176,11 @@ export default function Home() {
           <div className="bg-primary rounded-2xl p-8 md:p-12 text-primary-foreground text-center">
             <h3 className="text-2xl font-bold mb-4">Decisioning on your knowledge, not just searching it</h3>
             <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-              Join Early Access and we'll map your knowledge sets to workflows and decision rules.
+              Get in touch and we'll map your knowledge sets to workflows and decision rules.
             </p>
             <WaitlistDialog>
-              <Button size="lg" variant="secondary" className="text-primary font-semibold" data-testid="button-early-access-km">
-                Get Early Access
+              <Button size="lg" variant="secondary" className="text-primary font-semibold" data-testid="button-learn-more-km">
+                Learn More
               </Button>
             </WaitlistDialog>
           </div>
@@ -569,11 +569,11 @@ export default function Home() {
           <div className="bg-primary rounded-2xl p-8 md:p-12 text-primary-foreground text-center">
             <h3 className="text-2xl font-bold mb-4">See it on your documents</h3>
             <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-              Early Access includes guided setup and a tailored workflow demo.
+              Get a guided setup and a tailored workflow demo for your team.
             </p>
             <WaitlistDialog>
-              <Button size="lg" variant="secondary" className="text-primary font-semibold" data-testid="button-request-early-access">
-                Request Early Access
+              <Button size="lg" variant="secondary" className="text-primary font-semibold" data-testid="button-learn-more-how">
+                Learn More
               </Button>
             </WaitlistDialog>
           </div>
@@ -634,12 +634,12 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to replace manual review with scalable decisions?</h2>
               <p className="text-primary-foreground/80 text-lg mb-8">
-                Join Early Access to get priority onboarding and a tailored demo.
+                Get priority onboarding and a tailored demo for your team.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <WaitlistDialog>
-                  <Button size="lg" variant="secondary" className="text-primary font-semibold h-12 px-8" data-testid="button-final-cta-early-access">
-                    Get Early Access
+                  <Button size="lg" variant="secondary" className="text-primary font-semibold h-12 px-8" data-testid="button-learn-more-cta">
+                    Learn More
                   </Button>
                 </WaitlistDialog>
                 <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 h-12 px-8" asChild>

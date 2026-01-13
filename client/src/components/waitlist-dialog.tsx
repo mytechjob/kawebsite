@@ -83,9 +83,9 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Join Early Access</DialogTitle>
+          <DialogTitle>Learn More</DialogTitle>
           <DialogDescription>
-            Get product updates, demo access, and first priority onboarding.
+            Get product updates, demo access, and priority onboarding.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
@@ -150,10 +150,10 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
             />
           </div>
           <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit">
-            {mutation.isPending ? "Submitting..." : "Request Early Access"}
+            {mutation.isPending ? "Submitting..." : "Submit"}
           </Button>
           <p className="text-xs text-muted-foreground text-center">
-            We'll only use this to contact you about Early Access and onboarding. No spam.
+            We'll only use this to contact you about Knowledge Agents. No spam.
           </p>
         </form>
       </DialogContent>

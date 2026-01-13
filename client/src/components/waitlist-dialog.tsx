@@ -10,13 +10,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
@@ -29,16 +22,6 @@ interface WaitlistFormData {
   automationGoal: string;
 }
 
-const roleOptions = [
-  "Finance / Accounting",
-  "Legal",
-  "Compliance",
-  "Internal Audit / Risk",
-  "Private Equity / M&A",
-  "Operations",
-  "IT / Data",
-  "Other",
-];
 
 export default function WaitlistDialog({ children }: { children: React.ReactNode }) {
   const [formData, setFormData] = useState<WaitlistFormData>({
@@ -144,22 +127,15 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
           </div>
           <div className="grid gap-2">
             <Label htmlFor="role">Role</Label>
-            <Select
+            <Input
+              id="role"
+              type="text"
+              placeholder="e.g., Finance Manager, Legal Counsel, Compliance Officer"
               value={formData.role}
-              onValueChange={(value) => updateField("role", value)}
+              onChange={(e) => updateField("role", e.target.value)}
               required
-            >
-              <SelectTrigger data-testid="select-role">
-                <SelectValue placeholder="Select your role" />
-              </SelectTrigger>
-              <SelectContent>
-                {roleOptions.map((role) => (
-                  <SelectItem key={role} value={role}>
-                    {role}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              data-testid="input-role"
+            />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="automationGoal">What are you hoping to automate?</Label>
@@ -173,7 +149,7 @@ export default function WaitlistDialog({ children }: { children: React.ReactNode
               data-testid="input-automationGoal"
             />
           </div>
-          <Button type="submit" className="w-full" disabled={mutation.isPending || !formData.role} data-testid="button-submit">
+          <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit">
             {mutation.isPending ? "Submitting..." : "Request Early Access"}
           </Button>
           <p className="text-xs text-muted-foreground text-center">

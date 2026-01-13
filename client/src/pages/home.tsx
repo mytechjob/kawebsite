@@ -264,114 +264,246 @@ export default function Home() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {[
-              {
-                category: "Finance",
-                icon: <Receipt className="w-6 h-6" />,
-                title: "Invoice validation & exceptions",
-                desc: "Extract invoice fields, reconcile against PO/policy rules, and flag exceptions with evidence before they hit close.",
-                bullets: [
+            {/* Finance Use Case */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+                  <Receipt className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium text-accent">Finance</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Invoice validation & exceptions</h3>
+              <p className="text-muted-foreground mb-6">Extract invoice fields, reconcile against PO/policy rules, and flag exceptions with evidence before they hit close.</p>
+              
+              <ul className="space-y-2 mb-6">
+                {[
                   "Automated extraction: Invoice #, vendor, date, line items, tax, totals, payment terms",
                   "Rules & reconciliation: Match against PO/GRN or policy thresholds (duplicates, tolerances)",
                   "Exception workflow: Flag missing fields, mismatches, duplicates, or out-of-policy spend",
                   "Audit-ready evidence: Tie every exception back to exact supporting source content"
-                ],
-                example: {
-                  fields: ["invoice_id", "vendor", "invoice_date", "amount_total", "payment_terms"],
-                  checks: "checks array with pass/fail",
-                  status: "REVIEW_REQUIRED"
-                }
-              },
-              {
-                category: "Legal / Compliance",
-                icon: <Scale className="w-6 h-6" />,
-                title: "Contract clause & policy checks",
-                desc: "Standardize contract review by detecting required clauses and flagging deviations from playbooks and policies.",
-                bullets: [
+                ].map((bullet, j) => (
+                  <li key={j} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="bg-secondary/50 px-4 py-2 border-b border-border">
+                  <p className="text-xs font-medium text-muted-foreground">Example Output</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-secondary/30">
+                      <tr>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Field</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Value</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Check</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      <tr><td className="px-3 py-2">Invoice #</td><td className="px-3 py-2">INV-2024-0847</td><td className="px-3 py-2 text-green-600">Pass</td></tr>
+                      <tr><td className="px-3 py-2">Vendor</td><td className="px-3 py-2">Acme Corp</td><td className="px-3 py-2 text-green-600">Pass</td></tr>
+                      <tr><td className="px-3 py-2">Amount</td><td className="px-3 py-2">$12,450.00</td><td className="px-3 py-2 text-amber-600">Review</td></tr>
+                      <tr><td className="px-3 py-2">PO Match</td><td className="px-3 py-2">PO-2024-0312</td><td className="px-3 py-2 text-green-600">Pass</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-amber-50 dark:bg-amber-950/30 px-4 py-2 border-t border-border flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                  <span className="text-xs font-medium text-amber-700 dark:text-amber-400">Status: Review Required — Amount exceeds threshold</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Legal / Compliance Use Case */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+                  <Scale className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium text-accent">Legal / Compliance</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Contract clause & policy checks</h3>
+              <p className="text-muted-foreground mb-6">Standardize contract review by detecting required clauses and flagging deviations from playbooks and policies.</p>
+              
+              <ul className="space-y-2 mb-6">
+                {[
                   "Clause detection: Termination, indemnity, liability caps, confidentiality, renewals",
                   "Policy compliance: Check against standard language and risk thresholds",
                   "Deviation summaries: Highlight what changed and why it matters for approval",
                   "Evidence-linked outputs: Provide citations to exact sections for counsel and audit trails"
-                ],
-                example: {
-                  fields: ["required_clauses with present true/false"],
-                  checks: "risk_flags with severity and evidence",
-                  status: "NON_STANDARD_REVIEW"
-                }
-              },
-              {
-                category: "M&A / Private Equity",
-                icon: <Briefcase className="w-6 h-6" />,
-                title: "Diligence red flags & readiness scoring",
-                desc: "Review large deal rooms quickly and surface what matters: risks, gaps, and a readiness score with evidence packs.",
-                bullets: [
+                ].map((bullet, j) => (
+                  <li key={j} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="bg-secondary/50 px-4 py-2 border-b border-border">
+                  <p className="text-xs font-medium text-muted-foreground">Example Output</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-secondary/30">
+                      <tr>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Clause</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Present</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Risk</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      <tr><td className="px-3 py-2">Termination</td><td className="px-3 py-2 text-green-600">Yes</td><td className="px-3 py-2 text-green-600">Low</td></tr>
+                      <tr><td className="px-3 py-2">Indemnity</td><td className="px-3 py-2 text-green-600">Yes</td><td className="px-3 py-2 text-amber-600">Medium</td></tr>
+                      <tr><td className="px-3 py-2">Liability Cap</td><td className="px-3 py-2 text-red-600">No</td><td className="px-3 py-2 text-red-600">High</td></tr>
+                      <tr><td className="px-3 py-2">Confidentiality</td><td className="px-3 py-2 text-green-600">Yes</td><td className="px-3 py-2 text-green-600">Low</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-red-50 dark:bg-red-950/30 px-4 py-2 border-t border-border flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                  <span className="text-xs font-medium text-red-700 dark:text-red-400">Status: Non-Standard Review — Missing liability cap clause</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* M&A / Private Equity Use Case */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium text-accent">M&A / Private Equity</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Diligence red flags & readiness scoring</h3>
+              <p className="text-muted-foreground mb-6">Review large deal rooms quickly and surface what matters: risks, gaps, and a readiness score with evidence packs.</p>
+              
+              <ul className="space-y-2 mb-6">
+                {[
                   "Red-flag detection: Customer concentration, unfavorable terms, litigation, covenants",
                   "Completeness scoring: Identify missing documents and unanswered diligence requests",
                   "Executive summaries: Board-ready briefs: key risks, mitigation, and next steps",
                   "Evidence packs: Auto-assemble citations and excerpts for advisors and IC memos"
-                ],
-                example: {
-                  fields: ["readiness_score"],
-                  checks: "top_risks list with severity and evidence",
-                  status: "gaps list of missing items"
-                }
-              },
-              {
-                category: "Knowledge Management / Productivity",
-                icon: <RefreshCw className="w-6 h-6" />,
-                title: "Auto-updating Knowledge Base (with decisioning + actioning)",
-                desc: "Keep institutional knowledge continuously current by automatically ingesting new content, normalizing it, resolving duplicates, and publishing a 'single source of truth' that teams can trust—while also triggering decisions and actions when knowledge changes.",
-                bullets: [
-                  "Continuously ingests knowledge from docs, tickets, emails, wikis, meeting notes, and shared drives",
-                  "Normalizes and deduplicates concepts (one canonical answer, linked to evidence)",
-                  "Detects changes and conflicts (new policy vs old policy, two versions of 'truth')",
-                  "Auto-updates knowledge pages with a clear 'last updated' and 'what changed' log",
-                  "Notifies the right teams when critical knowledge changes (policy updates, product changes, pricing changes)",
-                  "Triggers actioning/decisioning: routing approvals, updating downstream docs/templates, creating tasks, or flagging impacted workflows"
-                ],
-                example: {
-                  fields: ["Support enablement", "Sales enablement", "Finance/HR ops", "Engineering/product"],
-                  checks: "Updated troubleshooting, pricing notes, policies, release notes",
-                  status: "AUTO-DISTRIBUTED"
-                }
-              }
-            ].map((useCase, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
-                    {useCase.icon}
-                  </div>
-                  <span className="text-sm font-medium text-accent">{useCase.category}</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{useCase.title}</h3>
-                <p className="text-muted-foreground mb-6">{useCase.desc}</p>
-                
-                <ul className="space-y-2 mb-6">
-                  {useCase.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+                ].map((bullet, j) => (
+                  <li key={j} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
 
-                <div className="p-4 rounded-lg bg-secondary/50 border border-border">
-                  <p className="text-xs font-medium text-muted-foreground mb-2">Example output (simplified):</p>
-                  <div className="font-mono text-xs space-y-1">
-                    <div className="text-primary">{Array.isArray(useCase.example.fields) ? useCase.example.fields.join(", ") : useCase.example.fields}</div>
-                    <div className="text-muted-foreground">{useCase.example.checks}</div>
-                    <div className="text-accent">status: {useCase.example.status}</div>
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="bg-secondary/50 px-4 py-2 border-b border-border">
+                  <p className="text-xs font-medium text-muted-foreground">Example Output</p>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Readiness Score</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-32 h-2 bg-secondary rounded-full overflow-hidden">
+                        <div className="h-full bg-amber-500 w-[72%]"></div>
+                      </div>
+                      <span className="text-sm font-bold text-amber-600">72%</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2 text-sm">
+                      <span className="w-2 h-2 rounded-full bg-red-500 mt-1.5 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">Customer concentration risk (Top 3 = 68% revenue)</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <span className="w-2 h-2 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">Missing: 3 financial statements, 2 contracts</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <span className="w-2 h-2 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">Legal review: 24/26 items complete</span>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* Knowledge Management Use Case */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+                  <RefreshCw className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium text-accent">Knowledge Management / Productivity</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Auto-updating Knowledge Base (with decisioning + actioning)</h3>
+              <p className="text-muted-foreground mb-6">Keep institutional knowledge continuously current by automatically ingesting new content, normalizing it, resolving duplicates, and publishing a "single source of truth" that teams can trust.</p>
+              
+              <ul className="space-y-2 mb-6">
+                {[
+                  "Continuously ingests knowledge from docs, tickets, emails, wikis, and shared drives",
+                  "Normalizes and deduplicates concepts (one canonical answer, linked to evidence)",
+                  "Detects changes and conflicts (new policy vs old policy)",
+                  "Auto-updates knowledge pages with 'last updated' and 'what changed' log",
+                  "Triggers actioning: routing approvals, updating docs, creating tasks"
+                ].map((bullet, j) => (
+                  <li key={j} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="bg-secondary/50 px-4 py-2 border-b border-border">
+                  <p className="text-xs font-medium text-muted-foreground">Example Output</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-secondary/30">
+                      <tr>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Team</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Update</th>
+                        <th className="px-3 py-2 text-left font-medium text-muted-foreground">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      <tr><td className="px-3 py-2">Support</td><td className="px-3 py-2">Troubleshooting v2.1</td><td className="px-3 py-2 text-green-600">Distributed</td></tr>
+                      <tr><td className="px-3 py-2">Sales</td><td className="px-3 py-2">New pricing notes</td><td className="px-3 py-2 text-green-600">Distributed</td></tr>
+                      <tr><td className="px-3 py-2">Finance</td><td className="px-3 py-2">Policy update</td><td className="px-3 py-2 text-amber-600">Pending Approval</td></tr>
+                      <tr><td className="px-3 py-2">Engineering</td><td className="px-3 py-2">Release notes v4.2</td><td className="px-3 py-2 text-green-600">Distributed</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-green-50 dark:bg-green-950/30 px-4 py-2 border-t border-border flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                  <span className="text-xs font-medium text-green-700 dark:text-green-400">Status: Auto-Distributed — 12 teams notified</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           <div className="mt-12 bg-secondary/50 rounded-2xl p-8 text-center border border-border">

@@ -1,0 +1,278 @@
+Knowledge Agents — Full Landing Page Copy
+
+Navigation
+	•	Product
+	•	Knowledge Management
+	•	Use Cases
+	•	How it Works
+	•	FAQ
+	•	CTA: Early Access
+
+⸻
+
+Hero
+
+Pill:
+A new Knowledge Management system for decisioning
+
+Headline:
+AI-powered digital analysts for document-heavy work
+
+Subheadline:
+Knowledge Agents redefine Knowledge Management. Instead of just storing and searching information, they let you create decisions and actions across all knowledge sets. Automate expert review, standardize outcomes, and operate with evidence at scale.
+
+Primary CTA: Get Early Access
+Secondary CTA: View Use Cases
+Tertiary CTA: How the Product Works
+
+Audience chips:
+Finance • Legal • Compliance • Internal Audit • M&A / Private Equity
+
+⸻
+
+Early Access (Signup Panel)
+
+Title:
+Join Early Access
+
+Subhead:
+Get product updates, demo access, and first priority onboarding.
+
+Fields:
+	•	Full name
+	•	Work email
+	•	Company
+	•	Role (Finance / Accounting, Legal, Compliance, Internal Audit / Risk, Private Equity / M&A, Operations, IT / Data, Other)
+	•	What are you hoping to automate?
+
+Button:
+Request Early Access
+
+Privacy note:
+We’ll only use this to contact you about Early Access and onboarding. No spam.
+
+Success message:
+✅ Thanks — you’re on the Early Access list. We’ll reach out shortly.
+
+⸻
+
+Why it matters
+
+Kicker:
+Why it matters
+
+Headline:
+Information is growing faster than teams can act on it
+
+Body:
+Most tools help you store or find knowledge. Knowledge Agents help you operate on knowledge—turning documents into decisions, actions, and evidence-backed outcomes.
+
+Value cards:
+	1.	Automate expert review
+Agents handle first-pass review so experts focus on judgment and strategy.
+	2.	Standardize decisions
+Apply consistent rules and outputs across teams, regions, and vendors.
+	3.	Increase confidence
+Every outcome ties back to evidence—ready for audit and leadership review.
+
+⸻
+
+New Knowledge Management
+
+Kicker:
+New Knowledge Management
+
+Headline:
+From knowledge storage → to knowledge execution
+
+Body:
+Traditional KM helps teams capture and find information (wikis, search, portals). Knowledge Agents go further: they turn knowledge into operational decisions and actions—consistently, at scale, and with evidence.
+
+Cards:
+	1.	Knowledge → Structured outputs
+Convert documents into fields, tables, and datasets teams can use in workflows.
+	2.	Knowledge → Decisions
+Apply rules to generate pass/fail, completeness indicators, and risk flags.
+	3.	Knowledge → Actioning
+Route exceptions, trigger reviews, and generate evidence packs automatically.
+
+Panel CTA:
+Decisioning on your knowledge, not just searching it
+Join Early Access and we’ll map your knowledge sets to workflows and decision rules.
+CTA: Get Early Access
+
+⸻
+
+Product
+
+Kicker:
+Product
+
+Headline:
+One platform. Governed intelligence.
+
+Body:
+Knowledge Agents combine structured extraction, rules-based evaluation, and explainable outputs—so teams can operate with speed and governance.
+
+Product cards:
+	•	Conversation Agents
+Ask questions across your sources and get executive-ready answers with traceability.
+	•	Extraction Agents
+Convert documents into structured rows for dashboards, exports, and reconciliation.
+	•	Evaluation Agents
+Apply business rules to produce pass/fail outcomes, completeness, and risk flags.
+	•	Knowledge Cards
+Correct mistakes once and keep the system aligned—without retraining models.
+	•	Rules Engine
+Define schemas, thresholds, and policy checks to standardize decisions.
+	•	Audit & Evidence
+Outputs tie back to sources for audit trails, approvals, and compliance confidence.
+
+⸻
+
+Use Cases
+
+Kicker:
+Use Cases
+
+Headline:
+Three high-ROI use cases
+
+Body:
+Click a use case to see what the agent produces: structured outputs, pass/fail rules, and evidence-backed summaries.
+
+Use Case 1 — Finance
+
+Title: Invoice validation & exceptions
+Description: Extract invoice fields, reconcile against PO/policy rules, and flag exceptions with evidence before they hit close.
+
+Bullets:
+	•	Automated extraction: Invoice #, vendor, date, line items, tax, totals, payment terms
+	•	Rules & reconciliation: Match against PO/GRN or policy thresholds (duplicates, tolerances)
+	•	Exception workflow: Flag missing fields, mismatches, duplicates, or out-of-policy spend
+	•	Audit-ready evidence: Tie every exception back to exact supporting source content
+
+Example output (simplified):
+	•	invoice_id, vendor, invoice_date, amount_total, payment_terms
+	•	checks array with pass/fail
+	•	status: REVIEW_REQUIRED
+
+Use Case 2 — Legal / Compliance
+
+Title: Contract clause & policy checks
+Description: Standardize contract review by detecting required clauses and flagging deviations from playbooks and policies.
+
+Bullets:
+	•	Clause detection: Termination, indemnity, liability caps, confidentiality, renewals
+	•	Policy compliance: Check against standard language and risk thresholds
+	•	Deviation summaries: Highlight what changed and why it matters for approval
+	•	Evidence-linked outputs: Provide citations to exact sections for counsel and audit trails
+
+Example output (simplified):
+	•	required_clauses with present true/false
+	•	risk_flags with severity and evidence
+	•	overall_status: NON_STANDARD_REVIEW
+
+Use Case 3 — M&A / Private Equity
+
+Title: Diligence red flags & readiness scoring
+Description: Review large deal rooms quickly and surface what matters: risks, gaps, and a readiness score with evidence packs.
+
+Bullets:
+	•	Red-flag detection: Customer concentration, unfavorable terms, litigation, covenants
+	•	Completeness scoring: Identify missing documents and unanswered diligence requests
+	•	Executive summaries: Board-ready briefs: key risks, mitigation, and next steps
+	•	Evidence packs: Auto-assemble citations and excerpts for advisors and IC memos
+
+Example output (simplified):
+	•	readiness_score
+	•	top_risks list with severity and evidence
+	•	gaps list of missing items
+
+Use case CTA panel:
+Want a different use case?
+Tell us your workflow in Early Access and we’ll tailor a demo.
+CTA: Join
+
+⸻
+
+How it Works
+
+Kicker:
+How it works
+
+Headline:
+Connect → Configure → Operate
+
+Body:
+Get from document piles to governed decisions in three steps.
+
+Steps:
+	1.	Connect your sources
+Docs, PDFs, exports, and systems. Organize by data source and document type.
+	2.	Configure outputs
+Define extraction schemas and evaluation rules to produce consistent results.
+	3.	Run with evidence
+Agents generate structured tables, pass/fail outcomes, and citations for every decision.
+
+Panel CTA:
+See it on your documents
+Early Access includes guided setup and a tailored workflow demo.
+CTA: Request Early Access
+
+⸻
+
+FAQ
+
+Kicker:
+FAQ
+
+Headline:
+Common questions
+
+Intro:
+If you want, we can tailor an Early Access demo to your exact workflow.
+
+Q: What is a Knowledge Agent?
+A Knowledge Agent is an AI-powered digital analyst that reads documents, extracts key facts into structured outputs, evaluates against business rules, and explains results with evidence.
+
+Q: How is this different from AI search or a chatbot?
+Search helps you find information. Knowledge Agents produce operational outputs (tables, pass/fail decisions, risk flags) with repeatability and traceability—so teams can act confidently.
+
+Q: How does this relate to Knowledge Management?
+Traditional KM focuses on storing and retrieving knowledge. Knowledge Agents add decisioning and actioning: they apply rules to knowledge sets and produce governed outcomes you can operationalize.
+
+Q: How do we correct wrong outputs?
+Use Knowledge Cards to fix a fact once and keep future results aligned—without retraining models. Corrections become part of your governed knowledge layer.
+
+⸻
+
+Final CTA
+
+Headline:
+Ready to replace manual review with scalable decisions?
+
+Subhead:
+Join Early Access to get priority onboarding and a tailored demo.
+
+Buttons:
+Get Early Access • Explore Use Cases
+
+⸻
+
+Footer
+
+Brand line:
+Knowledge Agents
+
+One-liner:
+A new Knowledge Management system for actioning and decisioning on enterprise knowledge.
+
+Copyright:
+© {Current Year} Knowledge Agents. All rights reserved.
+
+Quick links:
+Product • Knowledge Management • Use Cases • Early Access
+
+Tip line (optional):
+Tip: wire the form to your backend (Zapier/Make/Webflow forms/your API).

@@ -40,7 +40,7 @@ export default function PricingPage() {
     <PageLayout>
       <SEO
         title="Pricing | Knowledge Agents — Plans From Free to Enterprise"
-        description="Simple, transparent pricing for AI agents. Start free with no credit card, then scale from $19/mo. Compare Free, Hobby, Standard, and Unlimited plans."
+        description="Simple, transparent pricing for AI agents. Schedule a demo to explore, then scale from $19/mo. Compare Free, Hobby, Standard, and Unlimited plans."
         path="/pricing"
         keywords={[...allKeywords("core"), "AI chatbot pricing", "AI agent pricing", "free AI chatbot"]}
         jsonLd={[
@@ -61,7 +61,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Pricing that scales with you"
-        description="Start free and upgrade only when you're ready. Every plan includes unlimited embeds, lead capture, and 80+ languages. No credit card required to begin."
+        description="Schedule a demo and upgrade only when you're ready. Every plan includes unlimited embeds, lead capture, and 80+ languages. No credit card required to begin."
       />
 
       <PricingSection showHeader={false} />

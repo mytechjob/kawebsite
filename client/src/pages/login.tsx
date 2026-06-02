@@ -83,7 +83,7 @@ export default function LoginPage() {
           </Button>
         </CardContent>
         <CardFooter className="flex justify-center text-sm text-muted-foreground">
-            Don't have an account? <Link href="/login"><a className="ml-1 text-primary hover:underline">Sign up</a></Link>
+            Don't have an account? <Link href="/login" className="ml-1 text-primary hover:underline">Sign up</Link>
         </CardFooter>
       </Card>
     </div>

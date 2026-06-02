@@ -46,16 +46,23 @@ export default function SolutionPage() {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">{solution.subhead}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/login">
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" className="h-12 px-8 w-full sm:w-auto">
-                  Start free <ArrowRight className="ml-2 w-4 h-4" />
+                  Schedule Demo <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-              </Link>
-              <Link href="/#demo">
-                <Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">
+              </a>
+              <div className="relative">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-wider bg-primary/10 text-primary px-2 py-0.5 rounded-full whitespace-nowrap">
+                  Coming soon
+                </span>
+                <Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto" disabled>
                   See it in action
                 </Button>
-              </Link>
+              </div>
             </div>
           </div>
 
@@ -173,7 +180,7 @@ export default function SolutionPage() {
       />
       <CTA
         title={`Ready to transform your ${solution.name.toLowerCase()}?`}
-        subtitle="Build your first Knowledge Agent free and see results in minutes — no credit card required."
+        subtitle="Schedule a demo to see how Knowledge Agents can help your team in minutes."
       />
     </PageLayout>
   );

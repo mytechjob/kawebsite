@@ -14,7 +14,7 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
               Simple, transparent pricing
             </h2>
             <p className="text-muted-foreground text-lg">
-              Start free, upgrade as you grow. No hidden fees, cancel anytime.
+              Schedule a demo, upgrade as you grow. No hidden fees, cancel anytime.
             </p>
           </div>
         )}
@@ -51,11 +51,15 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
                 ))}
               </ul>
 
-              <Link href="/login">
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
                   {plan.cta}
                 </Button>
-              </Link>
+              </a>
             </div>
           ))}
         </div>

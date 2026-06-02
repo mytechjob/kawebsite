@@ -163,7 +163,7 @@ export const PLANS: Plan[] = [
       "Lead capture forms",
       "Community support",
     ],
-    cta: "Start free",
+    cta: "Schedule Demo",
   },
   {
     name: "Hobby",
@@ -182,7 +182,7 @@ export const PLANS: Plan[] = [
       "Basic actions (lead capture, email)",
       "Remove branding (add-on)",
     ],
-    cta: "Start free trial",
+    cta: "Schedule Demo",
   },
   {
     name: "Standard",
@@ -201,7 +201,7 @@ export const PLANS: Plan[] = [
       "Analytics & conversation insights",
       "GPT-4o, Claude, and Gemini models",
     ],
-    cta: "Start free trial",
+    cta: "Schedule Demo",
   },
   {
     name: "Unlimited",

@@ -32,10 +32,8 @@ function NavLink({
     );
   }
   return (
-    <Link href={href}>
-      <a className={className} onClick={onClick}>
-        {children}
-      </a>
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
     </Link>
   );
 }
@@ -101,10 +99,8 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2 font-display font-bold text-xl">
-            <img src={logo} alt="Knowledge Agents logo" className="h-14 sm:h-16 w-auto" />
-          </a>
+        <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl">
+          <img src={logo} alt="Knowledge Agents logo" className="h-14 sm:h-16 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -125,12 +121,16 @@ export function Navbar() {
 
           <div className="flex items-center gap-3 ml-2">
             <ThemeToggle />
-            <Link href="/login">
-              <a className="text-sm font-medium hover:text-primary transition-colors">Sign in</a>
+            <Link href="/login" className="text-sm font-medium hover:text-primary transition-colors">
+              Sign in
             </Link>
-            <Link href="/login">
-              <Button>Try for free</Button>
-            </Link>
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>Schedule Demo</Button>
+            </a>
           </div>
         </div>
 
@@ -178,16 +178,21 @@ export function Navbar() {
             </div>
           ))}
           <div className="flex flex-col gap-2 pt-4 border-t">
-            <Link href="/login">
+            <Link href="/login" className="w-full">
               <Button variant="ghost" className="w-full justify-start" onClick={() => setIsOpen(false)}>
                 Sign in
               </Button>
             </Link>
-            <Link href="/login">
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
               <Button className="w-full" onClick={() => setIsOpen(false)}>
-                Try for free
+                Schedule Demo
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       )}

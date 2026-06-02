@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, CalendarCheck, Sparkles } from "lucide-react";
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 
 const trust = ["No credit card required", "Free plan forever", "Live in under 5 minutes"];
@@ -52,16 +51,23 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link href="/login">
+          <a
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
-              Build your agent free <ArrowRight className="ml-2 w-4 h-4" />
+              Schedule Demo <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-          </Link>
-          <Link href="/#demo">
-            <Button variant="outline" size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
+          </a>
+          <div className="relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-wider bg-primary/10 text-primary px-2 py-0.5 rounded-full whitespace-nowrap">
+              Coming soon
+            </span>
+            <Button variant="outline" size="lg" className="h-12 px-8 text-base w-full sm:w-auto" disabled>
               Try the live demo
             </Button>
-          </Link>
+          </div>
         </motion.div>
 
         <motion.ul

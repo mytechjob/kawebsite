@@ -89,7 +89,7 @@ export default function AboutPage() {
       <CTA
         title="Join us on the journey"
         subtitle="Whether you're building your first agent or scaling to millions of conversations, we'd love to help."
-        primaryLabel="Start free"
+        primaryLabel="Schedule Demo"
         secondaryLabel="Get in touch"
         secondaryHref="/contact"
       />

@@ -50,9 +50,9 @@ export default function BlogPostPage() {
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-sm text-muted-foreground mb-8 flex-wrap">
-            <Link href="/"><a className="hover:text-primary">Home</a></Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <Link href="/blog"><a className="hover:text-primary">Blog</a></Link>
+            <Link href="/blog" className="hover:text-primary">Blog</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-foreground/70 truncate">{post.category}</span>
           </nav>

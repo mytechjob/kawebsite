@@ -21,7 +21,7 @@ export default function Home() {
     <PageLayout>
       <SEO
         title="Knowledge Agents | Build AI Agents That Answer & Take Action"
-        description="Build no-code AI chatbots and chat pages trained on your content. Knowledge Agents answer customer questions 24/7 and take real actions — book meetings, create tickets, check orders, and capture leads. Start free, no credit card."
+        description="Build no-code AI chatbots and chat pages trained on your content. Knowledge Agents answer customer questions 24/7 and take real actions — book meetings, create tickets, check orders, and capture leads. Schedule a demo."
         path="/"
         keywords={allKeywords("core", "support", "agentic")}
         jsonLd={[

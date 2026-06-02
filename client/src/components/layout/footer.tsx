@@ -52,8 +52,8 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
     );
   }
   return (
-    <Link href={href}>
-      <a className="hover:text-primary transition-colors">{children}</a>
+    <Link href={href} className="hover:text-primary transition-colors">
+      {children}
     </Link>
   );
 }
@@ -64,10 +64,8 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           <div className="col-span-2">
-            <Link href="/">
-              <a className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-                <img src={logo} alt="Knowledge Agents logo" className="h-16 sm:h-20 w-auto" />
-              </a>
+            <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl mb-4">
+              <img src={logo} alt="Knowledge Agents logo" className="h-16 sm:h-20 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
               The no-code platform to build AI agents that answer customer questions and take real
@@ -105,8 +103,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {SITE.legalName} All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy"><a className="hover:text-primary">Privacy</a></Link>
-            <Link href="/terms"><a className="hover:text-primary">Terms</a></Link>
+            <Link href="/privacy" className="hover:text-primary">Privacy</Link>
+            <Link href="/terms" className="hover:text-primary">Terms</Link>
             <a href={`mailto:${SITE.email}`} className="hover:text-primary">{SITE.email}</a>
           </div>
         </div>

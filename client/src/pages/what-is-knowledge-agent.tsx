@@ -116,7 +116,7 @@ export default function WhatIsKnowledgeAgentPage() {
             <p>
               This is why a Knowledge Agent can answer specific questions about <em>your</em> products,
               policies, and pricing, where a generic AI assistant cannot. To go deeper, read{" "}
-              <Link href="/blog/rag-explained-for-business"><a className="text-primary font-medium hover:underline">RAG explained for business</a></Link>.
+              <Link href="/blog/rag-explained-for-business" className="text-primary font-medium hover:underline">RAG explained for business</Link>.
             </p>
 
             <h2 id="two-forms" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">
@@ -143,7 +143,7 @@ export default function WhatIsKnowledgeAgentPage() {
               <strong>agentic actions</strong>, it can call your tools to complete tasks: book an
               appointment, create or update a ticket, look up an order, start a return, qualify a lead,
               or trigger a custom workflow — all with guardrails you control. Learn more in{" "}
-              <Link href="/blog/agentic-ai-actions-explained"><a className="text-primary font-medium hover:underline">agentic AI actions explained</a></Link>.
+              <Link href="/blog/agentic-ai-actions-explained" className="text-primary font-medium hover:underline">agentic AI actions explained</Link>.
             </p>
 
             <h2 id="vs-chatbot" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">
@@ -154,17 +154,17 @@ export default function WhatIsKnowledgeAgentPage() {
               customer phrases something unexpectedly. A Knowledge Agent understands natural language,
               answers from your real content with citations, supports 80+ languages, and takes action.
               See the full breakdown on our{" "}
-              <Link href="/compare"><a className="text-primary font-medium hover:underline">Knowledge Agents vs. chatbots</a></Link> page.
+              <Link href="/compare" className="text-primary font-medium hover:underline">Knowledge Agents vs. chatbots</Link> page.
             </p>
 
             <h2 id="use-cases" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">
               Common use cases
             </h2>
             <ul className="space-y-2 list-disc pl-6">
-              <li><Link href="/solutions/customer-support"><a className="text-primary font-medium hover:underline">Customer support</a></Link> — deflect tickets and resolve issues 24/7.</li>
-              <li><Link href="/solutions/ecommerce"><a className="text-primary font-medium hover:underline">E-commerce</a></Link> — product guidance, order tracking, and returns.</li>
-              <li><Link href="/solutions/saas"><a className="text-primary font-medium hover:underline">SaaS</a></Link> — onboarding and technical answers inside your app.</li>
-              <li><Link href="/solutions/healthcare"><a className="text-primary font-medium hover:underline">Healthcare</a></Link>, <Link href="/solutions/real-estate"><a className="text-primary font-medium hover:underline">real estate</a></Link>, and <Link href="/solutions/education"><a className="text-primary font-medium hover:underline">education</a></Link> — and many more.</li>
+              <li><Link href="/solutions/customer-support" className="text-primary font-medium hover:underline">Customer support</Link> — deflect tickets and resolve issues 24/7.</li>
+              <li><Link href="/solutions/ecommerce" className="text-primary font-medium hover:underline">E-commerce</Link> — product guidance, order tracking, and returns.</li>
+              <li><Link href="/solutions/saas" className="text-primary font-medium hover:underline">SaaS</Link> — onboarding and technical answers inside your app.</li>
+              <li><Link href="/solutions/healthcare" className="text-primary font-medium hover:underline">Healthcare</Link>, <Link href="/solutions/real-estate" className="text-primary font-medium hover:underline">real estate</Link>, and <Link href="/solutions/education" className="text-primary font-medium hover:underline">education</Link> — and many more.</li>
             </ul>
 
             <h2 id="how-to-build" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">
@@ -174,7 +174,7 @@ export default function WhatIsKnowledgeAgentPage() {
               Building one takes about five minutes and no code: add your content (upload files or crawl
               a URL), shape its tone and guardrails, enable the actions you want, then embed it or
               publish a chat page. Follow the full walkthrough in{" "}
-              <Link href="/blog/how-to-build-an-ai-chatbot-trained-on-your-data"><a className="text-primary font-medium hover:underline">how to build an AI chatbot trained on your data</a></Link>.
+              <Link href="/blog/how-to-build-an-ai-chatbot-trained-on-your-data" className="text-primary font-medium hover:underline">how to build an AI chatbot trained on your data</Link>.
             </p>
 
             <h2 id="benefits" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">
@@ -190,11 +190,15 @@ export default function WhatIsKnowledgeAgentPage() {
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 not-prose">
-            <Link href="/login">
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1tEk3D-k8vjST9p-FTVrrSsa3PF-Dcawmc19Q-mUj6nrvW128yo1sDiw4_9nYb-Wi1hzvRVSLj"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="h-12 px-8 w-full sm:w-auto">
-                Build your Knowledge Agent <ArrowRight className="ml-2 w-4 h-4" />
+                Schedule Demo <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-            </Link>
+            </a>
             <Link href="/features">
               <Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">
                 Explore features

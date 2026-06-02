@@ -1,0 +1,54 @@
+# Knowledge Agents
+
+> Knowledge Agents is a no-code platform for building AI chatbots and AI chat pages ("Knowledge Agents") that are trained on your own content. Unlike basic chatbots, a Knowledge Agent both **answers customer questions 24/7** from your knowledge and **takes real actions** on the customer's behalf — such as booking meetings, creating support tickets, checking order status, processing returns, qualifying leads, and handing off to a human when needed.
+
+## What a Knowledge Agent is
+
+A **Knowledge Agent** is an AI assistant that you create by uploading your content (documents, websites, help centers, PDFs, FAQs) and connecting your tools. It can be deployed two ways:
+
+1. **Chat widget** — an embeddable bubble that lives on any website with a single `<script>` tag.
+2. **Chat page** — a standalone, shareable, SEO-friendly web page (its own URL) that answers questions and runs actions, with no website required.
+
+Knowledge Agents use Retrieval-Augmented Generation (RAG) so answers are grounded in your source content with citations, reducing hallucinations. They support leading models including GPT-4o, Claude, and Gemini.
+
+## Key facts
+
+- **Category:** Conversational AI / AI customer support agent platform (no-code).
+- **Primary use cases:** customer support automation, ticket deflection, lead generation, e-commerce assistance, employee/internal knowledge, onboarding.
+- **Differentiator:** action-taking ("agentic") capabilities, not just Q&A. Agents can call APIs and run workflows (book, create, look up, update, route).
+- **Time to launch:** typically under 5 minutes from first upload to an embedded, working agent.
+- **Data sources:** PDF, DOCX, TXT, Markdown, website crawling, help-center import, Notion, sitemaps, and pasted text.
+- **Deployment:** website widget, standalone chat page, or API.
+- **Pricing:** Free ($0), Hobby ($19/mo), Standard ($99/mo), Unlimited ($399/mo). Free plan requires no credit card.
+- **Security:** encryption in transit and at rest; customer data is not used to train foundation models.
+
+## Core pages
+
+- [Home](https://www.knowledgeagents.com/): Overview of the platform and how it works.
+- [Features](https://www.knowledgeagents.com/features): Training, actions, integrations, analytics, branding, security.
+- [What is a Knowledge Agent?](https://www.knowledgeagents.com/what-is-a-knowledge-agent): Complete definitional guide.
+- [Knowledge Agents vs. chatbots](https://www.knowledgeagents.com/compare): How action-taking agents differ from traditional chatbots and live chat.
+- [Pricing](https://www.knowledgeagents.com/pricing): Plans, limits, and FAQ.
+
+## Solutions by industry
+
+- [Customer support](https://www.knowledgeagents.com/solutions/customer-support): Deflect tickets and resolve faster.
+- [E-commerce](https://www.knowledgeagents.com/solutions/ecommerce): Product guidance, order status, returns, cart recovery.
+- [SaaS & software](https://www.knowledgeagents.com/solutions/saas): Onboarding, technical answers, churn reduction.
+- [Healthcare](https://www.knowledgeagents.com/solutions/healthcare): Patient questions and scheduling.
+- [Real estate](https://www.knowledgeagents.com/solutions/real-estate): Lead qualification and viewing bookings.
+- [Education](https://www.knowledgeagents.com/solutions/education): Student and applicant support.
+
+## Guides and articles
+
+- [How to build an AI chatbot trained on your data](https://www.knowledgeagents.com/blog/how-to-build-an-ai-chatbot-trained-on-your-data)
+- [The AI customer support automation playbook](https://www.knowledgeagents.com/blog/ai-customer-support-automation-playbook)
+- [Agentic AI actions explained](https://www.knowledgeagents.com/blog/agentic-ai-actions-explained)
+- [How to reduce support tickets with AI](https://www.knowledgeagents.com/blog/reduce-support-tickets-with-ai)
+- [RAG explained for business](https://www.knowledgeagents.com/blog/rag-explained-for-business)
+- [Generative Engine Optimization (GEO) guide](https://www.knowledgeagents.com/blog/generative-engine-optimization-guide)
+
+## Contact
+
+- Website: https://www.knowledgeagents.com
+- Email: hello@knowledgeagents.com

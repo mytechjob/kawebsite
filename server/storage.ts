@@ -1,28 +1,38 @@
-import { 
-  type WaitlistEntry, 
-  type InsertWaitlistEntry,
-  type ContactSubmission,
-  type InsertContactSubmission,
-  waitlistEntries,
-  contactSubmissions
-} from "@shared/schema";
-import { db } from "./db";
+import { type User, type InsertUser } from "@shared/schema";
+import { randomUUID } from "crypto";
+
+// modify the interface with any CRUD methods
+// you might need
 
 export interface IStorage {
-  createWaitlistEntry(entry: InsertWaitlistEntry): Promise<WaitlistEntry>;
-  createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  getUser(id: string): Promise<User | undefined>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
 }
 
-export class DatabaseStorage implements IStorage {
-  async createWaitlistEntry(entry: InsertWaitlistEntry): Promise<WaitlistEntry> {
-    const [created] = await db.insert(waitlistEntries).values(entry).returning();
-    return created;
+export class MemStorage implements IStorage {
+  private users: Map<string, User>;
+
+  constructor() {
+    this.users = new Map();
   }
 
-  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const [created] = await db.insert(contactSubmissions).values(submission).returning();
-    return created;
+  async getUser(id: string): Promise<User | undefined> {
+    return this.users.get(id);
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => user.username === username,
+    );
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const id = randomUUID();
+    const user: User = { ...insertUser, id };
+    this.users.set(id, user);
+    return user;
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new MemStorage();

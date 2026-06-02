@@ -1,222 +1,117 @@
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Link } from "wouter";
-import WaitlistDialog from "@/components/waitlist-dialog";
-import { Check } from "lucide-react";
+import { PageLayout, PageHero } from "@/components/layout/page-layout";
+import { Pricing as PricingSection } from "@/components/sections/pricing";
+import { FAQ } from "@/components/sections/faq";
+import { CTA } from "@/components/sections/cta";
+import { Testimonials } from "@/components/sections/testimonials";
+import { SEO, breadcrumbSchema, faqSchema, productSchema } from "@/lib/seo";
+import { PRICING_FAQS } from "@/data/content";
+import { allKeywords } from "@/lib/site";
+import { Check, Minus } from "lucide-react";
 
-export default function Pricing() {
-  const allFeatures = [
-    "Multi-Model AI (GPT-4, Claude, Gemini)",
-    "Knowledge Base / Wiki",
-    "Document Upload (PDF, DOCX, PPTX)",
-    "Chat Interface",
-    "Power Search",
-    "Incident to SOP Automation",
-    "Analytics Dashboard",
-    "User Feedback Tracking",
-    "API Access",
-    "Slack & Teams Integration",
-    "SharePoint & Google Drive Sync",
-    "Custom Agent Configuration",
-    "Portal Customization",
-    "Role-Based Access Control",
-    "Audit Logs",
-    "Email Support"
-  ];
+const comparison: { label: string; values: (string | boolean)[] }[] = [
+  { label: "Knowledge Agents", values: ["1", "5", "10", "40"] },
+  { label: "Message credits / month", values: ["100", "2,000", "10,000", "40,000"] },
+  { label: "Training characters", values: ["400K", "11M", "Unlimited", "Unlimited"] },
+  { label: "Team members", values: ["1", "1", "3", "Unlimited"] },
+  { label: "File uploads & website crawling", values: [true, true, true, true] },
+  { label: "Lead capture forms", values: [true, true, true, true] },
+  { label: "Basic actions (email, lead capture)", values: [false, true, true, true] },
+  { label: "Advanced actions & integrations", values: [false, false, true, true] },
+  { label: "Custom actions (your APIs)", values: [false, false, false, true] },
+  { label: "Human handoff & live takeover", values: [false, false, true, true] },
+  { label: "Conversation analytics", values: [false, false, true, true] },
+  { label: "API access", values: [false, true, true, true] },
+  { label: "Remove “Powered by” branding", values: [false, "Add-on", true, true] },
+  { label: "White-label & custom domain", values: [false, false, false, true] },
+  { label: "SSO, audit logs & roles", values: [false, false, false, true] },
+  { label: "Support", values: ["Community", "Email", "Priority", "Priority + SLA"] },
+];
 
-  const faqs = [
-    { q: "What's included in Early Access?", a: "During Early Access, you get full access to all Knowledge Agents features completely free. This includes unlimited agents, all integrations, and priority support." },
-    { q: "How long does Early Access last?", a: "Early Access will continue until we launch our paid plans. We'll give you plenty of notice before any changes, and early users will receive special pricing." },
-    { q: "Is my data secure?", a: "Yes, we use enterprise-grade encryption. Your data is encrypted at rest and in transit, and we never train models on customer data." },
-    { q: "What happens after Early Access?", a: "When we launch paid plans, you'll have the option to continue on a free tier or upgrade to Team or Enterprise plans for additional capacity and support." }
-  ];
+const planNames = ["Free", "Hobby", "Standard", "Unlimited"];
 
+function Cell({ value }: { value: string | boolean }) {
+  if (value === true) return <Check className="w-5 h-5 text-primary mx-auto" />;
+  if (value === false) return <Minus className="w-5 h-5 text-muted-foreground/40 mx-auto" />;
+  return <span className="text-sm font-medium">{value}</span>;
+}
+
+export default function PricingPage() {
   return (
-    <div className="flex flex-col gap-0">
-      <section className="relative py-24 bg-secondary/20">
-        <div className="container mx-auto px-4 text-center max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-            Early Access
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6 font-display">Start Free During Early Access</h1>
-          <p className="text-xl text-muted-foreground">
-            Get full access to all features at no cost. Team and Enterprise plans coming soon.
-          </p>
-        </div>
-      </section>
+    <PageLayout>
+      <SEO
+        title="Pricing | Knowledge Agents — Plans From Free to Enterprise"
+        description="Simple, transparent pricing for AI agents. Start free with no credit card, then scale from $19/mo. Compare Free, Hobby, Standard, and Unlimited plans."
+        path="/pricing"
+        keywords={[...allKeywords("core"), "AI chatbot pricing", "AI agent pricing", "free AI chatbot"]}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Pricing", path: "/pricing" },
+          ]),
+          productSchema({
+            name: "Knowledge Agents",
+            description:
+              "No-code AI agent platform that answers questions and takes action, trained on your content.",
+            lowPrice: "0",
+            highPrice: "399",
+          }),
+          faqSchema(PRICING_FAQS),
+        ]}
+      />
+      <PageHero
+        eyebrow="Pricing"
+        title="Pricing that scales with you"
+        description="Start free and upgrade only when you're ready. Every plan includes unlimited embeds, lead capture, and 80+ languages. No credit card required to begin."
+      />
 
-      <section className="py-24">
+      <PricingSection showHeader={false} />
+
+      {/* Comparison table */}
+      <section className="py-16 bg-muted/30 border-y">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Free Plan */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="relative p-8 rounded-2xl border-2 border-accent bg-card shadow-xl ring-2 ring-accent/20"
-            >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-accent to-teal-400 text-white text-xs font-bold uppercase tracking-wide rounded-full whitespace-nowrap">
-                Available Now
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Free</h3>
-              <p className="text-muted-foreground text-sm mb-6">Full access during Early Access</p>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-5xl font-bold font-display text-primary">$0</span>
-                <span className="text-muted-foreground">/forever</span>
-              </div>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-sm font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  All features included
-                </div>
-                <div className="flex items-center gap-3 text-sm font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Unlimited agents
-                </div>
-                <div className="flex items-center gap-3 text-sm font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Priority support
-                </div>
-              </div>
-
-              <WaitlistDialog>
-                <Button className="w-full h-12 text-base font-semibold">Get Started Free</Button>
-              </WaitlistDialog>
-            </motion.div>
-
-            {/* Team Plan */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="relative p-8 rounded-2xl border border-border bg-card"
-            >
-              <h3 className="text-2xl font-bold mb-2">Team</h3>
-              <p className="text-muted-foreground text-sm mb-6">For growing teams and departments</p>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-3xl font-bold font-display text-muted-foreground">Coming Soon</span>
-              </div>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Everything in Free
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Team collaboration
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Advanced analytics
-                </div>
-              </div>
-
-              <Button variant="outline" className="w-full h-12 text-base font-semibold" asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
-            </motion.div>
-
-            {/* Enterprise Plan */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="relative p-8 rounded-2xl border border-border bg-card"
-            >
-              <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-              <p className="text-muted-foreground text-sm mb-6">Custom solutions for large orgs</p>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-3xl font-bold font-display text-muted-foreground">Custom</span>
-              </div>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Everything in Team
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  SSO & SAML
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-secondary text-muted-foreground flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </div>
-                  Dedicated support
-                </div>
-              </div>
-
-              <Button variant="outline" className="w-full h-12 text-base font-semibold" asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
-            </motion.div>
+          <h2 className="text-3xl font-bold font-display text-center mb-10">Compare every plan</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[720px] border-separate border-spacing-0">
+              <thead>
+                <tr>
+                  <th className="text-left p-4 font-semibold text-muted-foreground w-1/3">Feature</th>
+                  {planNames.map((name) => (
+                    <th key={name} className="p-4 text-center font-bold">
+                      {name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row, i) => (
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-background" : ""}>
+                    <td className="p-4 text-sm font-medium border-t">{row.label}</td>
+                    {row.values.map((v, j) => (
+                      <td key={j} className="p-4 text-center border-t">
+                        <Cell value={v} />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* All Features Section */}
-      <section className="py-24 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">All Features Included Free During Early Access</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get the full power of Knowledge Agents at no cost while we're in Early Access.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {allFeatures.map((feature, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.03 }}
-                className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl"
-              >
-                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5 stroke-[3]" />
-                </div>
-                <span className="text-sm font-medium">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-          </div>
-          <div className="space-y-6">
-            {faqs.map((faq, i) => (
-              <div key={i} className="p-6 bg-card border border-border rounded-xl">
-                <h3 className="text-lg font-semibold text-primary mb-2">{faq.q}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+      <Testimonials />
+      <FAQ
+        faqs={PRICING_FAQS}
+        heading="Pricing FAQ"
+        subheading="Common questions about plans, credits, and billing."
+        className="py-24"
+      />
+      <CTA
+        title="Try Knowledge Agents free today"
+        subtitle="Ship your first AI agent in minutes. No credit card, no risk — upgrade only when it's working for you."
+        secondaryLabel="Talk to sales"
+        secondaryHref="/contact"
+      />
+    </PageLayout>
   );
 }

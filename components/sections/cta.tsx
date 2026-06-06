@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import { SIGNUP_URL } from "@/lib/site";
 
 interface CTAProps {
   title?: string;
@@ -16,10 +17,10 @@ export function CTA({
   title = "Ready to build your Knowledge Agent?",
   subtitle = "Join thousands of teams using Knowledge Agents to answer questions and take action for their customers — 24/7.",
   primaryLabel = "Start free — no credit card",
-  primaryHref = "/login",
+  primaryHref = SIGNUP_URL,
   secondaryLabel = "See pricing",
   secondaryHref = "/pricing",
-  bullets = ["Free plan forever", "Live in 5 minutes", "Cancel anytime"],
+  bullets = ["Free to get started", "Live in 5 minutes", "Cancel anytime"],
 }: CTAProps) {
   return (
     <section className="py-20 md:py-24">

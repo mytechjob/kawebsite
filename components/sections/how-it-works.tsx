@@ -2,6 +2,7 @@ import { HOW_IT_WORKS } from "@/data/content";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { SIGNUP_URL } from "@/lib/site";
 
 export function HowItWorks() {
   return (
@@ -26,7 +27,7 @@ export function HowItWorks() {
           })}
         </div>
         <div className="text-center mt-14">
-          <Link href="/login"><Button size="lg" className="h-12 px-8">Start building free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+          <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8">Start building free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
         </div>
       </div>
     </section>

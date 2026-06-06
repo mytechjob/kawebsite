@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import { MAIN_NAV, type NavItem } from "@/lib/site";
+import { MAIN_NAV, SIGNUP_URL, type NavItem } from "@/lib/site";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -116,8 +116,8 @@ export function Navbar() {
 
           <div className="flex items-center gap-3 ml-2">
             <ThemeToggle />
-            <Link href="/login" className="text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
-            <Link href="/login">
+            <Link href={SIGNUP_URL} className="text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
+            <Link href={SIGNUP_URL}>
               <Button>Try for free</Button>
             </Link>
           </div>
@@ -150,8 +150,8 @@ export function Navbar() {
             </div>
           ))}
           <div className="flex flex-col gap-2 pt-4 border-t">
-            <Link href="/login"><Button variant="ghost" className="w-full justify-start" onClick={() => setIsOpen(false)}>Sign in</Button></Link>
-            <Link href="/login"><Button className="w-full" onClick={() => setIsOpen(false)}>Try for free</Button></Link>
+            <Link href={SIGNUP_URL}><Button variant="ghost" className="w-full justify-start" onClick={() => setIsOpen(false)}>Sign in</Button></Link>
+            <Link href={SIGNUP_URL}><Button className="w-full" onClick={() => setIsOpen(false)}>Try for free</Button></Link>
           </div>
         </div>
       )}

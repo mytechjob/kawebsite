@@ -10,31 +10,28 @@ import { Check, Minus } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing | Knowledge Agents — Plans From Free to Enterprise",
-  description: "Simple, transparent pricing for AI agents. Start free with no credit card, then scale from $19/mo. Compare Free, Hobby, Standard, and Unlimited plans.",
+  title: "Pricing | Knowledge Agents — Early Access, Launch Offer & Enterprise",
+  description: "Start free in Early Access, lock in our limited-time $39/year launch offer (renews at $480/year), or contact us for a custom Enterprise plan. Every plan includes unlimited embeds, lead capture, and 80+ languages.",
   keywords: [...allKeywords("core"), "AI chatbot pricing", "AI agent pricing", "free AI chatbot"],
 };
 
 const comparison: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Knowledge Agents", values: ["1", "5", "10", "40"] },
-  { label: "Message credits / month", values: ["100", "2,000", "10,000", "40,000"] },
-  { label: "Training characters", values: ["400K", "11M", "Unlimited", "Unlimited"] },
-  { label: "Team members", values: ["1", "1", "3", "Unlimited"] },
-  { label: "File uploads & website crawling", values: [true, true, true, true] },
-  { label: "Lead capture forms", values: [true, true, true, true] },
-  { label: "Basic actions (email, lead capture)", values: [false, true, true, true] },
-  { label: "Advanced actions & integrations", values: [false, false, true, true] },
-  { label: "Custom actions (your APIs)", values: [false, false, false, true] },
-  { label: "Human handoff & live takeover", values: [false, false, true, true] },
-  { label: "Conversation analytics", values: [false, false, true, true] },
-  { label: "API access", values: [false, true, true, true] },
-  { label: "Remove \"Powered by\" branding", values: [false, "Add-on", true, true] },
-  { label: "White-label & custom domain", values: [false, false, false, true] },
-  { label: "SSO, audit logs & roles", values: [false, false, false, true] },
-  { label: "Support", values: ["Community", "Email", "Priority", "Priority + SLA"] },
+  { label: "Knowledge Agents", values: ["1", "Multiple", "Unlimited"] },
+  { label: "Train on files & website content", values: [true, true, true] },
+  { label: "Embed on unlimited websites", values: [true, true, true] },
+  { label: "Lead capture forms", values: [true, true, true] },
+  { label: "80+ languages", values: [true, true, true] },
+  { label: "Advanced actions & integrations", values: [false, true, true] },
+  { label: "Human handoff & live takeover", values: [false, true, true] },
+  { label: "Conversation analytics", values: [false, true, true] },
+  { label: "API access", values: [false, true, true] },
+  { label: "Custom actions (your APIs)", values: [false, false, true] },
+  { label: "White-label & custom domain", values: [false, false, true] },
+  { label: "SSO, audit logs & roles", values: [false, false, true] },
+  { label: "Support", values: ["Community", "Priority", "Dedicated + SLA"] },
 ];
 
-const planNames = ["Free", "Hobby", "Standard", "Unlimited"];
+const planNames = ["Early Access", "Limited Time Offer", "Custom / Enterprise"];
 
 function Cell({ value }: { value: string | boolean }) {
   if (value === true) return <Check className="w-5 h-5 text-primary mx-auto" />;
@@ -45,7 +42,7 @@ function Cell({ value }: { value: string | boolean }) {
 export default function PricingPage() {
   return (
     <PageLayout>
-      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "0", highPrice: "399" }), faqSchema(PRICING_FAQS)]} />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "0", highPrice: "480" }), faqSchema(PRICING_FAQS)]} />
       <PageHero eyebrow="Pricing" title="Pricing that scales with you" description="Start free and upgrade only when you're ready. Every plan includes unlimited embeds, lead capture, and 80+ languages. No credit card required to begin." />
       <PricingSection showHeader={false} />
       <section className="py-16 bg-muted/30 border-y">

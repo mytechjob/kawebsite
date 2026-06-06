@@ -10,7 +10,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - **Founding year**: 2023
 - **Headquarters**: United States
 - **Website**: https://www.knowledgeagents.com
-- **Pricing**: Free plan available (no credit card required). Paid plans from $19/mo (Hobby), $99/mo (Standard), $399/mo (Unlimited).
+- **Pricing**: Early Access plan available free (no credit card required). Limited Time Offer: $39 for the first year (renews at $480/year). Custom / Enterprise plans available on request.
 
 ## Core platform capabilities
 - Train AI agents on documents (PDF, DOCX, TXT, Markdown), help centers, and websites.

@@ -292,7 +292,7 @@ export const PRICING_FAQS: Faq[] = [
   },
   {
     q: "Is there a free plan?",
-    a: "Yes. The Free plan includes one Knowledge Agent, 100 message credits per month, and 400K training characters — with no credit card required. It's a great way to ship your first agent and see the value before upgrading.",
+    a: "Yes. Our Early Access plan lets you build your first Knowledge Agent and embed it on your site for free — no credit card required. It's a great way to ship your first agent and see the value before upgrading.",
   },
   {
     q: "Can I change or cancel my plan anytime?",
@@ -303,12 +303,12 @@ export const PRICING_FAQS: Faq[] = [
     a: "Your agent pauses new AI responses until credits reset next cycle, or you can purchase a top-up or upgrade. We'll warn you well before you hit the limit so there's no surprise downtime.",
   },
   {
-    q: "Do you offer discounts for nonprofits or annual billing?",
-    a: "Yes. Annual billing saves roughly two months versus monthly, and we offer discounts for nonprofits, educational institutions, and early-stage startups. Contact sales to learn more.",
+    q: "What is the Limited Time Offer?",
+    a: "For a limited time you can get a full year of access for $39. After the offer period the plan renews at our standard $480/year — but if you sign up now, you lock in the launch price for your first year. We also offer discounts for nonprofits, educational institutions, and early-stage startups; contact sales to learn more.",
   },
   {
     q: "Can I use my own model API key?",
-    a: "On Standard and Unlimited plans you can bring your own OpenAI, Anthropic, or Google API key for effectively unlimited messages — you pay the model provider directly while we handle everything else.",
+    a: "On our paid plans you can bring your own OpenAI, Anthropic, or Google API key for effectively unlimited messages — you pay the model provider directly while we handle everything else.",
   },
 ];
 

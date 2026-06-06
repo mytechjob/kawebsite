@@ -5,6 +5,7 @@ import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
 import { JsonLd, breadcrumbSchema, faqSchema } from "@/lib/metadata";
 import { getSolution, SOLUTIONS } from "@/data/solutions";
+import { SIGNUP_URL } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, X, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
@@ -42,7 +43,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <h1 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-5">{solution.headline}</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">{solution.subhead}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/login"><Button size="lg" className="h-12 px-8 w-full sm:w-auto">Start free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+              <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 w-full sm:w-auto">Start free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
               <Link href="/#demo"><Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">See it in action</Button></Link>
             </div>
           </div>

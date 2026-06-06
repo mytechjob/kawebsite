@@ -4,7 +4,7 @@ import { CTA } from "@/components/sections/cta";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { JsonLd, breadcrumbSchema, faqSchema } from "@/lib/metadata";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, SIGNUP_URL } from "@/lib/site";
 import type { Faq } from "@/data/content";
 import { ArrowRight, MessageSquare, Sparkles, BookOpen, LayoutTemplate } from "lucide-react";
 import type { Metadata } from "next";
@@ -80,7 +80,7 @@ export default function WhatIsKnowledgeAgentPage() {
             </ul>
           </div>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 not-prose">
-            <Link href="/login"><Button size="lg" className="h-12 px-8 w-full sm:w-auto">Build your Knowledge Agent <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 w-full sm:w-auto">Build your Knowledge Agent <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
             <Link href="/features"><Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">Explore features</Button></Link>
           </div>
         </div>

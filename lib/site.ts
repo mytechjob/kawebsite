@@ -135,6 +135,9 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
   { label: "Pricing", href: "/pricing" },
 ];
 
+/** Where sign-up / "try for free" CTAs send people so they can start using the product right away. */
+export const SIGNUP_URL = "https://kagents.net";
+
 /** Single source of truth for plans — used by pricing section, page, and JSON-LD. */
 export type Plan = {
   name: string;
@@ -144,82 +147,64 @@ export type Plan = {
   description: string;
   features: string[];
   cta: string;
+  href: string;
   popular?: boolean;
   highlightFeature?: string;
 };
 
 export const PLANS: Plan[] = [
   {
-    name: "Free",
+    name: "Early Access",
     price: "$0",
     priceValue: 0,
-    description: "Test the platform and ship your first agent.",
+    description: "Get started free and build your first agent today.",
     highlightFeature: "Best for trying things out",
     features: [
-      "1 Knowledge Agent",
-      "100 message credits / mo",
-      "400K training characters",
+      "Build your first Knowledge Agent",
+      "Train on files & website content",
       "Embed on unlimited websites",
       "Lead capture forms",
+      "80+ languages",
       "Community support",
     ],
-    cta: "Schedule Demo",
+    cta: "Get Started Free",
+    href: SIGNUP_URL,
   },
   {
-    name: "Hobby",
-    price: "$19",
-    priceValue: 19,
-    period: "/mo",
-    description: "For creators, freelancers, and small sites.",
-    highlightFeature: "Most popular for individuals",
+    name: "Limited Time Offer",
+    price: "$39",
+    priceValue: 39,
+    period: "/year",
+    description: "1 year of full access at our launch price — renews at $480/year after the offer period.",
+    highlightFeature: "Best value — limited time",
     popular: true,
     features: [
-      "5 Knowledge Agents",
-      "2,000 message credits / mo",
-      "11M training characters",
-      "Website crawling & file uploads",
-      "API access",
-      "Basic actions (lead capture, email)",
-      "Remove branding (add-on)",
-    ],
-    cta: "Schedule Demo",
-  },
-  {
-    name: "Standard",
-    price: "$99",
-    priceValue: 99,
-    period: "/mo",
-    description: "For growing support and success teams.",
-    highlightFeature: "Best for growing teams",
-    features: [
-      "10 Knowledge Agents",
-      "10,000 message credits / mo",
-      "Unlimited training characters",
-      "3 team members",
+      "Everything in Early Access",
+      "Multiple Knowledge Agents",
       "Advanced actions & integrations",
       "Human handoff & live takeover",
       "Analytics & conversation insights",
-      "GPT-4o, Claude, and Gemini models",
+      "Priority support",
+      "Lock in $39/year (then $480/year)",
     ],
-    cta: "Schedule Demo",
+    cta: "Claim the Offer",
+    href: SIGNUP_URL,
   },
   {
-    name: "Unlimited",
-    price: "$399",
-    priceValue: 399,
-    period: "/mo",
-    description: "For agencies, platforms, and high volume.",
-    highlightFeature: "Best for scale & agencies",
+    name: "Custom / Enterprise",
+    price: "Contact Us",
+    priceValue: 0,
+    description: "For teams that need custom volume, security, and white-glove onboarding.",
+    highlightFeature: "Best for scale & enterprise",
     features: [
-      "40 Knowledge Agents",
-      "40,000 message credits / mo",
+      "Unlimited Knowledge Agents",
       "White-label & custom domains",
-      "Unlimited team members",
       "Custom actions & private integrations",
       "SSO, audit logs & roles",
-      "Priority support & SLA",
+      "Dedicated support & SLA",
       "Onboarding & solution engineering",
     ],
-    cta: "Talk to sales",
+    cta: "Contact Us",
+    href: "/contact",
   },
 ];

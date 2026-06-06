@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, CalendarCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { SIGNUP_URL } from "@/lib/site";
 
-const trust = ["No credit card required", "Free plan forever", "Live in under 5 minutes"];
+const trust = ["No credit card required", "Free to get started", "Live in under 5 minutes"];
 
 export function Hero() {
   return (
@@ -49,7 +50,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link href="/login">
+          <Link href={SIGNUP_URL}>
             <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
               Build your agent free <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

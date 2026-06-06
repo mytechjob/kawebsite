@@ -14,7 +14,7 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
             <p className="text-muted-foreground text-lg">Start free, upgrade as you grow. No hidden fees, cancel anytime.</p>
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {PLANS.map((plan) => (
             <div key={plan.name} className={`relative p-8 rounded-2xl border flex flex-col ${plan.popular ? "border-primary shadow-lg bg-primary/5" : "bg-background shadow-sm"}`}>
               {plan.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Most popular</div>}
@@ -26,11 +26,11 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (<li key={feature} className="flex items-start gap-3 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /><span>{feature}</span></li>))}
               </ul>
-              <Link href="/login"><Button className="w-full" variant={plan.popular ? "default" : "outline"}>{plan.cta}</Button></Link>
+              <Link href={plan.href}><Button className="w-full" variant={plan.popular ? "default" : "outline"}>{plan.cta}</Button></Link>
             </div>
           ))}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited embeds, lead capture, and 80+ languages. <span className="text-foreground font-medium">Save ~2 months with annual billing.</span></p>
+        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited embeds, lead capture, and 80+ languages. <span className="text-foreground font-medium">Lock in the $39/year launch price before it goes to $480/year.</span></p>
       </div>
     </section>
   );

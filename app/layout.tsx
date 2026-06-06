@@ -99,6 +99,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </TooltipProvider>
         </ThemeProvider>
+
+        {/* Chat Widget Integration (Simple Mode) — secured by browser CORS */}
+        <div id="kb-chat-widget" />
+        <Script id="kb-chat-widget-loader" strategy="afterInteractive">
+          {`
+            (function() {
+              const projectId = "ca73581b-d216-47c1-9366-a15e721b94c9";
+              const apiUrl = "https://kagents.net/api/widget/" + projectId + "/chat";
+
+              const script = document.createElement('script');
+              script.src = "https://kagents.net/widget.js";
+              script.async = true;
+              script.onload = function() {
+                if (window.KBChatWidget) {
+                  window.KBChatWidget.init({
+                    projectId: projectId,
+                    apiUrl: apiUrl,
+                    securityMode: "simple",
+                    position: "bottom-right",
+                    style: "bubble",
+                    primaryColor: "#7C3AED",
+                    accentColor: "#7C3AED",
+                    welcomeMessage: "Hello! How can I help you today?"
+                  });
+                }
+              };
+              document.head.appendChild(script);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   )

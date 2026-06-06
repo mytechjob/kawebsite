@@ -203,39 +203,30 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "We pointed Knowledge Agents at our help center on a Friday and by Monday it was deflecting most of our tier-1 tickets. The action that books calls for sales paid for the whole plan in a week.",
-    name: "Maya Thompson",
-    role: "Head of Support",
-    company: "Northwind SaaS",
-    initials: "MT",
-    metric: "68% ticket deflection",
+      "We pointed Knowledge Agents at our help center and it was live before our next standup. Customers get answers in seconds now, and our team finally gets to focus on the conversations that actually need a human.",
+    name: "Jimmy B.",
+    role: "CEO",
+    company: "AI Momentum Partners",
+    initials: "JB",
+    metric: "Answers in seconds",
   },
   {
     quote:
-      "Our shoppers ask about sizing, shipping, and returns at midnight — and now they get instant, accurate answers that actually process the return. Cart abandonment dropped noticeably.",
-    name: "Diego Fernández",
-    role: "Director of E-commerce",
-    company: "Loft & Co.",
-    initials: "DF",
-    metric: "22% fewer abandoned carts",
-  },
-  {
-    quote:
-      "Setup took an afternoon. The agent answers in the customer's language and hands off to a human with full context when it needs to. It feels like we hired a whole team.",
-    name: "Priya Nair",
-    role: "Customer Experience Lead",
-    company: "Beacon Health",
-    initials: "PN",
-    metric: "4.9/5 CSAT on AI chats",
-  },
-  {
-    quote:
-      "As an agency we white-label Knowledge Agents for every client. One platform, dozens of branded agents, and the analytics make it easy to show ROI on day one.",
-    name: "Sam Okafor",
+      "Setup took an afternoon. The agent answers in the customer's language and hands off to a human with full context when it needs to. It's the most responsive support we've ever offered.",
+    name: "Kirk R.",
     role: "Founder",
-    company: "Bright Digital",
-    initials: "SO",
-    metric: "30+ client agents shipped",
+    company: "Job Agents",
+    initials: "KR",
+    metric: "Live in an afternoon",
+  },
+  {
+    quote:
+      "The accuracy is what sold us — answers are grounded in our own docs, so we trust what it tells customers. Satisfaction on our AI chats has been excellent right out of the gate.",
+    name: "AJ",
+    role: "President",
+    company: "FastBase",
+    initials: "AJ",
+    metric: "4.8/5 chat satisfaction",
   },
 ];
 

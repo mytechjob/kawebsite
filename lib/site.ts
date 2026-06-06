@@ -94,8 +94,8 @@ export const allKeywords = (...groups: (keyof typeof KEYWORDS)[]) =>
 
 /** Headline metrics reused across hero, stats, and structured data. */
 export const STATS = [
-  { value: "12M+", label: "questions answered", sub: "across customer chats every month" },
-  { value: "73%", label: "average ticket deflection", sub: "fewer tickets reaching human agents" },
+  { value: "< 2s", label: "average response time", sub: "instant answers, day or night" },
+  { value: "99.9%", label: "uptime", sub: "reliable, always-on infrastructure" },
   { value: "4.8/5", label: "answer satisfaction", sub: "rated helpful by end users" },
   { value: "< 5 min", label: "to go live", sub: "from first upload to embedded agent" },
 ] as const;

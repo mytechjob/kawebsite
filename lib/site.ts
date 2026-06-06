@@ -136,7 +136,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
 ];
 
 /** Where sign-up / "try for free" CTAs send people so they can start using the product right away. */
-export const SIGNUP_URL = "https://kagents.net";
+export const SIGNUP_URL = "https://kagents.net/signup";
 
 /** Single source of truth for plans — used by pricing section, page, and JSON-LD. */
 export type Plan = {
@@ -187,7 +187,7 @@ export const PLANS: Plan[] = [
       "Priority support",
       "Lock in $39/year (then $480/year)",
     ],
-    cta: "Claim the Offer",
+    cta: "Get Started",
     href: SIGNUP_URL,
   },
   {

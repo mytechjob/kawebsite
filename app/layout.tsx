@@ -121,6 +121,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     style: "bubble",
                     primaryColor: "#7C3AED",
                     accentColor: "#7C3AED",
+                    bubbleIcon: "logo",
+                    teaserEnabled: true,
+                    teaserText: "Have a question? Ask me anything!",
                     welcomeMessage: "Hello! How can I help you today?"
                   });
                 }

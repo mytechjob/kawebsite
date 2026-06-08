@@ -29,7 +29,7 @@ export function DemoSection() {
       } else if (q.includes("embed") || q.includes("website") || q.includes("install")) {
         response = "Add me to any site with one script tag, or publish a standalone chat page with its own URL — no website required. I also work via API for custom builds.";
       } else if (q.includes("language")) {
-        response = "I detect and respond in 80+ languages automatically — train once, support everyone.";
+        response = "I detect and respond in your customers' languages automatically — train once, support everyone.";
       }
       setMessages((prev) => [...prev, { role: "assistant", content: response }]);
       setIsTyping(false);

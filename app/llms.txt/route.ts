@@ -17,7 +17,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - Retrieval-Augmented Generation (RAG) — answers are grounded in your content with citations.
 - Agentic actions — book meetings, create/update tickets, check order status, capture leads.
 - Deploy as a website widget (one script tag) or a standalone chat page with its own URL.
-- 80+ languages, dark/light themes, custom branding and white-label options.
+- Multilingual support, dark/light themes, custom branding and white-label options.
 - Analytics, conversation insights, human handoff with full context transfer.
 
 ## Core pages

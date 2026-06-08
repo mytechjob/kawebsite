@@ -56,11 +56,6 @@ export function Hero() {
               Create your AI agent <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>
-          <Link href="/#demo">
-            <Button variant="outline" size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
-              Try the live demo
-            </Button>
-          </Link>
         </motion.div>
         <motion.ul
           initial={{ opacity: 0 }}

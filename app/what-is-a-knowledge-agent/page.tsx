@@ -60,7 +60,7 @@ export default function WhatIsKnowledgeAgentPage() {
             <h2 id="answer-and-act" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">Answering questions <em>and</em> taking action</h2>
             <p>The defining feature of a Knowledge Agent is that it does more than answer. Through <strong>agentic actions</strong>, it can call your tools to complete tasks: book an appointment, create or update a ticket, look up an order, start a return, qualify a lead, or trigger a custom workflow — all with guardrails you control. Learn more in <Link href="/blog/agentic-ai-actions-explained" className="text-primary font-medium hover:underline">agentic AI actions explained</Link>.</p>
             <h2 id="vs-chatbot" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">Knowledge Agent vs. traditional chatbot</h2>
-            <p>A traditional chatbot follows rigid, pre-scripted decision trees and breaks the moment a customer phrases something unexpectedly. A Knowledge Agent understands natural language, answers from your real content with citations, supports 80+ languages, and takes action. See the full breakdown on our <Link href="/compare" className="text-primary font-medium hover:underline">Knowledge Agents vs. chatbots</Link> page.</p>
+            <p>A traditional chatbot follows rigid, pre-scripted decision trees and breaks the moment a customer phrases something unexpectedly. A Knowledge Agent understands natural language, answers from your real content with citations, is multilingual, and takes action. See the full breakdown on our <Link href="/compare" className="text-primary font-medium hover:underline">Knowledge Agents vs. chatbots</Link> page.</p>
             <h2 id="use-cases" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">Common use cases</h2>
             <ul className="space-y-2 list-disc pl-6">
               <li><Link href="/solutions/customer-support" className="text-primary font-medium hover:underline">Customer support</Link> — deflect tickets and resolve issues 24/7.</li>
@@ -72,7 +72,7 @@ export default function WhatIsKnowledgeAgentPage() {
             <p>Building one takes about five minutes and no code: add your content (upload files or crawl a URL), shape its tone and guardrails, enable the actions you want, then embed it or publish a chat page. Follow the full walkthrough in <Link href="/blog/how-to-build-an-ai-chatbot-trained-on-your-data" className="text-primary font-medium hover:underline">how to build an AI chatbot trained on your data</Link>.</p>
             <h2 id="benefits" className="text-2xl md:text-3xl font-bold font-display text-foreground pt-6 scroll-mt-28">Key benefits</h2>
             <ul className="space-y-2 list-disc pl-6">
-              <li><strong>24/7 instant answers</strong> in 80+ languages, with no wait times.</li>
+              <li><strong>24/7 instant answers</strong> in your customers' languages, with no wait times.</li>
               <li><strong>Lower support costs</strong> by deflecting 60-80% of repetitive questions.</li>
               <li><strong>Real resolutions</strong> through actions, not just deflection.</li>
               <li><strong>More leads and sales</strong> from always-on, helpful conversations.</li>

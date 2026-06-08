@@ -74,7 +74,7 @@ export const SOLUTIONS: Solution[] = [
       {
         title: "Always-on, every language",
         description:
-          "Coverage at 2 a.m. and on holidays, answering in 80+ languages without extra staffing.",
+          "Coverage at 2 a.m. and on holidays, answering in your customers' languages without extra staffing.",
       },
     ],
     actions: [
@@ -479,7 +479,7 @@ export const SOLUTIONS: Solution[] = [
       {
         title: "Always-on access",
         description:
-          "Round-the-clock help in 80+ languages for a diverse, global student body.",
+          "Round-the-clock help in students' own languages for a diverse, global student body.",
       },
       {
         title: "Lighten the staff load",
@@ -509,7 +509,7 @@ export const SOLUTIONS: Solution[] = [
       },
       {
         q: "Does it support multiple languages?",
-        a: "Yes. It detects and responds in 80+ languages automatically, which is ideal for international applicants and diverse student populations.",
+        a: "Yes. It detects and responds in your customers' languages automatically, which is ideal for international applicants and diverse student populations.",
       },
     ],
     sampleChat: [

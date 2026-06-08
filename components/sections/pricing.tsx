@@ -14,23 +14,27 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
             <p className="text-muted-foreground text-lg">Pick a plan that fits your business and upgrade as you grow. No hidden fees, cancel anytime.</p>
           </div>
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 max-w-7xl mx-auto">
           {PLANS.map((plan) => (
-            <div key={plan.name} className={`relative p-8 rounded-2xl border flex flex-col ${plan.popular ? "border-primary shadow-lg bg-primary/5" : "bg-background shadow-sm"}`}>
+            <div key={plan.name} className={`relative p-6 rounded-2xl border flex flex-col ${plan.popular ? "border-primary shadow-lg bg-primary/5" : "bg-background shadow-sm"}`}>
               {plan.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Most popular</div>}
               <div className="mb-6">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1"><span className="text-4xl font-bold">{plan.price}</span>{plan.period && <span className="text-muted-foreground">{plan.period}</span>}</div>
-                <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
+                {!plan.hideFeatures && <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>}
               </div>
-              <ul className="space-y-3 mb-8 flex-1">
-                {plan.features.map((feature) => (<li key={feature} className="flex items-start gap-3 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /><span>{feature}</span></li>))}
-              </ul>
+              {plan.hideFeatures ? (
+                <p className="text-lg md:text-xl text-foreground/80 mb-8 flex-1 leading-snug">{plan.description}</p>
+              ) : (
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((feature) => (<li key={feature} className="flex items-start gap-3 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /><span>{feature}</span></li>))}
+                </ul>
+              )}
               <Link href={plan.href}><Button className="w-full" variant={plan.popular ? "default" : "outline"}>{plan.cta}</Button></Link>
             </div>
           ))}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited knowledge uploads, lead capture, and 80+ languages. <span className="text-foreground font-medium">Cancel anytime — no long-term contract.</span></p>
+        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited knowledge uploads and lead capture. <span className="text-foreground font-medium">Start free — cancel anytime, no long-term contract.</span></p>
       </div>
     </section>
   );

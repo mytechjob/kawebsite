@@ -136,7 +136,7 @@ export const productSchema = (p: {
     priceCurrency: "USD",
     lowPrice: p.lowPrice,
     highPrice: p.highPrice,
-    offerCount: "4",
+    offerCount: "5",
   },
   aggregateRating: {
     "@type": "AggregateRating",

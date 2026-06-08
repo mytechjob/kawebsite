@@ -138,6 +138,9 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
 /** Where sign-up / "try for free" CTAs send people so they can start using the product right away. */
 export const SIGNUP_URL = "https://kagents.net/signup";
 
+/** Where the Enterprise / "talk to us" CTA sends people — the Google appointment scheduling page. */
+export const SCHEDULE_URL = "https://calendar.app.google/4dDonNoV9np8WuweA";
+
 /** Single source of truth for plans — used by pricing section, page, and JSON-LD. */
 export type Plan = {
   name: string;
@@ -150,9 +153,29 @@ export type Plan = {
   href: string;
   popular?: boolean;
   highlightFeature?: string;
+  /** Render the description as the focal copy and skip the checkbox feature list (used for the Full Service plan). */
+  hideFeatures?: boolean;
 };
 
 export const PLANS: Plan[] = [
+  {
+    name: "Hobby",
+    price: "$0",
+    priceValue: 0,
+    period: "/mo",
+    description: "Try the platform and ship your first AI employee for free.",
+    highlightFeature: "Best for trying things out",
+    features: [
+      "10 customer conversations / mo",
+      "1 Knowledge Agent",
+      "Training allowed on 1 file",
+      "Website chat widget & chat page",
+      "Lead capture forms",
+      "Community support",
+    ],
+    cta: "Get started",
+    href: SIGNUP_URL,
+  },
   {
     name: "Starter",
     price: "$49",
@@ -161,14 +184,14 @@ export const PLANS: Plan[] = [
     description: "For small websites and solo founders launching their first AI employee.",
     highlightFeature: "Best for getting started",
     features: [
-      "1 Knowledge Agent",
+      "100 customer conversations / mo",
+      "10 Knowledge Agents",
       "Train on files & website content",
       "Website chat widget & chat page",
       "Lead capture forms",
-      "80+ languages",
       "Email support",
     ],
-    cta: "Start with Starter",
+    cta: "Get started",
     href: SIGNUP_URL,
   },
   {
@@ -180,14 +203,15 @@ export const PLANS: Plan[] = [
     highlightFeature: "Most popular",
     popular: true,
     features: [
-      "Up to 3 Knowledge Agents",
+      "500 customer conversations / mo",
+      "Unlimited Knowledge Agents",
       "Everything in Starter",
       "Advanced actions & integrations",
       "Human handoff & live takeover",
       "Conversation analytics & gap insights",
       "Priority support",
     ],
-    cta: "Get Professional",
+    cta: "Get started",
     href: SIGNUP_URL,
   },
   {
@@ -198,31 +222,25 @@ export const PLANS: Plan[] = [
     description: "For multi-agent teams running customer-facing and internal agents at scale.",
     highlightFeature: "Best for teams",
     features: [
-      "Up to 10 Knowledge Agents",
+      "1,500 customer conversations / mo",
+      "Unlimited Knowledge Agents",
       "Everything in Professional",
       "Custom actions (your APIs)",
       "White-label & custom domains",
       "Onboarding & solution engineering",
-      "Priority support",
     ],
-    cta: "Choose Business",
+    cta: "Get started",
     href: SIGNUP_URL,
   },
   {
-    name: "Enterprise",
+    name: "Full Service Plans",
     price: "Custom",
     priceValue: 0,
-    description: "For custom volume, security, and compliance needs across your organization.",
+    description: "Want us to set everything up for you, or need an Enterprise plan? Schedule time to speak with us.",
     highlightFeature: "Best for scale & security",
-    features: [
-      "Unlimited Knowledge Agents",
-      "Everything in Business",
-      "SSO, audit logs & roles",
-      "Custom data retention & residency",
-      "Dedicated support & SLA",
-      "Solution engineering & SLAs",
-    ],
-    cta: "Contact Sales",
-    href: "/contact",
+    features: [],
+    hideFeatures: true,
+    cta: "Schedule Time",
+    href: SCHEDULE_URL,
   },
 ];

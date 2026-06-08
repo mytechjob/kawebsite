@@ -19,7 +19,7 @@ const rows: { label: string; values: [Mark | string, Mark | string, Mark | strin
   { label: "Available 24/7", values: ["yes", "yes", "no"] },
   { label: "Takes actions (book, ticket, order, return)", values: ["yes", "partial", "yes"] },
   { label: "Scales to unlimited conversations", values: ["yes", "yes", "no"] },
-  { label: "Multilingual (80+ languages)", values: ["yes", "partial", "partial"] },
+  { label: "Multilingual", values: ["yes", "partial", "partial"] },
   { label: "Time to set up", values: ["Minutes", "Weeks", "Hiring & training"] },
   { label: "Cost to scale", values: ["Low", "Low", "High"] },
   { label: "Improves from analytics", values: ["yes", "no", "partial"] },
@@ -29,7 +29,7 @@ const rows: { label: string; values: [Mark | string, Mark | string, Mark | strin
 const columns = ["Knowledge Agent", "Rule-based chatbot", "Live chat (humans only)"];
 
 const FAQS: Faq[] = [
-  { q: "What's the difference between a Knowledge Agent and a chatbot?", a: "A rule-based chatbot follows fixed decision trees and can only answer pre-scripted questions, breaking when users phrase things unexpectedly. A Knowledge Agent uses AI to understand natural language, answers from your real content with citations via RAG, supports 80+ languages, and can take actions like booking meetings or creating tickets." },
+  { q: "What's the difference between a Knowledge Agent and a chatbot?", a: "A rule-based chatbot follows fixed decision trees and can only answer pre-scripted questions, breaking when users phrase things unexpectedly. A Knowledge Agent uses AI to understand natural language, answers from your real content with citations via RAG, is multilingual, and can take actions like booking meetings or creating tickets." },
   { q: "Is a Knowledge Agent better than live chat?", a: "They're complementary. A Knowledge Agent handles the high volume of repetitive questions instantly and around the clock, while live agents focus on complex, high-empathy cases. The agent hands off to a human with full context when needed, so customers get the best of both." },
   { q: "Will an AI agent replace my support team?", a: "No — it amplifies them. By deflecting 60-80% of routine questions and completing common requests, it frees your team to focus on the conversations that genuinely need human judgment, often improving both satisfaction and morale." },
   { q: "Can I switch from my existing chatbot easily?", a: "Yes. Because a Knowledge Agent trains on your existing content (help center, docs, FAQs) in minutes, most teams migrate quickly and see better answers immediately, without rebuilding decision trees." },

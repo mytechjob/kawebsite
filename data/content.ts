@@ -86,9 +86,9 @@ export const FEATURES: Feature[] = [
   },
   {
     icon: Languages,
-    title: "80+ languages",
+    title: "Multilingual support",
     description:
-      "Train once and answer in your customer's language automatically. Knowledge Agents detect and respond in 80+ languages out of the box.",
+      "Train once and answer in your customer's language automatically. Knowledge Agents detect and respond in your customers' languages out of the box.",
   },
   {
     icon: Code2,
@@ -288,15 +288,15 @@ export const HOME_FAQS: Faq[] = [
 export const PRICING_FAQS: Faq[] = [
   {
     q: "How does pricing work — are there confusing AI credits?",
-    a: "No. Plans are simple flat monthly prices: Starter ($49/mo), Professional ($149/mo), and Business ($399/mo), with custom pricing for Enterprise. You pick the plan that fits the number of agents and capabilities you need — no per-message credits to track or top up.",
+    a: "No. You simply pick a plan based on how many customer conversations you need each month: Hobby (10, free), Starter (100, $49/mo), Professional (500, $149/mo), and Business (1,500, $399/mo), with custom volume on Enterprise. No per-message credits to track or top up.",
   },
   {
-    q: "Can I try it before I commit?",
-    a: "Yes. You can build your agent, upload your content, and customize and preview it working before you deploy it publicly — so you can see the value first. There's no long-term contract, and you can cancel anytime.",
+    q: "Is there a free plan?",
+    a: "Yes. The Hobby plan is free forever and includes 10 customer conversations a month so you can build your agent, upload your content, and see it working before you upgrade. There's no long-term contract, and you can cancel anytime.",
   },
   {
     q: "Which plan is right for me?",
-    a: "Starter is best for a single website or solo founder. Professional fits growing businesses that want agents to take action, hand off to humans, and surface analytics. Business is for teams running multiple customer-facing and internal agents. Enterprise adds SSO, custom data controls, and a dedicated SLA.",
+    a: "Hobby is great for testing the platform for free. Starter suits a single website or solo founder. Professional fits growing businesses that want agents to take action, hand off to humans, and surface analytics. Business is for teams running multiple customer-facing and internal agents. Enterprise adds SSO, custom data controls, and a dedicated SLA.",
   },
   {
     q: "Can I change or cancel my plan anytime?",

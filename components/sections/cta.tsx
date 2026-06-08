@@ -16,11 +16,11 @@ interface CTAProps {
 export function CTA({
   title = "Ready to build your Knowledge Agent?",
   subtitle = "Join thousands of teams using Knowledge Agents to answer questions and take action for their customers — 24/7.",
-  primaryLabel = "Start free — no credit card",
+  primaryLabel = "Create your AI agent",
   primaryHref = SIGNUP_URL,
   secondaryLabel = "See pricing",
   secondaryHref = "/pricing",
-  bullets = ["Free to get started", "Live in 5 minutes", "Cancel anytime"],
+  bullets = ["No code required", "Live in minutes", "Cancel anytime"],
 }: CTAProps) {
   return (
     <section className="py-20 md:py-24">

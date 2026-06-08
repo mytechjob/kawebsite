@@ -10,11 +10,11 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
         {showHeader && (
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Pricing</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">Simple, transparent pricing</h2>
-            <p className="text-muted-foreground text-lg">Start free, upgrade as you grow. No hidden fees, cancel anytime.</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">Simple pricing. No confusing AI credits.</h2>
+            <p className="text-muted-foreground text-lg">Pick a plan that fits your business and upgrade as you grow. No hidden fees, cancel anytime.</p>
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {PLANS.map((plan) => (
             <div key={plan.name} className={`relative p-8 rounded-2xl border flex flex-col ${plan.popular ? "border-primary shadow-lg bg-primary/5" : "bg-background shadow-sm"}`}>
               {plan.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Most popular</div>}
@@ -30,7 +30,7 @@ export function Pricing({ showHeader = true }: { showHeader?: boolean }) {
             </div>
           ))}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited embeds, lead capture, and 80+ languages. <span className="text-foreground font-medium">Lock in the $39/year launch price before it goes to $480/year.</span></p>
+        <p className="text-center text-sm text-muted-foreground mt-8">All plans include unlimited knowledge uploads, lead capture, and 80+ languages. <span className="text-foreground font-medium">Cancel anytime — no long-term contract.</span></p>
       </div>
     </section>
   );

@@ -10,28 +10,28 @@ import { Check, Minus } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing | Knowledge Agents — Early Access, Launch Offer & Enterprise",
-  description: "Start free in Early Access, lock in our limited-time $39/year launch offer (renews at $480/year), or contact us for a custom Enterprise plan. Every plan includes unlimited embeds, lead capture, and 80+ languages.",
-  keywords: [...allKeywords("core"), "AI chatbot pricing", "AI agent pricing", "free AI chatbot"],
+  title: "Pricing | Knowledge Agents — Starter, Professional, Business & Enterprise",
+  description: "Professional plans from $49/mo. Choose Starter, Professional, or Business, or contact us for a custom Enterprise plan. Every plan includes unlimited knowledge uploads, lead capture, and 80+ languages. No confusing AI credits.",
+  keywords: [...allKeywords("core"), "AI chatbot pricing", "AI agent pricing", "SaaS AI chatbot pricing"],
 };
 
 const comparison: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Knowledge Agents", values: ["1", "Multiple", "Unlimited"] },
-  { label: "Train on files & website content", values: [true, true, true] },
-  { label: "Embed on unlimited websites", values: [true, true, true] },
-  { label: "Lead capture forms", values: [true, true, true] },
-  { label: "80+ languages", values: [true, true, true] },
-  { label: "Advanced actions & integrations", values: [false, true, true] },
-  { label: "Human handoff & live takeover", values: [false, true, true] },
-  { label: "Conversation analytics", values: [false, true, true] },
-  { label: "API access", values: [false, true, true] },
-  { label: "Custom actions (your APIs)", values: [false, false, true] },
-  { label: "White-label & custom domain", values: [false, false, true] },
-  { label: "SSO, audit logs & roles", values: [false, false, true] },
-  { label: "Support", values: ["Community", "Priority", "Dedicated + SLA"] },
+  { label: "Knowledge Agents", values: ["1", "3", "10", "Unlimited"] },
+  { label: "Train on files & website content", values: [true, true, true, true] },
+  { label: "Embed on unlimited websites", values: [true, true, true, true] },
+  { label: "Lead capture forms", values: [true, true, true, true] },
+  { label: "80+ languages", values: [true, true, true, true] },
+  { label: "Advanced actions & integrations", values: [false, true, true, true] },
+  { label: "Human handoff & live takeover", values: [false, true, true, true] },
+  { label: "Conversation analytics", values: [false, true, true, true] },
+  { label: "API access", values: [false, true, true, true] },
+  { label: "Custom actions (your APIs)", values: [false, false, true, true] },
+  { label: "White-label & custom domain", values: [false, false, true, true] },
+  { label: "SSO, audit logs & roles", values: [false, false, false, true] },
+  { label: "Support", values: ["Email", "Priority", "Priority + onboarding", "Dedicated + SLA"] },
 ];
 
-const planNames = ["Early Access", "Limited Time Offer", "Custom / Enterprise"];
+const planNames = ["Starter", "Professional", "Business", "Enterprise"];
 
 function Cell({ value }: { value: string | boolean }) {
   if (value === true) return <Check className="w-5 h-5 text-primary mx-auto" />;
@@ -42,8 +42,8 @@ function Cell({ value }: { value: string | boolean }) {
 export default function PricingPage() {
   return (
     <PageLayout>
-      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "0", highPrice: "480" }), faqSchema(PRICING_FAQS)]} />
-      <PageHero eyebrow="Pricing" title="Pricing that scales with you" description="Start free and upgrade only when you're ready. Every plan includes unlimited embeds, lead capture, and 80+ languages. No credit card required to begin." />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "49", highPrice: "399" }), faqSchema(PRICING_FAQS)]} />
+      <PageHero eyebrow="Pricing" title="Pricing that scales with you" description="Simple, professional plans — no confusing AI credits. Every plan includes unlimited knowledge uploads, lead capture, and 80+ languages. Cancel anytime." />
       <PricingSection showHeader={false} />
       <section className="py-16 bg-muted/30 border-y">
         <div className="container mx-auto px-4">
@@ -58,7 +58,7 @@ export default function PricingPage() {
       </section>
       <Testimonials />
       <FAQ faqs={PRICING_FAQS} heading="Pricing FAQ" subheading="Common questions about plans, credits, and billing." className="py-24" />
-      <CTA title="Try Knowledge Agents free today" subtitle="Ship your first AI agent in minutes. No credit card, no risk — upgrade only when it's working for you." secondaryLabel="Talk to sales" secondaryHref="/contact" />
+      <CTA title="Hire your AI employee today" subtitle="Ship your first AI agent in minutes, see it working before you go live, and upgrade as your business grows." primaryLabel="Create your AI agent" bullets={["No code required", "Live in minutes", "Cancel anytime"]} secondaryLabel="Talk to sales" secondaryHref="/contact" />
     </PageLayout>
   );
 }

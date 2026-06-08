@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { SIGNUP_URL } from "@/lib/site";
 
-const trust = ["No credit card required", "Free to get started", "Live in under 5 minutes"];
+const trust = ["No coding required", "Upload your own content", "Launch in minutes"];
 
 export function Hero() {
   return (
@@ -24,7 +24,7 @@ export function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
           </span>
-          New: Agents that take actions — book, ticket, look up & more
+          The customer interaction platform · No code required
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-6"
         >
-          AI agents that answer <br className="hidden sm:block" /> questions and take action
+          Turn your business knowledge <br className="hidden sm:block" /> into a{" "}
+          <span className="text-primary">24/7 AI employee</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -40,9 +41,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
         >
-          Build a <strong className="text-foreground font-semibold">Knowledge Agent</strong> trained on your
-          content in minutes. It answers customer questions 24/7 and takes real action — booking meetings, creating
-          tickets, checking orders, and capturing leads. No code required.
+          Stop answering the same questions over and over. <strong className="text-foreground font-semibold">Knowledge Agents</strong>{" "}
+          trains an AI employee on your own content so it can support customers, capture leads, and take real action —
+          booking meetings, creating tickets, and checking orders — around the clock.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +53,7 @@ export function Hero() {
         >
           <Link href={SIGNUP_URL}>
             <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
-              Build your agent free <ArrowRight className="ml-2 w-4 h-4" />
+              Create your AI agent <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>
           <Link href="/#demo">

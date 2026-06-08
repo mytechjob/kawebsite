@@ -72,7 +72,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
       <FAQ faqs={solution.faqs} heading={`${solution.name} FAQ`} className="py-24" />
-      <CTA title={`Ready to transform your ${solution.name.toLowerCase()}?`} subtitle="Build your first Knowledge Agent free and see results in minutes — no credit card required." />
+      <CTA title={`Ready to transform your ${solution.name.toLowerCase()}?`} subtitle="Build your first Knowledge Agent and see results in minutes — preview everything before you go live." />
     </PageLayout>
   );
 }

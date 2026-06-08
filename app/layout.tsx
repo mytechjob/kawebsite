@@ -114,17 +114,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               script.onload = function() {
                 if (window.KBChatWidget) {
                   window.KBChatWidget.init({
-                    projectId: projectId,
-                    apiUrl: apiUrl,
-                    securityMode: "simple",
-                    position: "bottom-right",
-                    style: "bubble",
-                    primaryColor: "#7C3AED",
-                    accentColor: "#7C3AED",
-                    bubbleIcon: "logo",
-                    teaserEnabled: true,
-                    teaserText: "Have a question? Ask me anything!",
-                    welcomeMessage: "Hello! How can I help you today?"
+                        projectId: projectId,
+                        apiUrl: apiUrl,
+                        securityMode: "simple",
+                        position: "bottom-right",
+                        style: "bubble",
+                        primaryColor: "#7C3AED",
+                        accentColor: "#7C3AED",
+                        welcomeMessage: "Hello! How can I help you today?",
+                        bubbleIcon: "avatar",
+                        bubbleLogoUrl: "/avatars/avatar_05.png",
+                        bubbleSize: "xl",
+                        teaserEnabled: true,
+                        teaserText: "How may I help you today?"
                   });
                 }
               };

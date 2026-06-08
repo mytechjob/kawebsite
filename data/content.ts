@@ -287,28 +287,28 @@ export const HOME_FAQS: Faq[] = [
 
 export const PRICING_FAQS: Faq[] = [
   {
-    q: "How do message credits work?",
-    a: "One message credit is used per AI response. A conversation where the agent replies five times uses five credits. Credits reset at the start of each billing cycle, and you can buy top-ups or upgrade anytime.",
+    q: "How does pricing work — are there confusing AI credits?",
+    a: "No. Plans are simple flat monthly prices: Starter ($49/mo), Professional ($149/mo), and Business ($399/mo), with custom pricing for Enterprise. You pick the plan that fits the number of agents and capabilities you need — no per-message credits to track or top up.",
   },
   {
-    q: "Is there a free plan?",
-    a: "Yes. Our Early Access plan lets you build your first Knowledge Agent and embed it on your site for free — no credit card required. It's a great way to ship your first agent and see the value before upgrading.",
+    q: "Can I try it before I commit?",
+    a: "Yes. You can build your agent, upload your content, and customize and preview it working before you deploy it publicly — so you can see the value first. There's no long-term contract, and you can cancel anytime.",
+  },
+  {
+    q: "Which plan is right for me?",
+    a: "Starter is best for a single website or solo founder. Professional fits growing businesses that want agents to take action, hand off to humans, and surface analytics. Business is for teams running multiple customer-facing and internal agents. Enterprise adds SSO, custom data controls, and a dedicated SLA.",
   },
   {
     q: "Can I change or cancel my plan anytime?",
     a: "Absolutely. You can upgrade, downgrade, or cancel at any time from your dashboard. Upgrades take effect immediately and downgrades apply at the next billing cycle.",
   },
   {
-    q: "What happens if I run out of message credits?",
-    a: "Your agent pauses new AI responses until credits reset next cycle, or you can purchase a top-up or upgrade. We'll warn you well before you hit the limit so there's no surprise downtime.",
-  },
-  {
-    q: "What is the Limited Time Offer?",
-    a: "For a limited time you can get a full year of access for $39. After the offer period the plan renews at our standard $480/year — but if you sign up now, you lock in the launch price for your first year. We also offer discounts for nonprofits, educational institutions, and early-stage startups; contact sales to learn more.",
+    q: "Do you offer discounts?",
+    a: "We offer discounts for nonprofits, educational institutions, and early-stage startups, as well as annual billing on every paid plan. Contact sales to learn more.",
   },
   {
     q: "Can I use my own model API key?",
-    a: "On our paid plans you can bring your own OpenAI, Anthropic, or Google API key for effectively unlimited messages — you pay the model provider directly while we handle everything else.",
+    a: "On Business and Enterprise plans you can bring your own OpenAI, Anthropic, or Google API key — you pay the model provider directly while we handle everything else.",
   },
 ];
 

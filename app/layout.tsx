@@ -118,15 +118,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         apiUrl: apiUrl,
                         securityMode: "simple",
                         position: "bottom-right",
-                        style: "bubble",
+                        style: "bar",
                         primaryColor: "#7C3AED",
                         accentColor: "#7C3AED",
                         welcomeMessage: "Hello! How can I help you today?",
+                        barPlaceholder: "Hello! How can I help you today?",
+                        barSuggestions: ["What services do you offer?","how can I get started?"],
                         bubbleIcon: "avatar",
                         bubbleLogoUrl: "/avatars/avatar_05.png",
-                        bubbleSize: "xl",
-                        teaserEnabled: true,
-                        teaserText: "How may I help you today?"
+                        bubbleSize: "xl"
                   });
                 }
               };

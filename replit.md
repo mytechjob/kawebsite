@@ -45,16 +45,14 @@ public/              # Static assets, sitemap.xml, robots.txt, llms.txt
 
 ### Chat Widget Integration
 
-`app/layout.tsx` embeds the external Knowledge Agents chat widget (`https://kagents.net/widget.js`) in "bar" style on every page. The layout also adds a host-page minimize/expand enhancement: a chevron collapses the bar into a slim one-line bar (avatar + welcome text), the state persists in localStorage, and first-time mobile visitors start minimized.
-
-Note: the widget config references `/avatars/avatar_05.png`, which does not exist in `public/` — add it (or use a hosted URL) for the avatar to display.
+`app/layout.tsx` embeds the external Knowledge Agents chat widget (`https://kagents.net/widget.js`) in "bar" style on every page. The layout also adds a host-page minimize/expand enhancement: a chevron collapses the bar into a slim one-line bar (avatar + welcome text). The bar always starts expanded; a visitor's minimize choice persists for the rest of their visit via sessionStorage. The avatar loads from `https://kagents.net/avatars/avatar_05.png` (the widget resolves assets against the kagents.net origin).
 
 ## Build and Development
 
-- **Development**: `npm run dev` (Next dev server on port 5000)
-- **Production build**: `npm run build`, serve with `npm run start` (port 5000)
+- **Development**: `npm run dev` (Next dev server on port 5080)
+- **Production build**: `npm run build`, serve with `npm run start` (port 5080)
 - **Type check**: `npm run check`
-- **Deployment**: Replit autoscale runs `npm run build` then `npm run start`; port 5000 maps to external port 80. `/api/health` returns 200 for health probes.
+- **Deployment**: Replit autoscale runs `npm run build` then `npm run start`; port 5080 maps to external port 80. `/api/health` returns 200 for health probes.
 
 ## History
 

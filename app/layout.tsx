@@ -107,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             (function() {
               const projectId = "ca73581b-d216-47c1-9366-a15e721b94c9";
               const apiUrl = "https://kagents.net/api/widget/" + projectId + "/chat";
+              const avatarUrl = "https://kagents.net/avatars/avatar_05.png";
 
               const script = document.createElement('script');
               script.src = "https://kagents.net/widget.js";
@@ -125,7 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         barPlaceholder: "Hello! How can I help you today?",
                         barSuggestions: ["What services do you offer?","how can I get started?"],
                         bubbleIcon: "avatar",
-                        bubbleLogoUrl: "/avatars/avatar_05.png",
+                        bubbleLogoUrl: avatarUrl,
                         bubbleSize: "xl"
                   });
                   addBarMinimizeToggle();
@@ -138,8 +139,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                * The widget renders a tall bar that can dominate small screens,
                * so we add a chevron that collapses it into a slim one-line bar
                * in the same spot at the bottom — tap anywhere on it to expand.
-               * The choice persists in localStorage; first-time mobile visitors
-               * start minimized, desktop visitors start open.
+               * The bar always starts expanded; a visitor's minimize choice is
+               * remembered for the rest of their visit (sessionStorage).
                * ------------------------------------------------------------- */
               function addBarMinimizeToggle() {
                 var tries = 0;
@@ -184,14 +185,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   minBtn.innerHTML = chevronDown;
                   bar.appendChild(minBtn);
 
-                  // Reuse the agent's avatar from the full bar so the minimized
-                  // bar keeps the same face; fall back to a chat glyph if the
-                  // bar has no avatar (or its image fails to load).
-                  var barAvatarImg = bar.querySelector('.kb-widget-bar-avatar img');
-                  var avatarSrc = barAvatarImg ? barAvatarImg.getAttribute('src') : null;
-                  var miniIconHtml = avatarSrc
-                    ? '<span class="kb-bar-mini-icon kb-bar-mini-avatar"><img src="' + avatarSrc.replace(/"/g, '&quot;') + '" alt=""></span>'
-                    : '<span class="kb-bar-mini-icon">' + chatIcon + '</span>';
+                  // Same avatar as the full bar (known absolute URL — no DOM
+                  // cloning); fall back to a chat glyph only if it fails to load.
+                  var miniIconHtml =
+                    '<span class="kb-bar-mini-icon kb-bar-mini-avatar"><img src="' + avatarUrl + '" alt=""></span>';
 
                   var mini = document.createElement('button');
                   mini.id = 'kb-bar-mini';
@@ -217,7 +214,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   function setMinimized(min, persist) {
                     container.classList.toggle('kb-bar-min', min);
                     if (persist) {
-                      try { localStorage.setItem('kbBarMinimized', min ? '1' : '0'); } catch (e) {}
+                      try { sessionStorage.setItem('kbBarMinimized', min ? '1' : '0'); } catch (e) {}
                       if (typeof window.gtag === 'function') {
                         window.gtag('event', min ? 'widget_bar_minimize' : 'widget_bar_expand');
                       }
@@ -227,12 +224,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   minBtn.addEventListener('click', function (e) { e.stopPropagation(); setMinimized(true, true); });
                   mini.addEventListener('click', function () { setMinimized(false, true); });
 
+                  // Expanded by default; only re-minimize if the visitor chose
+                  // that earlier in this same visit. Clear the old localStorage
+                  // flag from a previous version that persisted across visits.
                   var saved = null;
-                  try { saved = localStorage.getItem('kbBarMinimized'); } catch (e) {}
-                  var startMinimized = saved === null
-                    ? window.matchMedia('(max-width: 767px)').matches
-                    : saved === '1';
-                  setMinimized(startMinimized, false);
+                  try {
+                    saved = sessionStorage.getItem('kbBarMinimized');
+                    localStorage.removeItem('kbBarMinimized');
+                  } catch (e) {}
+                  setMinimized(saved === '1', false);
                   return true;
                 }
               }

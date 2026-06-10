@@ -57,6 +57,7 @@ export function FunnelFooter() {
       <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
         <span>© {new Date().getFullYear()} Knowledge Agents, Inc.</span>
         <div className="flex items-center gap-6">
+          <Link href="/business" className="hover:text-primary transition-colors">For business & enterprise</Link>
           <Link href="/pricing" className="hover:text-primary transition-colors">Pricing</Link>
           <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
           <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>

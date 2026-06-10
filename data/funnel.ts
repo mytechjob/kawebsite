@@ -13,7 +13,7 @@ import {
 import type { Faq } from "@/data/content";
 
 /* ------------------------------------------------------------------ */
-/*  Copy for the /launch sales funnel — single source of truth.        */
+/*  Copy for the home-page sales funnel — single source of truth.      */
 /* ------------------------------------------------------------------ */
 
 export type SuiteProduct = {

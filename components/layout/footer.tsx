@@ -6,9 +6,11 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Product",
     links: [
+      { label: "The Knowledge Suite", href: "/" },
+      { label: "For business & enterprise", href: "/business" },
       { label: "Features", href: "/features" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Live demo", href: "/#demo" },
+      { label: "Live demo", href: "/business#demo" },
       { label: "Integrations", href: "/features#actions" },
     ],
   },

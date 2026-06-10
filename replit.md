@@ -2,9 +2,9 @@
 
 ## Overview
 
-Knowledge Agents is an AI-powered enterprise knowledge management SaaS platform. It positions itself as the "first AI-native knowledge orchestrator" that transforms documents, incidents, and tribal knowledge into intelligent, self-improving systems. The platform targets document-heavy industries including Finance, Legal, Compliance, Internal Audit, and Private Equity/M&A.
+Knowledge Agents is a no-code platform for building AI agents trained on a business's own content. The agents answer customer questions 24/7 and take real actions (book meetings, create tickets, check orders, capture leads). This repository is the **marketing website** for the platform — the product itself lives at kagents.net.
 
-The application is a full-stack TypeScript monorepo with a React frontend and Express backend, designed to be deployed on Replit. It currently serves as a marketing website with early access signup functionality, featuring multiple landing pages for different use cases and audience segments.
+The site is a statically-generated Next.js application. There is no database and no backend of its own; sign-ups and the live chat widget point at the external product (kagents.net).
 
 ## User Preferences
 
@@ -12,72 +12,50 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-### Frontend Architecture
-- **Framework**: React with TypeScript, using Vite as the build tool
-- **Routing**: Wouter (lightweight React router)
-- **Styling**: Tailwind CSS v4 with CSS variables for theming, shadcn/ui component library (New York style)
-- **State Management**: TanStack React Query for server state
-- **Animations**: Framer Motion for page transitions and micro-interactions
-- **Theme Support**: next-themes for dark/light mode switching
-- **Typography**: Custom fonts - Fraunces (display), Inter (body), JetBrains Mono (code)
-
-### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **Database ORM**: Drizzle ORM configured for PostgreSQL (via Neon serverless)
-- **API Pattern**: RESTful endpoints under `/api/` prefix
-- **Build System**: Custom build script using esbuild for server bundling, Vite for client
+- **Framework**: Next.js 15 (App Router) with React 19 and TypeScript
+- **Styling**: Tailwind CSS v4 (CSS-variable theming in `app/globals.css`), shadcn/ui components in `components/ui/`
+- **Animations**: Framer Motion
+- **Theme**: next-themes (light/dark)
+- **Typography**: Inter (body, `--font-sans`) and Plus Jakarta Sans (display, `--font-display`)
+- **Rendering**: All pages are statically prerendered at build time except two dynamic route handlers (`/api/health`, `/llms.txt`)
 
 ### Directory Structure
+
 ```
-client/src/          # React frontend application
-  components/        # Reusable UI components
-  pages/            # Route-based page components
-  hooks/            # Custom React hooks
-  lib/              # Utility functions and query client
-server/             # Express backend
-  routes.ts         # API route definitions
-  storage.ts        # Database access layer
-  db.ts             # Drizzle database connection
-shared/             # Shared code between client and server
-  schema.ts         # Drizzle database schema and Zod validators
+app/                 # App Router pages (home funnel, business, pricing, features, blog, solutions, ...)
+  api/health/        # Health-check endpoint for Replit autoscale / uptime monitors
+  business/          # Full business/enterprise marketing page (former home page)
+  page.tsx           # Home page: sales funnel for the Knowledge Suite (Bar, Bubble, Page)
+components/
+  ui/                # shadcn/ui primitives
+  layout/            # Navbar, footer, page layout
+  sections/          # Home-page and shared marketing sections
+  funnel/            # Home-page funnel sections (distraction-free header, showcase, sticky CTA)
+data/                # All marketing copy/content (content.ts, funnel.ts, blog.ts, solutions.ts)
+lib/                 # site.ts (branding/nav/plans — single source of truth), metadata.tsx (JSON-LD)
+public/              # Static assets, sitemap.xml, robots.txt, llms.txt
 ```
 
-### Data Layer
-- **Schema Location**: `shared/schema.ts` defines all database tables
-- **Current Tables**: `waitlistEntries` and `contactSubmissions` for lead capture
-- **Validation**: Zod schemas generated from Drizzle schemas using drizzle-zod
-- **Storage Pattern**: Repository pattern with `IStorage` interface in `server/storage.ts`
+### Key Conventions
 
-### Build and Development
-- **Development**: `npm run dev` starts Express server with Vite middleware for HMR
-- **Production Build**: `npm run build` bundles both client (Vite) and server (esbuild)
-- **Database Migrations**: `npm run db:push` uses Drizzle Kit to sync schema
-
-## External Dependencies
-
-### Database
-- **PostgreSQL via Neon**: Serverless PostgreSQL using `@neondatabase/serverless`
-- **Connection**: Requires `DATABASE_URL` environment variable
-- **WebSocket Support**: Uses `ws` package for Neon's WebSocket connections
-
-### AI/External Services (Prepared but not yet integrated)
-- Package.json includes dependencies for future AI integrations:
-  - OpenAI SDK
-  - Google Generative AI (@google/generative-ai)
-  - These are bundled for deployment but not currently used in the codebase
-
-### Third-Party Integrations
-- **Stripe**: Payment processing (dependency installed, not implemented)
-- **Nodemailer**: Email sending capability (dependency installed)
-- **Multer**: File upload handling (dependency installed)
+- `lib/site.ts` is the single source of truth for branding, navigation, pricing plans, sign-up URL (`SIGNUP_URL` → kagents.net/signup), and scheduling URL (`SCHEDULE_URL`).
+- Marketing copy lives in `data/*.ts` files, not inline in pages.
+- SEO: every page composes keywords from `lib/site.ts` and emits JSON-LD via `lib/metadata.tsx` helpers.
+- Analytics: Google Analytics (gtag, `G-CRRX66KVW6`) is loaded in `app/layout.tsx`; funnel CTAs and the chat-bar minimize/expand fire custom events.
 
 ### Chat Widget Integration
-- External knowledge base chat widget embedded in the homepage
-- Connects to an external API endpoint for chat functionality
-- Uses a simple CORS-based security model
 
-### Replit-Specific Plugins
-- `@replit/vite-plugin-runtime-error-modal`: Error overlay in development
-- `@replit/vite-plugin-cartographer`: Development tooling
-- `@replit/vite-plugin-dev-banner`: Development environment indicator
-- Custom `vite-plugin-meta-images`: Updates OpenGraph meta tags with Replit deployment URLs
+`app/layout.tsx` embeds the external Knowledge Agents chat widget (`https://kagents.net/widget.js`) in "bar" style on every page. The layout also adds a host-page minimize/expand enhancement: a chevron collapses the bar into a slim one-line bar (avatar + welcome text), the state persists in localStorage, and first-time mobile visitors start minimized.
+
+Note: the widget config references `/avatars/avatar_05.png`, which does not exist in `public/` — add it (or use a hosted URL) for the avatar to display.
+
+## Build and Development
+
+- **Development**: `npm run dev` (Next dev server on port 5000)
+- **Production build**: `npm run build`, serve with `npm run start` (port 5000)
+- **Type check**: `npm run check`
+- **Deployment**: Replit autoscale runs `npm run build` then `npm run start`; port 5000 maps to external port 80. `/api/health` returns 200 for health probes.
+
+## History
+
+This site was previously a full-stack Express + Vite + React app with PostgreSQL (waitlist/contact tables) and `/api/*` endpoints. It was rebuilt as the current static Next.js site; no API routes remain except `/api/health` (added because legacy health-check probes still poll it). The `postgresql-16` module in `.replit` is a leftover from that era and is unused.

@@ -22,9 +22,16 @@ Knowledge Agents use Retrieval-Augmented Generation (RAG) so answers are grounde
 - **Pricing:** Free ($0), Hobby ($19/mo), Standard ($99/mo), Unlimited ($399/mo). Free plan requires no credit card.
 - **Security:** encryption in transit and at rest; customer data is not used to train foundation models.
 
+## The Knowledge Suite (product lineup)
+
+- **Knowledge Bar** — turns any website or application into an AI application via an embedded answer bar.
+- **Knowledge Bubble** — a virtual agent visitors talk to on your website; answers, captures leads, and takes actions.
+- **Knowledge Page** — a collaborative content workspace teams publish as a standalone, shareable AI page.
+
 ## Core pages
 
-- [Home](https://www.knowledgeagents.com/): Overview of the platform and how it works.
+- [Home](https://www.knowledgeagents.com/): The Knowledge Suite — Bar, Bubble, and Page.
+- [For business & enterprise](https://www.knowledgeagents.com/business): Full platform tour for teams.
 - [Features](https://www.knowledgeagents.com/features): Training, actions, integrations, analytics, branding, security.
 - [What is a Knowledge Agent?](https://www.knowledgeagents.com/what-is-a-knowledge-agent): Complete definitional guide.
 - [Knowledge Agents vs. chatbots](https://www.knowledgeagents.com/compare): How action-taking agents differ from traditional chatbots and live chat.

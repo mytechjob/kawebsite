@@ -44,7 +44,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <p className="text-lg md:text-xl text-muted-foreground mb-8">{solution.subhead}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 w-full sm:w-auto">Start free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
-              <Link href="/#demo"><Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">See it in action</Button></Link>
+              <Link href="/business#demo"><Button variant="outline" size="lg" className="h-12 px-8 w-full sm:w-auto">See it in action</Button></Link>
             </div>
           </div>
           <div className="bg-background border rounded-2xl shadow-xl overflow-hidden">

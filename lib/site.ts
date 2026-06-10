@@ -106,11 +106,12 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
   {
     label: "Product",
     items: [
-      { label: "The Knowledge Suite", href: "/launch", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
+      { label: "The Knowledge Suite", href: "/", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
+      { label: "For business & enterprise", href: "/business", description: "The full platform tour for teams" },
       { label: "Features", href: "/features", description: "Everything in the platform" },
-      { label: "How it works", href: "/#how-it-works", description: "From content to live agent in 3 steps" },
+      { label: "How it works", href: "/business#how-it-works", description: "From content to live agent in 3 steps" },
       { label: "Actions & integrations", href: "/features#actions", description: "Let agents do work, not just talk" },
-      { label: "Live demo", href: "/#demo", description: "Chat with an agent right now" },
+      { label: "Live demo", href: "/business#demo", description: "Chat with an agent right now" },
     ],
   },
   {

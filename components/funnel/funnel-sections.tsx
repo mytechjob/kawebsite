@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Check, ShieldCheck } from "lucide-react";
 import { LEAKS, FUNNEL_STEPS, VALUE_STACK } from "@/data/funnel";
-import { STATS, PLANS, SCHEDULE_URL } from "@/lib/site";
+import { STATS, SCHEDULE_URL } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FunnelButton, trackFunnelEvent } from "./funnel-cta-button";
@@ -154,9 +154,16 @@ export function FunnelStats() {
 /*  The offer — value stack + plan anchor + risk reversal              */
 /* ------------------------------------------------------------------ */
 
-export function FunnelOffer() {
-  const professional = PLANS.find((p) => p.popular);
+const TEAM_FEATURES = [
+  "Unlimited Knowledge Agents across your sites and teams",
+  "Advanced actions & integrations — connect your own tools and APIs",
+  "Human handoff & live takeover with full context",
+  "Conversation analytics & content-gap insights",
+  "White-label, custom domains & custom branding",
+  "Priority support, onboarding & solution engineering",
+];
 
+export function FunnelOffer() {
   return (
     <section className="py-20 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -189,7 +196,7 @@ export function FunnelOffer() {
               ))}
             </ul>
             <div className="mt-8">
-              <FunnelButton location="offer_free" label="Claim your free agent" />
+              <FunnelButton location="offer_free" label="Build your free agent" />
             </div>
           </motion.div>
 
@@ -200,19 +207,15 @@ export function FunnelOffer() {
             className="p-8 rounded-2xl border-2 border-primary bg-primary/5 shadow-lg flex flex-col"
           >
             <div className="inline-flex self-start items-center px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wide mb-5">
-              Most teams choose this
+              Most popular
             </div>
-            <h3 className="font-bold text-xl mb-1">{professional?.name ?? "Professional"}</h3>
-            <div className="flex items-baseline gap-1 mb-3">
-              <span className="text-4xl font-bold">{professional?.price ?? "$149"}</span>
-              <span className="text-muted-foreground">{professional?.period ?? "/mo"}</span>
-            </div>
+            <h3 className="font-bold text-2xl mb-3">For Teams &amp; Businesses</h3>
             <p className="text-sm text-muted-foreground mb-6">
-              {professional?.description ??
-                "For growing businesses that want agents to support customers and take action."}
+              Everything growing teams need to support customers, capture leads, and take action at
+              scale — with plans that grow with you.
             </p>
             <ul className="space-y-3 mb-8 flex-1">
-              {(professional?.features ?? []).map((f) => (
+              {TEAM_FEATURES.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm">
                   <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                   <span>{f}</span>

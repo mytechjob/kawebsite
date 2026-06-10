@@ -162,6 +162,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     '.kb-bar-mini { display: none; width: 100%; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px; border: 1px solid #d1d5db; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); cursor: pointer; text-align: left; animation: kb-mini-rise .25s ease; transition: box-shadow .15s ease, transform .15s ease; font-family: inherit; box-sizing: border-box; }' +
                     '.kb-bar-mini:hover { box-shadow: 0 12px 34px rgba(0,0,0,0.22); transform: translateY(-1px); }' +
                     '.kb-bar-mini-icon { width: 32px; height: 32px; border-radius: 999px; background: #7C3AED; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }' +
+                    '.kb-bar-mini-icon.kb-bar-mini-avatar { background: #ede9fe; overflow: hidden; }' +
+                    '.kb-bar-mini-icon.kb-bar-mini-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 999px; display: block; }' +
                     '.kb-bar-mini-text { flex: 1; min-width: 0; font-size: 14px; color: #374151; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }' +
                     '.kb-bar-mini-chevron { color: #9ca3af; display: flex; align-items: center; flex-shrink: 0; }' +
                     '@keyframes kb-mini-rise { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }' +
@@ -182,6 +184,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   minBtn.innerHTML = chevronDown;
                   bar.appendChild(minBtn);
 
+                  // Reuse the agent's avatar from the full bar so the minimized
+                  // bar keeps the same face; fall back to a chat glyph if the
+                  // bar has no avatar (or its image fails to load).
+                  var barAvatarImg = bar.querySelector('.kb-widget-bar-avatar img');
+                  var avatarSrc = barAvatarImg ? barAvatarImg.getAttribute('src') : null;
+                  var miniIconHtml = avatarSrc
+                    ? '<span class="kb-bar-mini-icon kb-bar-mini-avatar"><img src="' + avatarSrc.replace(/"/g, '&quot;') + '" alt=""></span>'
+                    : '<span class="kb-bar-mini-icon">' + chatIcon + '</span>';
+
                   var mini = document.createElement('button');
                   mini.id = 'kb-bar-mini';
                   mini.className = 'kb-bar-mini';
@@ -189,10 +200,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   mini.setAttribute('aria-label', 'Expand chat bar');
                   mini.title = 'Expand';
                   mini.innerHTML =
-                    '<span class="kb-bar-mini-icon">' + chatIcon + '</span>' +
+                    miniIconHtml +
                     '<span class="kb-bar-mini-text">Hello! How can I help you today?</span>' +
                     '<span class="kb-bar-mini-chevron">' + chevronUp + '</span>';
                   container.appendChild(mini);
+
+                  var miniAvatar = mini.querySelector('.kb-bar-mini-avatar img');
+                  if (miniAvatar) {
+                    miniAvatar.addEventListener('error', function () {
+                      var iconSpan = miniAvatar.parentNode;
+                      iconSpan.classList.remove('kb-bar-mini-avatar');
+                      iconSpan.innerHTML = chatIcon;
+                    });
+                  }
 
                   function setMinimized(min, persist) {
                     container.classList.toggle('kb-bar-min', min);

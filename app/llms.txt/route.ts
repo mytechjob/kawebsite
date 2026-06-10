@@ -12,6 +12,11 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - **Website**: https://www.knowledgeagents.com
 - **Pricing**: Simple flat monthly plans with no AI credits — Starter ($49/mo), Professional ($149/mo), Business ($399/mo), and custom Enterprise pricing on request. Cancel anytime.
 
+## The Knowledge Suite (product lineup)
+- **Knowledge Bar** — turns any website or application into an AI application via an embedded answer bar.
+- **Knowledge Bubble** — a virtual agent visitors talk to on your website; answers, captures leads, and takes actions.
+- **Knowledge Page** — a collaborative content workspace teams publish as a standalone, shareable AI page.
+
 ## Core platform capabilities
 - Train AI agents on documents (PDF, DOCX, TXT, Markdown), help centers, and websites.
 - Retrieval-Augmented Generation (RAG) — answers are grounded in your content with citations.
@@ -21,7 +26,8 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - Analytics, conversation insights, human handoff with full context transfer.
 
 ## Core pages
-- Home: https://www.knowledgeagents.com/
+- Home (Knowledge Suite): https://www.knowledgeagents.com/
+- For business & enterprise: https://www.knowledgeagents.com/business
 - Features: https://www.knowledgeagents.com/features
 - Pricing: https://www.knowledgeagents.com/pricing
 - Blog: https://www.knowledgeagents.com/blog

@@ -106,6 +106,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
   {
     label: "Product",
     items: [
+      { label: "The Knowledge Suite", href: "/launch", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
       { label: "Features", href: "/features", description: "Everything in the platform" },
       { label: "How it works", href: "/#how-it-works", description: "From content to live agent in 3 steps" },
       { label: "Actions & integrations", href: "/features#actions", description: "Let agents do work, not just talk" },

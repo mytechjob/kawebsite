@@ -128,9 +128,94 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         bubbleLogoUrl: "/avatars/avatar_05.png",
                         bubbleSize: "xl"
                   });
+                  addBarMinimizeToggle();
                 }
               };
               document.head.appendChild(script);
+
+              /* ---------------------------------------------------------------
+               * Minimize / expand for the Knowledge Bar.
+               * The widget renders a tall bar that can dominate small screens,
+               * so we add a chevron that collapses it into a slim one-line bar
+               * in the same spot at the bottom — tap anywhere on it to expand.
+               * The choice persists in localStorage; first-time mobile visitors
+               * start minimized, desktop visitors start open.
+               * ------------------------------------------------------------- */
+              function addBarMinimizeToggle() {
+                var tries = 0;
+                var timer = setInterval(function () {
+                  if (setup() || ++tries > 60) clearInterval(timer);
+                }, 250);
+
+                function setup() {
+                  var container = document.querySelector('.kb-widget-container.kb-bar-style');
+                  var bar = document.getElementById('kb-widget-bar');
+                  if (!container || !bar) return false;
+                  if (document.getElementById('kb-bar-minimize')) return true;
+
+                  var style = document.createElement('style');
+                  style.textContent =
+                    '#kb-widget-bar { position: relative; }' +
+                    '.kb-bar-minimize-btn { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 999px; border: none; background: rgba(17,24,39,0.06); color: #6b7280; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; z-index: 10; transition: background .15s ease, color .15s ease; }' +
+                    '.kb-bar-minimize-btn:hover { background: rgba(17,24,39,0.14); color: #111827; }' +
+                    /* Slim minimized bar — same bottom-centered footprint, one line tall. */
+                    '.kb-bar-mini { display: none; width: 100%; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px; border: 1px solid #d1d5db; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); cursor: pointer; text-align: left; animation: kb-mini-rise .25s ease; transition: box-shadow .15s ease, transform .15s ease; font-family: inherit; box-sizing: border-box; }' +
+                    '.kb-bar-mini:hover { box-shadow: 0 12px 34px rgba(0,0,0,0.22); transform: translateY(-1px); }' +
+                    '.kb-bar-mini-icon { width: 32px; height: 32px; border-radius: 999px; background: #7C3AED; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }' +
+                    '.kb-bar-mini-text { flex: 1; min-width: 0; font-size: 14px; color: #374151; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }' +
+                    '.kb-bar-mini-chevron { color: #9ca3af; display: flex; align-items: center; flex-shrink: 0; }' +
+                    '@keyframes kb-mini-rise { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }' +
+                    '.kb-widget-container.kb-bar-style.kb-bar-min > *:not(.kb-bar-mini) { display: none !important; }' +
+                    '.kb-widget-container.kb-bar-style.kb-bar-min .kb-bar-mini { display: flex; }';
+                  document.head.appendChild(style);
+
+                  var chevronDown = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+                  var chevronUp = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+                  var chatIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+
+                  var minBtn = document.createElement('button');
+                  minBtn.id = 'kb-bar-minimize';
+                  minBtn.className = 'kb-bar-minimize-btn';
+                  minBtn.type = 'button';
+                  minBtn.setAttribute('aria-label', 'Minimize chat bar');
+                  minBtn.title = 'Minimize';
+                  minBtn.innerHTML = chevronDown;
+                  bar.appendChild(minBtn);
+
+                  var mini = document.createElement('button');
+                  mini.id = 'kb-bar-mini';
+                  mini.className = 'kb-bar-mini';
+                  mini.type = 'button';
+                  mini.setAttribute('aria-label', 'Expand chat bar');
+                  mini.title = 'Expand';
+                  mini.innerHTML =
+                    '<span class="kb-bar-mini-icon">' + chatIcon + '</span>' +
+                    '<span class="kb-bar-mini-text">Hello! How can I help you today?</span>' +
+                    '<span class="kb-bar-mini-chevron">' + chevronUp + '</span>';
+                  container.appendChild(mini);
+
+                  function setMinimized(min, persist) {
+                    container.classList.toggle('kb-bar-min', min);
+                    if (persist) {
+                      try { localStorage.setItem('kbBarMinimized', min ? '1' : '0'); } catch (e) {}
+                      if (typeof window.gtag === 'function') {
+                        window.gtag('event', min ? 'widget_bar_minimize' : 'widget_bar_expand');
+                      }
+                    }
+                  }
+
+                  minBtn.addEventListener('click', function (e) { e.stopPropagation(); setMinimized(true, true); });
+                  mini.addEventListener('click', function () { setMinimized(false, true); });
+
+                  var saved = null;
+                  try { saved = localStorage.getItem('kbBarMinimized'); } catch (e) {}
+                  var startMinimized = saved === null
+                    ? window.matchMedia('(max-width: 767px)').matches
+                    : saved === '1';
+                  setMinimized(startMinimized, false);
+                  return true;
+                }
+              }
             })();
           `}
         </Script>

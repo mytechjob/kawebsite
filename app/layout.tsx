@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Script from "next/script"
+import { Analytics } from "@vercel/analytics/next"
 import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -99,6 +100,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </TooltipProvider>
         </ThemeProvider>
+
+        <Analytics />
 
         {/* Chat Widget Integration (Simple Mode) — secured by browser CORS */}
         <div id="kb-chat-widget" />

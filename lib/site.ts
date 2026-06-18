@@ -138,7 +138,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
 ];
 
 /** Where sign-up / "try for free" CTAs send people so they can start using the product right away. */
-export const SIGNUP_URL = "https://kagents.net/signup";
+export const SIGNUP_URL = "https://app.knowledgeagents.com/signup";
 
 /** Where the Enterprise / "talk to us" CTA sends people — the Google appointment scheduling page. */
 export const SCHEDULE_URL = "https://calendar.app.google/4dDonNoV9np8WuweA";

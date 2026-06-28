@@ -108,12 +108,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="kb-chat-widget-loader" strategy="afterInteractive">
           {`
             (function() {
-              const projectId = "ca73581b-d216-47c1-9366-a15e721b94c9";
-              const apiUrl = "https://kagents.net/api/widget/" + projectId + "/chat";
-              const avatarUrl = "https://kagents.net/avatars/avatar_05.png";
+              const projectId = "4665bc74-a30f-4fb6-996f-09177ad84287";
+              const apiUrl = "https://app.knowledgeagents.com/api/widget/" + projectId + "/chat";
+              const avatarUrl = "https://app.knowledgeagents.com/avatars/avatar_05.png";
 
               const script = document.createElement('script');
-              script.src = "https://kagents.net/widget.js";
+              script.src = "https://app.knowledgeagents.com/widget.js";
               script.async = true;
               script.onload = function() {
                 if (window.KBChatWidget) {

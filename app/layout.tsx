@@ -81,23 +81,24 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
-       <head>
-         {/* Google tag (gtag.js) */}
-         <Script
-           src="https://www.googletagmanager.com/gtag/js?id=G-CRRX66KVW6"
-           strategy="afterInteractive"
-         />
-         <Script id="google-analytics" strategy="afterInteractive">
-           {`
+      <head>
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CRRX66KVW6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
              window.dataLayer = window.dataLayer || [];
              function gtag(){dataLayer.push(arguments);}
              gtag('js', new Date());
              gtag('config', 'G-CRRX66KVW6');
            `}
-         </Script>
-         {/* Meta Pixel Code */}
-         <Script id="meta-pixel" strategy="afterInteractive">
-           {`
+        </Script>
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
              !function(f,b,e,v,n,t,s)
              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -109,16 +110,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
              fbq('init', '1039874798566661');
              fbq('track', 'PageView');
            `}
-         </Script>
-         <noscript>
-           <img 
-             height="1" 
-             width="1" 
-             style={{ display: 'none' }} 
-             src="https://www.facebook.com/tr?id=1039874798566661&ev=PageView&noscript=1" 
-           />
-         </noscript>
-       </head>
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1039874798566661&ev=PageView&noscript=1"
+          />
+        </noscript>
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
           <TooltipProvider>

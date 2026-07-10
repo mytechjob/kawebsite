@@ -58,7 +58,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-              <img src="/KA-logo.png" alt="Knowledge Agents logo" className="h-16 sm:h-20 w-auto" />            </Link>
+              <img src="/logo-trans.webp" alt="Knowledge Agents logo" className="h-16 sm:h-20 w-auto" />            </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
               The no-code platform to build AI agents that answer customer questions and take real action — trained on your content, live in minutes.
             </p>

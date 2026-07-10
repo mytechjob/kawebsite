@@ -25,9 +25,8 @@ export function FunnelHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow ${
-        scrolled ? "border-b shadow-sm" : ""
-      }`}
+      className={`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow ${scrolled ? "border-b shadow-sm" : ""
+        }`}
     >
       <motion.div
         style={{ scaleX: scrollYProgress }}
@@ -35,7 +34,7 @@ export function FunnelHeader() {
       />
       <div className="container mx-auto px-4 py-2.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl">
-          <img src="/KA-logo.png" alt="Knowledge Agents logo" className="h-12 sm:h-14 w-auto" />
+          <img src="/logo-trans.webp" alt="Knowledge Agents logo" className="h-12 sm:h-14 w-auto" />
         </Link>
         <div className="flex items-center gap-4">
           <span className="hidden md:inline text-sm text-muted-foreground">

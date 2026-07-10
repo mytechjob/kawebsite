@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Anthropic prompting guidance",
     "AI agent prompting",
   ],
-  authors: [{ name: "Amir Haddad" }],
+  authors: [{ name: "Atif Kanji" }],
   openGraph: { images: [IMAGE] },
 };
 
@@ -61,7 +61,9 @@ const CSS = `
 .goals-article .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
 .goals-article .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ka);font-weight:500;margin-bottom:20px}
 .goals-article .hero h1{font-size:clamp(32px,5vw,50px);font-weight:700;margin-bottom:22px;max-width:16ch}
-.goals-article .hero p.lede{font-size:20px;color:var(--body);max-width:56ch;margin-bottom:40px}
+.goals-article .hero p.lede{font-size:20px;color:var(--body);max-width:56ch;margin-bottom:28px}
+.goals-article .byline{font-size:14.5px;color:var(--muted);margin-bottom:40px;font-weight:500}
+.goals-article .byline strong{color:var(--ink);font-weight:600}
 .goals-article .goals-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:760px}
 .goals-article .goals-strip .cell{border:1px solid var(--line);border-radius:12px;padding:16px 14px;background:var(--bg);transition:border-color .15s}
 .goals-article .goals-strip .cell:hover{border-color:var(--ka)}
@@ -152,6 +154,7 @@ const ARTICLE_HTML = `
     <p class="eyebrow">Claude Fable 5 &middot; Field Guide</p>
     <h1>Your best prompting habits are now your worst.</h1>
     <p class="lede">Claude Fable 5 was built for long, ambiguous, end to end work, and the prompting habits that made you good with Opus 4.x will actively hold it back. Here is the new playbook, distilled from official Anthropic guidance into one word: <strong style="color:var(--ink)">GOALS</strong>.</p>
+    <p class="byline">Written and edited by <strong>Atif Kanji</strong> &middot; July 10, 2026</p>
     <div class="goals-strip">
       <a class="cell" href="#g"><span class="letter">G</span><span class="word">Give the why</span></a>
       <a class="cell" href="#o"><span class="letter">O</span><span class="word">Outcomes, not steps</span></a>
@@ -623,7 +626,7 @@ export default function PromptingClaudeFable5Page() {
             description: DESCRIPTION,
             path: PATH,
             image: IMAGE,
-            author: "Amir Haddad",
+            author: "Atif Kanji",
             datePublished: "2026-07-10",
           }),
           breadcrumbSchema([

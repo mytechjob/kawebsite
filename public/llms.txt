@@ -54,6 +54,7 @@ Knowledge Agents use Retrieval-Augmented Generation (RAG) so answers are grounde
 - [How to reduce support tickets with AI](https://www.knowledgeagents.com/blog/reduce-support-tickets-with-ai)
 - [RAG explained for business](https://www.knowledgeagents.com/blog/rag-explained-for-business)
 - [Generative Engine Optimization (GEO) guide](https://www.knowledgeagents.com/blog/generative-engine-optimization-guide)
+- [The GOALS framework for prompting Claude Fable 5](https://www.knowledgeagents.com/blog/prompting-claude-fable-5)
 
 ## Contact
 

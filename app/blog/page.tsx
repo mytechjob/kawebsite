@@ -35,6 +35,15 @@ export default function BlogPage() {
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Link href="/blog/prompting-claude-fable-5" className="group flex flex-col bg-background border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow h-full">
+            <div className="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200" alt="The GOALS framework for prompting Claude Fable 5" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+            <div className="p-6 flex flex-col flex-1">
+              <div className="flex items-center justify-between mb-2"><Badge variant="secondary">Field Guide</Badge><span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" /> 8 min read</span></div>
+              <h3 className="text-xl font-bold font-display mb-2 group-hover:text-primary transition-colors">Your Best Prompting Habits Are Now Your Worst: The GOALS Framework for Claude Fable 5</h3>
+              <p className="text-muted-foreground text-sm mb-4 flex-1">Prompting Claude Fable 5 needs a different playbook. The GOALS framework, distilled from official Anthropic guidance: give the why, outcomes not steps, agree on done, let it run, show the evidence.</p>
+              <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read more <ArrowRight className="w-4 h-4" /></span>
+            </div>
+          </Link>
           {rest.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col bg-background border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow h-full">
               <div className="h-48 overflow-hidden"><img src={post.image} alt={post.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>

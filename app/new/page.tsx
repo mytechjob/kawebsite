@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/sections/cta";
 import { LedgerCard } from "@/components/new/ledger-card";
+import { NewProductHero } from "@/components/new/product-hero";
 import { JsonLd, breadcrumbSchema } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/site";
 import { ArrowRight, Rocket, DollarSign, LineChart, Sparkles, Eye, Building2 } from "lucide-react";
@@ -86,6 +87,8 @@ export default function NewHomePage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "New", path: "/new" }])} />
+
+      <NewProductHero />
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28">

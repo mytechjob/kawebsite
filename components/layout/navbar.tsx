@@ -85,8 +85,36 @@ function DesktopDropdown({ label, items }: { label: string; items: NavItem[] }) 
   );
 }
 
-export function Navbar() {
+export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  if (navContent) {
+    // A custom nav slot (e.g. the /new section's pills) replaces MAIN_NAV entirely,
+    // in the same row as the logo, so there's no separate row or hamburger to maintain.
+    return (
+      <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 py-3 flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl shrink-0">
+            <img
+              src="/logo-trans.webp"
+              alt="Knowledge Agents logo"
+              className="h-14 sm:h-16 w-auto"
+            />
+          </Link>
+
+          <div className="flex-1 min-w-0">{navContent}</div>
+
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <ThemeToggle />
+            <Link href={SIGNUP_URL} className="hidden sm:inline text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
+            <Link href={SIGNUP_URL}>
+              <Button size="sm" className="sm:h-9 sm:px-4">Try for free</Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">

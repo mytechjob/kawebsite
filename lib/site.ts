@@ -102,7 +102,43 @@ export const STATS = [
 
 export type NavItem = { label: string; href: string; description?: string };
 
+/** Sub-navigation for the /ainative AI-Native B2B Support Platform section. */
+export const AINATIVE_NAV: NavItem[] = [
+  { label: "Overview", href: "/ainative", description: "The AI-native B2B support platform" },
+  { label: "Platform", href: "/ainative/platform", description: "Context layer, agents & copilots" },
+  { label: "Product", href: "/ainative/product", description: "Resolutions, drafts & support intelligence" },
+  { label: "Revenue Intelligence", href: "/ainative/revenue-intelligence", description: "Churn, upsell & competitor signals" },
+  { label: "Pricing", href: "/ainative/pricing", description: "Free platform. Pay only for outcomes." },
+  { label: "Compare", href: "/ainative/compare", description: "vs. legacy ticketing platforms" },
+];
+
+/** Solutions-by-vertical links for the /new subnav dropdown — point at /new/solutions/* so navigation stays inside the /new layout. */
+export const SOLUTIONS_NAV: NavItem[] = [
+  { label: "Customer support", href: "/new/solutions/customer-support", description: "Deflect tickets, resolve faster" },
+  { label: "E-commerce", href: "/new/solutions/ecommerce", description: "Guide shoppers and recover carts" },
+  { label: "SaaS & software", href: "/new/solutions/saas", description: "Onboard users and cut churn" },
+  { label: "Healthcare", href: "/new/solutions/healthcare", description: "Answer patient questions securely" },
+  { label: "Real estate", href: "/new/solutions/real-estate", description: "Qualify and book viewings 24/7" },
+  { label: "Education", href: "/new/solutions/education", description: "Support students around the clock" },
+];
+
+export type NewNavEntry = { label: string; href?: string; description?: string; items?: NavItem[] };
+
+/** Sub-navigation for the /new landing pages (adapted 1:1 from the kawebsite-newer mockup). */
+export const NEW_NAV: NewNavEntry[] = [
+  { label: "Home", href: "/new", description: "Support → Revenue" },
+  { label: "Platform", href: "/new/platform", description: "Context layer, agents & copilots" },
+  { label: "Revenue Intelligence", href: "/new/revenue-intelligence", description: "Churn, upsell & competitor signals" },
+  { label: "Pricing", href: "/new/pricing", description: "$300/mo · 500 tickets included" },
+  { label: "Compare", href: "/new/compare", description: "vs. legacy ticketing platforms" },
+  { label: "Solutions", items: SOLUTIONS_NAV },
+];
+
 export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
+  {
+    label: "AI-Native Platform",
+    items: AINATIVE_NAV,
+  },
   {
     label: "Product",
     items: [
@@ -112,17 +148,6 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
       { label: "How it works", href: "/business#how-it-works", description: "From content to live agent in 3 steps" },
       { label: "Actions & integrations", href: "/features#actions", description: "Let agents do work, not just talk" },
       { label: "Live demo", href: "/business#demo", description: "Chat with an agent right now" },
-    ],
-  },
-  {
-    label: "Solutions",
-    items: [
-      { label: "Customer support", href: "/solutions/customer-support", description: "Deflect tickets, resolve faster" },
-      { label: "E-commerce", href: "/solutions/ecommerce", description: "Guide shoppers and recover carts" },
-      { label: "SaaS & software", href: "/solutions/saas", description: "Onboard users and cut churn" },
-      { label: "Healthcare", href: "/solutions/healthcare", description: "Answer patient questions securely" },
-      { label: "Real estate", href: "/solutions/real-estate", description: "Qualify and book viewings 24/7" },
-      { label: "Education", href: "/solutions/education", description: "Support students around the clock" },
     ],
   },
   {

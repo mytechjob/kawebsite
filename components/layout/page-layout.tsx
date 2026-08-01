@@ -1,10 +1,10 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
-export function PageLayout({ children }: { children: React.ReactNode }) {
+export function PageLayout({ children, navContent }: { children: React.ReactNode; navContent?: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Navbar />
+      <Navbar navContent={navContent} />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

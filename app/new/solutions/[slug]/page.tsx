@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { PageLayout } from "@/components/layout/page-layout";
 import { SolutionPageBody } from "@/components/solutions/solution-page-body";
 import { getSolution, SOLUTIONS } from "@/data/solutions";
 import type { Metadata } from "next";
@@ -16,17 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: solution.metaTitle,
     description: solution.metaDescription,
     keywords: solution.keywords,
+    alternates: { canonical: `/new/solutions/${solution.slug}` },
   };
 }
 
-export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function NewSolutionPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const solution = getSolution(slug);
   if (!solution) notFound();
 
-  return (
-    <PageLayout>
-      <SolutionPageBody solution={solution} basePath="/solutions" />
-    </PageLayout>
-  );
+  return <SolutionPageBody solution={solution} basePath="/new/solutions" />;
 }

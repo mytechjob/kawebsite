@@ -10,6 +10,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "features", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "pricing", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "ainative", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "ainative/platform", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "ainative/product", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "ainative/revenue-intelligence", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "ainative/pricing", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "ainative/compare", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "new", priority: 0.6, changeFrequency: "weekly" as const },
+    { path: "new/platform", priority: 0.5, changeFrequency: "monthly" as const },
+    { path: "new/revenue-intelligence", priority: 0.5, changeFrequency: "monthly" as const },
+    { path: "new/pricing", priority: 0.5, changeFrequency: "weekly" as const },
+    { path: "new/compare", priority: 0.4, changeFrequency: "monthly" as const },
+    { path: "new/features", priority: 0.4, changeFrequency: "monthly" as const },
     { path: "what-is-a-knowledge-agent", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "compare", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "blog", priority: 0.8, changeFrequency: "weekly" as const },
@@ -34,6 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const newSolutionEntries: MetadataRoute.Sitemap = SOLUTIONS.map((s) => ({
+    url: `${baseUrl}/new/solutions/${s.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.4,
+  }));
+
   const blogEntries: MetadataRoute.Sitemap = POSTS.map((p) => ({
     url: `${baseUrl}/blog/${p.slug}`,
     lastModified: new Date(p.date),
@@ -41,5 +60,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...solutionEntries, ...blogEntries];
+  return [...staticEntries, ...solutionEntries, ...newSolutionEntries, ...blogEntries];
 }

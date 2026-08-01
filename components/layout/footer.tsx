@@ -4,34 +4,31 @@ import { SITE } from "@/lib/site";
 
 const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "Product",
+    title: "AI-Native Platform",
     links: [
-      { label: "The Knowledge Suite", href: "/" },
-      { label: "For business & enterprise", href: "/business" },
-      { label: "Features", href: "/features" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Live demo", href: "/business#demo" },
-      { label: "Integrations", href: "/features#actions" },
+      { label: "Overview", href: "/new" },
+      { label: "Platform", href: "/new/platform" },
+      { label: "Revenue Intelligence", href: "/new/revenue-intelligence" },
+      { label: "Features", href: "/new/features" },
     ],
   },
   {
     title: "Solutions",
     links: [
-      { label: "Customer support", href: "/solutions/customer-support" },
-      { label: "E-commerce", href: "/solutions/ecommerce" },
-      { label: "SaaS & software", href: "/solutions/saas" },
-      { label: "Healthcare", href: "/solutions/healthcare" },
-      { label: "Real estate", href: "/solutions/real-estate" },
-      { label: "Education", href: "/solutions/education" },
+      { label: "Customer support", href: "/new/solutions/customer-support" },
+      { label: "E-commerce", href: "/new/solutions/ecommerce" },
+      { label: "SaaS & software", href: "/new/solutions/saas" },
+      { label: "Healthcare", href: "/new/solutions/healthcare" },
+      { label: "Real estate", href: "/new/solutions/real-estate" },
+      { label: "Education", href: "/new/solutions/education" },
     ],
   },
   {
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
-      { label: "What is a Knowledge Agent?", href: "/what-is-a-knowledge-agent" },
-      { label: "vs. chatbots", href: "/compare" },
       { label: "Contact", href: "/contact" },
+      { label: "Compare", href: "/new/compare" },
     ],
   },
   {

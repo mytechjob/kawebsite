@@ -34,6 +34,15 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - Compare: https://www.knowledgeagents.com/compare
 - What is a Knowledge Agent? https://www.knowledgeagents.com/what-is-a-knowledge-agent
 
+## AI-Native B2B Support Platform (new positioning)
+Knowledge Agents also positions as an AI-native B2B support platform: an omnichannel inbox, an AI agent (Knowledge Agent) that resolves conversations with full account context, an AI copilot that drafts replies for humans, and revenue-signal routing (churn detection, upsell signals, competitor mentions) that ties support activity to revenue. An outcome-based pricing track (pay per resolution, churn save, or closed upsell — not per seat) is rolling out alongside the standard per-seat plans.
+- Overview: https://www.knowledgeagents.com/ainative
+- Platform (context layer, AI agent, copilot, account intelligence): https://www.knowledgeagents.com/ainative/platform
+- Product (resolutions, drafts, article creation, support intelligence): https://www.knowledgeagents.com/ainative/product
+- Revenue Intelligence (churn, upsell, competitor signals): https://www.knowledgeagents.com/ainative/revenue-intelligence
+- Outcome-based pricing: https://www.knowledgeagents.com/ainative/pricing
+- Compare (AI-native vs. legacy platforms): https://www.knowledgeagents.com/ainative/compare
+
 ## Solution pages
 - Customer support: https://www.knowledgeagents.com/solutions/customer-support
 - E-commerce: https://www.knowledgeagents.com/solutions/ecommerce

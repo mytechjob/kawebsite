@@ -71,13 +71,28 @@ const SIGNALS = [
 ];
 
 const QUOTES = [
-  { quote: "We pointed Knowledge Agents at our help center and it was live before our next standup. Customers get answers in seconds, and our team finally focuses on the conversations that need a human.", who: "Placeholder Name", role: "CEO, Example B2B Co." },
-  { quote: "Setup took an afternoon. The agent answers in the customer's language and hands off to a human with full context when it needs to. It's the most responsive support we've ever offered.", who: "Placeholder Name", role: "Founder, Example SaaS" },
-  { quote: "The accuracy is what sold us — answers are grounded in our own docs, so we trust what it tells customers. Satisfaction on our AI chats has been excellent from day one.", who: "Placeholder Name", role: "President, Example Cloud" },
+  {
+    stat: "Answers in seconds",
+    quote: "We pointed Knowledge Agents at our help center and it was live before our next standup. Customers get answers in seconds now, and our team finally gets to focus on the conversations that actually need a human.",
+    who: "Jimmy B.",
+    role: "AI Momentum Partners",
+  },
+  {
+    stat: "Wowed by the self-learning Knowledge Base!",
+    quote: "The accuracy is what sold us, answers are grounded in our own docs, so we trust what it tells customers. What was surprising was the ability for the knowledge to improve itself.",
+    who: "AJ",
+    role: "FastBase",
+  },
+  {
+    stat: "Live Customer Portal",
+    quote: "Setup took an afternoon. Customers had immediate access to a portal with answers and escalation options. Hands off to a human with full context is a game changer.",
+    who: "Kirk R.",
+    role: "Job Agents",
+  },
 ];
 
 const STAT_BAND = [
-  { value: "<2s", label: "Average response, day or night" },
+  { value: "<10s", label: "Average response, day or night" },
   { value: "99.9%", label: "Uptime, always-on" },
   { value: "4.8/5", label: "Answer satisfaction" },
   { value: "<5min", label: "From upload to live agent" },
@@ -206,6 +221,7 @@ export default function NewHomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {QUOTES.map((q) => (
               <div key={q.who + q.role} className="p-6 bg-background rounded-xl border flex flex-col">
+                <div className="text-sm font-bold text-primary mb-2">{q.stat}</div>
                 <div className="text-amber-500 text-sm mb-3">★★★★★</div>
                 <p className="text-sm text-foreground/80 leading-relaxed flex-1 mb-4">&ldquo;{q.quote}&rdquo;</p>
                 <div className="text-sm"><b>{q.who}</b> <span className="text-muted-foreground">{q.role}</span></div>

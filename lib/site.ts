@@ -120,6 +120,7 @@ export const SOLUTIONS_NAV: NavItem[] = [
   { label: "Healthcare", href: "/new/solutions/healthcare", description: "Answer patient questions securely" },
   { label: "Real estate", href: "/new/solutions/real-estate", description: "Qualify and book viewings 24/7" },
   { label: "Education", href: "/new/solutions/education", description: "Support students around the clock" },
+  { label: "Insurance", href: "/new/solutions/insurance", description: "Policy, billing & claims status, answered instantly" },
 ];
 
 export type NewNavEntry = { label: string; href?: string; description?: string; items?: NavItem[] };

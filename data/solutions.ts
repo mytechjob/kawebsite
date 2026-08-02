@@ -6,6 +6,7 @@ import {
   Stethoscope,
   Home as HomeIcon,
   GraduationCap,
+  Shield,
 } from "lucide-react";
 
 export type Solution = {
@@ -517,6 +518,88 @@ export const SOLUTIONS: Solution[] = [
       {
         role: "agent",
         text: "The fall transfer deadline is March 1. You'll need: official transcripts from all institutions, a personal statement, and one letter of recommendation. A minimum 2.5 GPA is required for most programs. Would you like me to email the checklist and book a 15-minute advising call?",
+      },
+    ],
+  },
+  {
+    slug: "insurance",
+    name: "Insurance",
+    icon: Shield,
+    metaTitle: "AI Agent for Insurance | Policy Questions & Claims Support",
+    metaDescription:
+      "Help policyholders get answers on coverage, billing, and claims with an AI agent trained on your policies. Reduce call volume and speed up claims — 24/7.",
+    keywords: [
+      "AI insurance chatbot",
+      "insurance customer service AI",
+      "AI claims support",
+      "policy questions AI assistant",
+      "reduce call volume insurance",
+      "AI agent for insurers",
+    ],
+    eyebrow: "For insurers & agencies",
+    headline: "Answer policy and claims questions instantly, day or night",
+    subhead:
+      "A Knowledge Agent trained on your policies, coverage details, and claims process handles routine policyholder questions and status checks — cutting call volume and speeding up resolution.",
+    intro:
+      "Policyholders call with the same questions again and again — what's covered, how to file a claim, why a payment was delayed — and agents spend hours on lookups instead of the complex cases that need a human. A Knowledge Agent gives policyholders instant, accurate answers grounded in your actual policy documents and claims data, any time they need them.",
+    challenges: [
+      "Call centers are swamped with routine coverage and billing questions.",
+      "Policyholders want claim status updates without waiting on hold.",
+      "Complex policy language leads to confusion and repeat contacts.",
+      "Claims data lives in systems that are slow to search manually.",
+    ],
+    capabilities: [
+      {
+        title: "Coverage questions, answered instantly",
+        description:
+          "Deductibles, coverage limits, exclusions, and billing — explained accurately from your policy documents.",
+      },
+      {
+        title: "Real-time claims status",
+        description:
+          "Policyholders check the status of an open claim without calling in, synced to your claims system.",
+      },
+      {
+        title: "Guided claims filing",
+        description:
+          "Walk policyholders through what's needed to file a claim, reducing incomplete submissions.",
+      },
+      {
+        title: "Escalates the complex cases",
+        description:
+          "Disputes, denials, and anything outside policy stay with your adjusters and agents — with full context attached.",
+      },
+    ],
+    actions: [
+      "Check claim status and next steps",
+      "Start or continue a claims filing",
+      "Explain coverage, deductibles, and exclusions",
+      "Route disputes and denials to a human adjuster",
+    ],
+    results: [
+      { value: "45%", label: "fewer routine status calls" },
+      { value: "24/7", label: "policyholder self-service" },
+      { value: "Faster", label: "claims filed with fewer errors" },
+    ],
+    faqs: [
+      {
+        q: "Can it explain what a policy covers?",
+        a: "Yes. Trained on your policy documents and product guides, it explains coverage, deductibles, and exclusions in plain language, grounded in the actual policy text.",
+      },
+      {
+        q: "Can policyholders check claims status?",
+        a: "Yes. Connect your claims system and policyholders can check status, see what's needed next, and get updates without calling in.",
+      },
+      {
+        q: "Will it make coverage decisions or approve claims?",
+        a: "No. The agent informs and guides — coverage determinations and claim approvals stay with your adjusters. Anything outside policy or in dispute is routed to a human with full context.",
+      },
+    ],
+    sampleChat: [
+      { role: "user", text: "I filed a claim last week for water damage — what's the status?" },
+      {
+        role: "agent",
+        text: "Your claim #48213 is currently with an adjuster for review, submitted 6 days ago. We're waiting on the contractor estimate — you can upload it directly here. Want me to send you the upload link?",
       },
     ],
   },

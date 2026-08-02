@@ -21,6 +21,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Healthcare", href: "/new/solutions/healthcare" },
       { label: "Real estate", href: "/new/solutions/real-estate" },
       { label: "Education", href: "/new/solutions/education" },
+      { label: "Insurance", href: "/new/solutions/insurance" },
     ],
   },
   {

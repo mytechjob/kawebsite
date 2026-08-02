@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Meet the Knowledge Suite: the Knowledge Bar turns any website or app into an AI application, the Knowledge Bubble puts a virtual agent on your site, and the Knowledge Page lets your team collaborate on content customers can talk to. Start free — live in 5 minutes.",
   keywords: allKeywords("core", "build", "agentic"),
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/original" },
 };
 
 /**

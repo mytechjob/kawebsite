@@ -46,7 +46,7 @@ function MarkCell({ value, highlight }: { value: Mark | string; highlight?: bool
 export default function ComparePage() {
   return (
     <PageLayout>
-      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Compare", path: "/compare" }]), faqSchema(FAQS)]} />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Compare", path: "/original/compare" }]), faqSchema(FAQS)]} />
       <PageHero eyebrow="Comparison" title="Knowledge Agents vs. chatbots vs. live chat" description='Not all "chatbots" are the same. Here&apos;s how an AI Knowledge Agent that takes action compares to a traditional rule-based chatbot and to human-only live chat.' />
       <section className="py-16">
         <div className="container mx-auto px-4">

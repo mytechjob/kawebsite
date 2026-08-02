@@ -2,16 +2,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/sections/cta";
 import { LedgerCard } from "@/components/new/ledger-card";
-import { JsonLd, breadcrumbSchema } from "@/lib/metadata";
+import { JsonLd, breadcrumbSchema, pageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL, SCHEDULE_URL } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Revenue Intelligence — Churn, Upsell & Competitor Signals",
-  description: "Every conversation scanned in real time for churn, upsell, competitor, and feature signals — attributed to a dollar and routed to the person who can act.",
-  alternates: { canonical: "/new/revenue-intelligence" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Customer Revenue Intelligence — Churn & Upsell Signals",
+  description: "Detect churn risk, upsell opportunities, competitor mentions, and product gaps in customer conversations, then attribute and route every signal.",
+  path: "/revenue-intelligence",
+  keywords: ["customer revenue intelligence", "churn risk detection", "upsell signals", "customer conversation intelligence", "B2B revenue signals"],
+});
 
 const SIGNALS = [
   { tag: "● Churn risk", color: "text-destructive", title: "Caught before renewal", description: "Cancellation language, price pushback, and quiet disengagement — flagged with the renewal date and ARR attached.", route: "CSM" },
@@ -36,7 +37,7 @@ const ROI_STATS = [
 export default function NewRevenueIntelligencePage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "New", path: "/new" }, { name: "Revenue Intelligence", path: "/new/revenue-intelligence" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Revenue Intelligence", path: "/revenue-intelligence" }])} />
 
       <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 border-b bg-muted/20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl -z-10" />

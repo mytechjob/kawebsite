@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   return (
     <PageLayout>
-      <FeaturesPageBody basePath="/features" />
+      <FeaturesPageBody basePath="/original/features" />
     </PageLayout>
   );
 }

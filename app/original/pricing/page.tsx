@@ -42,7 +42,7 @@ function Cell({ value }: { value: string | boolean }) {
 export default function PricingPage() {
   return (
     <PageLayout>
-      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "0", highPrice: "399" }), faqSchema(PRICING_FAQS)]} />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/original/pricing" }]), productSchema({ name: "Knowledge Agents", description: "No-code AI agent platform that answers questions and takes action, trained on your content.", lowPrice: "0", highPrice: "399" }), faqSchema(PRICING_FAQS)]} />
       <PageHero eyebrow="Pricing" title="Pricing that scales with you" description="Start free, then pay by the conversation — no confusing AI credits. Every plan includes unlimited knowledge uploads and lead capture. Cancel anytime." />
       <PricingSection showHeader={false} />
       <section className="py-16 bg-muted/30 border-y">

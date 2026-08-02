@@ -6,22 +6,22 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "AI-Native Platform",
     links: [
-      { label: "Overview", href: "/new" },
-      { label: "Platform", href: "/new/platform" },
-      { label: "Revenue Intelligence", href: "/new/revenue-intelligence" },
-      { label: "Features", href: "/new/features" },
+      { label: "Overview", href: "/" },
+      { label: "Platform", href: "/platform" },
+      { label: "Revenue Intelligence", href: "/revenue-intelligence" },
+      { label: "Features", href: "/features" },
     ],
   },
   {
     title: "Solutions",
     links: [
-      { label: "Customer support", href: "/new/solutions/customer-support" },
-      { label: "E-commerce", href: "/new/solutions/ecommerce" },
-      { label: "SaaS & software", href: "/new/solutions/saas" },
-      { label: "Healthcare", href: "/new/solutions/healthcare" },
-      { label: "Real estate", href: "/new/solutions/real-estate" },
-      { label: "Education", href: "/new/solutions/education" },
-      { label: "Insurance", href: "/new/solutions/insurance" },
+      { label: "Customer support", href: "/solutions/customer-support" },
+      { label: "E-commerce", href: "/solutions/ecommerce" },
+      { label: "SaaS & software", href: "/solutions/saas" },
+      { label: "Healthcare", href: "/solutions/healthcare" },
+      { label: "Real estate", href: "/solutions/real-estate" },
+      { label: "Education", href: "/solutions/education" },
+      { label: "Insurance", href: "/solutions/insurance" },
     ],
   },
   {
@@ -29,7 +29,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
-      { label: "Compare", href: "/new/compare" },
+      { label: "Compare", href: "/compare" },
     ],
   },
   {

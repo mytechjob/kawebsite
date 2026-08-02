@@ -3,56 +3,18 @@ import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/sections/cta";
 import { LedgerCard } from "@/components/new/ledger-card";
 import { NewProductHero } from "@/components/new/product-hero";
-import { JsonLd, breadcrumbSchema } from "@/lib/metadata";
+import { TechPartners } from "@/components/funnel/tech-partners";
+import { JsonLd, breadcrumbSchema, pageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/site";
-import { ArrowRight, Rocket, DollarSign, LineChart, Sparkles, Eye, Building2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "The AI-Native B2B Support Platform",
-  description:
-    "One AI-native platform resolves conversations with full account context, then routes churn, upsell, and product signals to the person who can act — the same day.",
-  alternates: { canonical: "/new" },
-};
-
-const PILLARS = [
-  {
-    icon: Rocket,
-    title: "Start with a free trial",
-    description:
-      "Explore the full platform on a 14-day free trial — every channel, every seat, every agent. No credit card to see real resolutions on your own docs first.",
-  },
-  {
-    icon: DollarSign,
-    title: "Simple ticket pricing",
-    description:
-      "$300/month includes up to 500 support tickets. Above that it's just $0.50 per ticket — never per seat or per message. One number your finance team can plan around.",
-  },
-  {
-    icon: LineChart,
-    title: "Dollar-tracked ROI",
-    description:
-      "Resolution rate, churn prevented, and upsell pipeline created roll up into a single revenue-impact number your CFO will understand.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI-native, not bolted on",
-    description:
-      "Context, resolution, and routing are one system — built from the ground up for the AI era, not retrofitted onto a 2007 ticketing model.",
-  },
-  {
-    icon: Eye,
-    title: "Full account context",
-    description:
-      "Every conversation is enriched with CRM stage, billing status, and product usage before the agent — human or AI — ever replies.",
-  },
-  {
-    icon: Building2,
-    title: "Built for B2B",
-    description:
-      "Designed for growing B2B teams doing $1M–$50M ARR, with the integrations, routing, and roadmap consumer-support tools were never built to handle.",
-  },
-];
+export const metadata: Metadata = pageMetadata({
+  title: "AI Customer Support That Gets Smarter",
+  description: "Unify chat, email, voice, help desk, and customer knowledge in one intelligent B2B support platform that resolves issues and identifies revenue opportunities.",
+  path: "/",
+  keywords: ["AI customer support platform", "unified customer support", "B2B customer intelligence", "account-aware AI support", "omnichannel AI support"],
+});
 
 const STEPS = [
   { idx: "STEP 01", title: "Unify every channel", description: "Email, chat, in-app, Slack Connect, and WhatsApp thread into one inbox with one set of shared automations." },
@@ -101,7 +63,7 @@ const STAT_BAND = [
 export default function NewHomePage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "New", path: "/new" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }])} />
 
       <NewProductHero />
 
@@ -111,9 +73,9 @@ export default function NewHomePage() {
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <div>
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Support → Revenue</span>
-            <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-display font-bold tracking-tight mt-3 mb-6 leading-[1.08]">
+            <h2 className="text-4xl sm:text-5xl md:text-[3.4rem] font-display font-bold tracking-tight mt-3 mb-6 leading-[1.08]">
               Every support reply is a <em className="not-italic text-primary">line item</em> on your revenue.
-            </h1>
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
               One AI-native platform resolves conversations with full account context — then routes the churn, upsell, and product signals inside them to the person who can act, the same day they happen.
             </p>
@@ -121,13 +83,13 @@ export default function NewHomePage() {
               <Link href={SIGNUP_URL}>
                 <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start free trial <ArrowRight className="ml-2 w-4 h-4" /></Button>
               </Link>
-              <Link href="/new/revenue-intelligence#roi">
+              <Link href="/revenue-intelligence#roi">
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See the ROI math</Button>
               </Link>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> 14-day free trial, no card</span>
-              <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> Then $300/mo · 500 tickets included</span>
+              <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> Then $300/mo · 10,000 messages included</span>
             </div>
           </div>
 
@@ -147,28 +109,7 @@ export default function NewHomePage() {
         </div>
       </div>
 
-      {/* WHY AI-NATIVE */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Why AI-native</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">Built differently, on purpose.</h2>
-            <p className="text-muted-foreground text-lg">Six things that change when the whole platform is designed for AI from day one — not a legacy ticket queue with a chatbot glued on top.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PILLARS.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div key={p.title} className="p-6 bg-background rounded-xl border hover:border-primary/50 hover:shadow-md transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"><Icon className="w-6 h-6 text-primary" /></div>
-                  <h3 className="text-lg font-bold mb-1.5">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <TechPartners />
 
       {/* HOW IT WORKS */}
       <section className="py-24 bg-muted/30 border-y">
@@ -236,7 +177,7 @@ export default function NewHomePage() {
         subtitle="Connect your knowledge base and start resolving conversations with full account context — free to start, live in minutes."
         primaryLabel="Start free trial"
         secondaryLabel="Explore the platform"
-        secondaryHref="/new/platform"
+        secondaryHref="/platform"
         bullets={["Free 14-day trial", "No code required", "Cancel anytime"]}
       />
     </>

@@ -1,5 +1,42 @@
 import { SITE } from "./site";
 import type { JsonLd } from "@/lib/jsonld";
+import type { Metadata } from "next";
+
+export function pageMetadata({
+  title,
+  description,
+  path,
+  keywords,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  keywords?: string[];
+}): Metadata {
+  const socialTitle = `${title} | ${SITE.name}`;
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: path,
+      siteName: SITE.name,
+      title: socialTitle,
+      description,
+      images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: `${title} — ${SITE.name}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: SITE.twitter,
+      title: socialTitle,
+      description,
+      images: [SITE.ogImage],
+    },
+  };
+}
 
 /**
  * Server component that renders JSON-LD structured data into the <head>.

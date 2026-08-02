@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/sections/cta";
-import { JsonLd, breadcrumbSchema } from "@/lib/metadata";
+import { JsonLd, breadcrumbSchema, pageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/site";
 import { ArrowRight, Check, MessageSquare, PenLine, Inbox, FileEdit, Workflow, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Platform — Context Layer, Agents & Copilots",
-  description: "The context layer, the AI agent, the human copilot, and revenue-signal routing — one connected AI-native support platform.",
-  alternates: { canonical: "/new/platform" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "AI Support Platform — Context, Agents & Copilots",
+  description: "Connect account context, AI agents, human copilots, and revenue-signal routing in one AI-native customer support platform for growing B2B companies.",
+  path: "/platform",
+  keywords: ["AI support platform", "customer support copilot", "account context AI", "B2B support automation", "AI customer service agents"],
+});
 
 const CONTEXT_ITEMS = [
   { k: "CRM", v: "Account stage, owner, ARR, and renewal date pulled in on every conversation." },
@@ -47,7 +48,7 @@ const INTEGRATIONS = [
 export default function NewPlatformPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "New", path: "/new" }, { name: "Platform", path: "/new/platform" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Platform", path: "/platform" }])} />
 
       <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 border-b bg-muted/20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl -z-10" />
@@ -59,7 +60,7 @@ export default function NewPlatformPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start free trial <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
-            <Link href="/new/compare"><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See how it compares</Button></Link>
+            <Link href="/compare"><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See how it compares</Button></Link>
           </div>
         </div>
       </section>
@@ -146,7 +147,7 @@ export default function NewPlatformPage() {
         subtitle="Connect your knowledge base and watch the agent resolve with the whole account picture — free to start."
         primaryLabel="Create your AI agent"
         secondaryLabel="Explore revenue intelligence"
-        secondaryHref="/new/revenue-intelligence"
+        secondaryHref="/revenue-intelligence"
         bullets={["No code required", "Live in minutes", "Cancel anytime"]}
       />
     </>

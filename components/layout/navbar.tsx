@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { MAIN_NAV, SIGNUP_URL, type NavItem } from "@/lib/site";
+import { usePathname } from "next/navigation";
+import { MAIN_NAV, SIGNUP_URL, SIGNIN_URL, type NavItem } from "@/lib/site";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -87,31 +88,35 @@ function DesktopDropdown({ label, items }: { label: string; items: NavItem[] }) 
 
 export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   if (navContent) {
-    // A custom nav slot (e.g. the /new section's pills) replaces MAIN_NAV entirely,
-    // in the same row as the logo, so there's no separate row or hamburger to maintain.
     return (
       <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl shrink-0">
-            <img
-              src="/logo-trans.webp"
-              alt="Knowledge Agents logo"
-              className="h-14 sm:h-16 w-auto"
-            />
+        <div className="container mx-auto flex items-center gap-3 px-4 py-2">
+          <Link href="/" className="flex shrink-0 items-center gap-2 font-display text-xl font-bold">
+            <img src="/logo-trans.webp" alt="Knowledge Agents logo" className="h-12 w-auto sm:h-14" />
           </Link>
-
-          <div className="flex-1 min-w-0">{navContent}</div>
-
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="hidden min-w-0 flex-1 lg:block">{navContent}</div>
+          <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
             <ThemeToggle />
-            <Link href={SIGNUP_URL} className="hidden sm:inline text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
-            <Link href={SIGNUP_URL}>
-              <Button size="sm" className="sm:h-9 sm:px-4">Try for free</Button>
-            </Link>
+            <Link href={SIGNIN_URL} className="hidden text-sm font-medium transition-colors hover:text-primary sm:inline">Sign in</Link>
+            <Link href={SIGNUP_URL}><Button size="sm" className="sm:h-9 sm:px-4">Start Free</Button></Link>
+            <button type="button" className="p-2 lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" aria-expanded={isOpen}>
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
+        {isOpen && (
+          <div className="border-t bg-background p-4 lg:hidden">
+            {navContent}
+            <Link href={SIGNIN_URL} className="mt-4 block sm:hidden"><Button variant="ghost" className="w-full">Sign in</Button></Link>
+          </div>
+        )}
       </nav>
     );
   }
@@ -144,7 +149,7 @@ export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
 
           <div className="flex items-center gap-3 ml-2">
             <ThemeToggle />
-            <Link href={SIGNUP_URL} className="text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
+            <Link href={SIGNIN_URL} className="text-sm font-medium hover:text-primary transition-colors">Sign in</Link>
             <Link href={SIGNUP_URL}>
               <Button>Try for free</Button>
             </Link>
@@ -178,7 +183,7 @@ export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
             </div>
           ))}
           <div className="flex flex-col gap-2 pt-4 border-t">
-            <Link href={SIGNUP_URL}><Button variant="ghost" className="w-full justify-start" onClick={() => setIsOpen(false)}>Sign in</Button></Link>
+            <Link href={SIGNIN_URL}><Button variant="ghost" className="w-full justify-start" onClick={() => setIsOpen(false)}>Sign in</Button></Link>
             <Link href={SIGNUP_URL}><Button className="w-full" onClick={() => setIsOpen(false)}>Try for free</Button></Link>
           </div>
         </div>

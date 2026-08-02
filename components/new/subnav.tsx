@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { NEW_NAV } from "@/lib/site";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-/** The /new section's nav pills — embedded directly in the top navbar, to the left of the CTA. */
+/** Main site nav pills — embedded directly in the top navbar, to the left of the CTA. */
 export function NewNavPills() {
   const pathname = usePathname();
 

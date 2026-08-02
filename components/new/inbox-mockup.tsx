@@ -1,4 +1,5 @@
 import { Search, Filter, Phone, Video, MoreHorizontal, Send } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "Inbox", count: 12, active: true },
@@ -15,12 +16,12 @@ const CONVERSATIONS = [
   { name: "Ava Torres", company: "Brightside", snippet: "Thanks, that resolved it — appreciated!", initial: "A" },
 ];
 
-export function InboxMockup() {
+export function InboxMockup({ className }: { className?: string }) {
   return (
-    <div className="min-w-[900px] rounded-2xl border bg-card shadow-2xl overflow-hidden text-left">
-      <div className="grid grid-cols-[180px_260px_1fr_240px]">
+    <div className={cn("w-full overflow-hidden rounded-2xl border bg-card text-left shadow-2xl", className)}>
+      <div className="grid min-h-[360px] grid-cols-1 md:grid-cols-[240px_minmax(0,1fr)] lg:grid-cols-[180px_240px_minmax(360px,1fr)_220px]">
         {/* Workspace / nav */}
-        <div className="border-r bg-muted/30 p-4">
+        <div className="hidden border-r bg-muted/30 p-4 lg:block">
           <div className="flex items-center gap-2 mb-5">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-primary-foreground text-xs font-bold">KA</span>
             <span className="text-sm font-bold">Northwind</span>
@@ -41,7 +42,7 @@ export function InboxMockup() {
         </div>
 
         {/* Conversation list */}
-        <div className="border-r">
+        <div className="hidden border-r md:block">
           <div className="flex items-center gap-2 border-b p-3">
             <div className="flex items-center gap-1.5 flex-1 rounded-md border bg-background px-2 py-1.5 text-xs text-muted-foreground">
               <Search className="w-3.5 h-3.5" /> Search
@@ -106,7 +107,7 @@ export function InboxMockup() {
         </div>
 
         {/* Contact panel */}
-        <div className="bg-muted/30 p-4 text-xs">
+        <div className="hidden bg-muted/30 p-4 text-xs lg:block">
           <div className="flex flex-col items-center text-center mb-4">
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-bold mb-2">J</span>
             <div className="font-semibold">Jordan Lee</div>

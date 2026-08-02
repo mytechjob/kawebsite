@@ -2,16 +2,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
-import { JsonLd, breadcrumbSchema, faqSchema } from "@/lib/metadata";
+import { JsonLd, breadcrumbSchema, faqSchema, pageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/site";
 import { Check, X, Minus } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Compare — AI-Native vs. Legacy Support Platforms",
-  description: "How an AI-native platform compares to a legacy ticketing system with AI bolted on, and to a narrow point-solution chatbot.",
-  alternates: { canonical: "/new/compare" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "AI-Native vs. Legacy Customer Support Platforms",
+  description: "Compare an AI-native customer support platform with legacy ticketing tools and point-solution chatbots across context, automation, revenue signals, and pricing.",
+  path: "/compare",
+  keywords: ["AI customer support comparison", "AI help desk vs legacy help desk", "AI chatbot comparison", "AI-native support platform"],
+});
 
 type Mark = "yes" | "no" | "partial";
 const columns = ["AI-native platform", "Legacy + AI bolt-on", "Point-solution chatbot"];
@@ -22,9 +23,9 @@ const rows: { label: string; values: [Mark | string, Mark | string, Mark | strin
   { label: "Omnichannel inbox, one queue", values: ["yes", "partial", "no"] },
   { label: "Revenue signal detection & routing", values: ["yes", "no", "no"] },
   { label: "Automatic article creation from resolutions", values: ["yes", "no", "partial"] },
-  { label: "Predictable ticket-based pricing", values: ["yes", "Per-seat", "Per-usage"] },
+  { label: "Predictable message-based pricing", values: ["yes", "Per-seat", "Per-usage"] },
   { label: "Time to see resolution impact", values: ["Weeks", "Months", "Weeks"] },
-  { label: "Cost as conversation volume grows", values: ["$300/mo + $0.50/ticket", "Scales with seats", "Scales with usage"] },
+  { label: "Cost as conversation volume grows", values: ["$300/mo + $25/1,000 msgs", "Scales with seats", "Scales with usage"] },
 ];
 
 const FAQS = [
@@ -36,7 +37,7 @@ const FAQS = [
 export default function NewComparePage() {
   return (
     <>
-      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "New", path: "/new" }, { name: "Compare", path: "/new/compare" }]), faqSchema(FAQS)]} />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Compare", path: "/compare" }]), faqSchema(FAQS)]} />
 
       <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 border-b bg-muted/20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl -z-10" />
@@ -108,7 +109,7 @@ export default function NewComparePage() {
         subtitle="Connect your knowledge base and watch full-context resolution in action — free to start."
         primaryLabel="Create your AI agent"
         secondaryLabel="See pricing"
-        secondaryHref="/new/pricing"
+        secondaryHref="/pricing"
         bullets={["No code required", "Live in minutes", "Cancel anytime"]}
       />
     </>

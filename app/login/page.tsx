@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { SIGNUP_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 export default function LoginPage() {
@@ -47,7 +48,7 @@ export default function LoginPage() {
         </div>
         <p className="text-center text-sm text-muted-foreground mt-6">
           Don't have an account?{" "}
-          <Link href="/login" className="text-primary hover:underline font-medium">Sign up</Link>
+          <Link href={SIGNUP_URL} className="text-primary hover:underline font-medium">Sign up</Link>
         </p>
       </div>
     </div>

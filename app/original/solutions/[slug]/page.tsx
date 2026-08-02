@@ -26,7 +26,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
 
   return (
     <PageLayout>
-      <SolutionPageBody solution={solution} basePath="/solutions" />
+      <SolutionPageBody solution={solution} basePath="/original/solutions" />
     </PageLayout>
   );
 }

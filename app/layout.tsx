@@ -164,21 +164,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               script.onload = function() {
                 if (window.KBChatWidget) {
                   window.KBChatWidget.init({
-                        projectId: projectId,
-                        apiUrl: apiUrl,
-                        securityMode: "simple",
-                        position: "bottom-right",
-                        style: "bar",
-                        primaryColor: "#7C3AED",
-                        accentColor: "#7C3AED",
-                        welcomeMessage: "Hello! How can I help you today?",
-                        barPlaceholder: "Hello! How can I help you today?",
-                        barSuggestions: ["What services do you offer?","how can I get started?"],
-                        bubbleIcon: "avatar",
-                        bubbleLogoUrl: avatarUrl,
-                        bubbleSize: "xl"
+                   projectId: projectId,
+                   apiUrl: apiUrl,
+                   securityMode: "simple",
+                   position: "bottom-right",
+                   style: "bubble",
+                   widgetSize: "large",
+                   primaryColor: "#7C3AED",
+                   accentColor: "#7C3AED",
+                   welcomeMessage: "Hello! How can I help you today?",
+                   bubbleIcon: "avatar",
+                   bubbleLogoUrl: "/avatars/avatar_05.png",
+                   bubbleSize: "xl",
+                   teaserEnabled: true,
+                   teaserText: "Have a question? Ask me anything!"
                   });
-                  addBarMinimizeToggle();
                 }
               };
               document.head.appendChild(script);

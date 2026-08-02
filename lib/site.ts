@@ -112,26 +112,26 @@ export const AINATIVE_NAV: NavItem[] = [
   { label: "Compare", href: "/ainative/compare", description: "vs. legacy ticketing platforms" },
 ];
 
-/** Solutions-by-vertical links for the /new subnav dropdown — point at /new/solutions/* so navigation stays inside the /new layout. */
+/** Solutions-by-vertical links, shown as a dropdown in the main site nav. */
 export const SOLUTIONS_NAV: NavItem[] = [
-  { label: "Customer support", href: "/new/solutions/customer-support", description: "Deflect tickets, resolve faster" },
-  { label: "E-commerce", href: "/new/solutions/ecommerce", description: "Guide shoppers and recover carts" },
-  { label: "SaaS & software", href: "/new/solutions/saas", description: "Onboard users and cut churn" },
-  { label: "Healthcare", href: "/new/solutions/healthcare", description: "Answer patient questions securely" },
-  { label: "Real estate", href: "/new/solutions/real-estate", description: "Qualify and book viewings 24/7" },
-  { label: "Education", href: "/new/solutions/education", description: "Support students around the clock" },
-  { label: "Insurance", href: "/new/solutions/insurance", description: "Policy, billing & claims status, answered instantly" },
+  { label: "Customer support", href: "/solutions/customer-support", description: "Deflect tickets, resolve faster" },
+  { label: "E-commerce", href: "/solutions/ecommerce", description: "Guide shoppers and recover carts" },
+  { label: "SaaS & software", href: "/solutions/saas", description: "Onboard users and cut churn" },
+  { label: "Healthcare", href: "/solutions/healthcare", description: "Answer patient questions securely" },
+  { label: "Real estate", href: "/solutions/real-estate", description: "Qualify and book viewings 24/7" },
+  { label: "Education", href: "/solutions/education", description: "Support students around the clock" },
+  { label: "Insurance", href: "/solutions/insurance", description: "Policy, billing & claims status, answered instantly" },
 ];
 
 export type NewNavEntry = { label: string; href?: string; description?: string; items?: NavItem[] };
 
-/** Sub-navigation for the /new landing pages (adapted 1:1 from the kawebsite-newer mockup). */
+/** Primary navigation for the main marketing site (the `(site)` route group). */
 export const NEW_NAV: NewNavEntry[] = [
-  { label: "Home", href: "/new", description: "Support → Revenue" },
-  { label: "Platform", href: "/new/platform", description: "Context layer, agents & copilots" },
-  { label: "Revenue Intelligence", href: "/new/revenue-intelligence", description: "Churn, upsell & competitor signals" },
-  { label: "Pricing", href: "/new/pricing", description: "$300/mo · 500 tickets included" },
-  { label: "Compare", href: "/new/compare", description: "vs. legacy ticketing platforms" },
+  { label: "Home", href: "/", description: "Support → Revenue" },
+  { label: "Platform", href: "/platform", description: "Context layer, agents & copilots" },
+  { label: "Revenue Intelligence", href: "/revenue-intelligence", description: "Churn, upsell & competitor signals" },
+  { label: "Pricing", href: "/pricing", description: "$300/mo · 10,000 messages included" },
+  { label: "Compare", href: "/compare", description: "vs. legacy ticketing platforms" },
   { label: "Solutions", items: SOLUTIONS_NAV },
 ];
 
@@ -143,7 +143,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
   {
     label: "Product",
     items: [
-      { label: "The Knowledge Suite", href: "/", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
+      { label: "The Knowledge Suite", href: "/original", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
       { label: "For business & enterprise", href: "/business", description: "The full platform tour for teams" },
       { label: "Features", href: "/features", description: "Everything in the platform" },
       { label: "How it works", href: "/business#how-it-works", description: "From content to live agent in 3 steps" },
@@ -156,7 +156,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
     items: [
       { label: "Blog", href: "/blog", description: "Guides, playbooks, and product news" },
       { label: "What is a Knowledge Agent?", href: "/what-is-a-knowledge-agent", description: "The complete guide" },
-      { label: "Knowledge Agents vs. chatbots", href: "/compare", description: "How we're different" },
+      { label: "Knowledge Agents vs. chatbots", href: "/original/compare", description: "How we're different" },
       { label: "About us", href: "/about", description: "Our mission and team" },
     ],
   },
@@ -164,7 +164,10 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
 ];
 
 /** Where sign-up / "try for free" CTAs send people so they can start using the product right away. */
-export const SIGNUP_URL = "https://app.knowledgeagents.com/signup";
+export const SIGNUP_URL = "https://app.knowledgeagents.com/v2/signup";
+
+/** Where "sign in" links send existing customers. */
+export const SIGNIN_URL = "https://app.knowledgeagents.com/v2/signin";
 
 /** Where the Enterprise / "talk to us" CTA sends people — the Google appointment scheduling page. */
 export const SCHEDULE_URL = "https://calendar.app.google/4dDonNoV9np8WuweA";

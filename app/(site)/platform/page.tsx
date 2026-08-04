@@ -59,7 +59,7 @@ export default function NewPlatformPage() {
             The context layer, the AI agent, and the human copilot are one connected platform — every reply, human or AI, starts with the full account picture.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start free trial <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
             <Link href="/compare"><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See how it compares</Button></Link>
           </div>
         </div>

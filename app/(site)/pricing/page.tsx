@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
-import { TicketEstimator } from "@/components/new/ticket-estimator";
 import { PricingPlans, type Plan } from "@/components/new/pricing-plans";
 import { JsonLd, breadcrumbSchema, faqSchema, pageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL, SCHEDULE_URL } from "@/lib/site";
@@ -38,7 +37,7 @@ const PLANS: Plan[] = [
       "Email support",
       "14-day free trial",
     ],
-    cta: "Start free trial",
+    cta: "Get Started",
     href: SIGNUP_URL,
   },
   {
@@ -55,7 +54,7 @@ const PLANS: Plan[] = [
       "Automatic article creation from resolutions",
       "Priority email support",
     ],
-    cta: "Start free trial",
+    cta: "Get Started",
     href: SIGNUP_URL,
     featured: true,
   },
@@ -74,7 +73,7 @@ const PLANS: Plan[] = [
       "SSO / SAML & audit logs",
       "Priority support, 4-hour response",
     ],
-    cta: "Start free trial",
+    cta: "Get Started",
     href: SIGNUP_URL,
   },
   {
@@ -144,7 +143,7 @@ export default function NewPricingPage() {
             Every plan includes unlimited seats, so bringing your whole support, success, and sales teams in costs nothing extra. You&apos;re billed on the messages your customers actually send — never on how many people you hire — so your costs track the value you&apos;re getting instead of the size of your team.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start your free trial <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
             <Link href={SCHEDULE_URL}><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">Book an Enterprise call</Button></Link>
           </div>
         </div>
@@ -155,19 +154,6 @@ export default function NewPricingPage() {
         <div className="container mx-auto px-4">
           <PricingPlans plans={PLANS} />
           <p className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto">A message is a single message sent within a support conversation. Overage is billed only on messages beyond each plan&apos;s included allotment.</p>
-        </div>
-      </section>
-
-      {/* ESTIMATOR */}
-      <section className="py-20 bg-muted/30 border-y">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Estimate your bill</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">What will you actually pay?</h2>
-            <p className="text-muted-foreground text-lg">Drag to your expected monthly message volume. This models the Scale plan, where the first 12,000 messages are included.</p>
-          </div>
-          <TicketEstimator />
-          <p className="text-center text-sm text-muted-foreground mt-6 max-w-md mx-auto">Estimate only. Enterprise volume rates reduce the per-message cost above high message counts.</p>
         </div>
       </section>
 
@@ -200,9 +186,9 @@ export default function NewPricingPage() {
       <FAQ faqs={FAQS} heading="Pricing FAQ" subheading="The questions buyers actually ask." />
 
       <CTA
-        title="Start your free trial today."
+        title="Get started today."
         subtitle="Connect your knowledge base and see real resolutions on your own content — 14 days free, no credit card. Pick a plan only once you've seen it work."
-        primaryLabel="Start free trial"
+        primaryLabel="Get Started"
         secondaryLabel="Talk to sales"
         secondaryHref={SCHEDULE_URL}
         bullets={["14-day free trial", "No credit card required", "Cancel anytime"]}

@@ -105,7 +105,7 @@ export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
             <ThemeToggle />
             <Link href={SIGNIN_URL} className="hidden text-sm font-medium transition-colors hover:text-primary sm:inline">Sign in</Link>
-            <Link href={SIGNUP_URL}><Button size="sm" className="sm:h-9 sm:px-4">Start Free</Button></Link>
+            <Link href={SIGNUP_URL}><Button size="sm" className="sm:h-9 sm:px-4">Get Started</Button></Link>
             <button type="button" className="p-2 lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" aria-expanded={isOpen}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

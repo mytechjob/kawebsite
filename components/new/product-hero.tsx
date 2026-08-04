@@ -43,7 +43,7 @@ export function NewProductHero() {
           <div className="mt-7 flex justify-center">
             <Link href={SIGNUP_URL} className="w-full sm:w-auto">
               <Button size="lg" className="h-12 w-full rounded-full px-8 text-base shadow-lg shadow-primary/20 sm:w-auto">
-                Start Free <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                Get Started <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </Button>
             </Link>
           </div>

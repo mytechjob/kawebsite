@@ -81,7 +81,7 @@ export default function NewHomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link href={SIGNUP_URL}>
-                <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start free trial <ArrowRight className="ml-2 w-4 h-4" /></Button>
+                <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button>
               </Link>
               <Link href="/revenue-intelligence#roi">
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See the ROI math</Button>
@@ -175,7 +175,7 @@ export default function NewHomePage() {
       <CTA
         title="Turn support into your revenue engine."
         subtitle="Connect your knowledge base and start resolving conversations with full account context — free to start, live in minutes."
-        primaryLabel="Start free trial"
+        primaryLabel="Get Started"
         secondaryLabel="Explore the platform"
         secondaryHref="/platform"
         bullets={["Free 14-day trial", "No code required", "Cancel anytime"]}

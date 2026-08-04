@@ -48,7 +48,7 @@ export default function NewRevenueIntelligencePage() {
             Every conversation is scanned in real time for churn, upsell, competitor, and feature signals — attributed to a dollar and routed to the person who can act, the same day.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start free trial <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
             <Link href="#roi"><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">See the ROI math</Button></Link>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function NewRevenueIntelligencePage() {
       <CTA
         title="Turn every conversation into a revenue signal."
         subtitle="Connect your knowledge base and start catching churn, upsell, and competitor signals the day they happen — free to start."
-        primaryLabel="Start free trial"
+        primaryLabel="Get Started"
         secondaryLabel="Talk to us"
         secondaryHref={SCHEDULE_URL}
         bullets={["No code required", "Live in minutes", "Cancel anytime"]}

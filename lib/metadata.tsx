@@ -120,7 +120,8 @@ export const articleSchema = (a: {
   description: string;
   path: string;
   image?: string;
-  author: string;
+  /** Optional named author. Omit to attribute the article to the organization. */
+  author?: string;
   datePublished: string;
   dateModified?: string;
 }): JsonLd => ({
@@ -129,7 +130,9 @@ export const articleSchema = (a: {
   headline: a.title,
   description: a.description,
   image: a.image ? absoluteUrl(a.image) : absoluteUrl(SITE.ogImage),
-  author: { "@type": "Person", name: a.author },
+  author: a.author
+    ? { "@type": "Person", name: a.author }
+    : { "@type": "Organization", name: SITE.name, url: SITE.url },
   publisher: {
     "@type": "Organization",
     name: SITE.name,

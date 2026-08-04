@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
-import { POSTS } from "@/data/blog";
+import { POSTS, TOPICS } from "@/data/blog";
 import { SOLUTIONS } from "@/data/solutions";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -55,5 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...solutionEntries, ...blogEntries];
+  // Topic archives. Lower priority than the articles themselves — they exist to
+  // spread link equity and give AI answer engines a clean topical entry point.
+  const topicEntries: MetadataRoute.Sitemap = TOPICS.map((t) => ({
+    url: `${baseUrl}/blog/topic/${t.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...solutionEntries, ...blogEntries, ...topicEntries];
 }

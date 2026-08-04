@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { ArticleRenderer } from "@/components/blog/article-renderer";
+import { ArticleFooterCta } from "@/components/blog/article-footer-cta";
 import { Newsletter } from "@/components/sections/newsletter";
 import { CTA } from "@/components/sections/cta";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/metadata";
-import { getPost, getRelatedPosts, POSTS } from "@/data/blog";
+import { getPost, getRelatedPosts, getTopic, POSTS } from "@/data/blog";
 import { Clock, ChevronRight, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -22,8 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Knowledge Agents Blog`,
     description: post.excerpt,
     keywords: post.keywords,
-    authors: [{ name: post.author.name }],
-    openGraph: { images: [post.image] },
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/blog/${post.slug}`,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      tags: post.tags,
+      images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    },
   };
 }
 
@@ -33,10 +48,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   const related = getRelatedPosts(post.slug, 3);
+  const postTopics = post.topics.map(getTopic).filter((t) => t !== undefined);
 
   return (
     <PageLayout>
-      <JsonLd data={[articleSchema({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}`, image: post.image, author: post.author.name, datePublished: post.date }), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]), ...(post.faqs ? [faqSchema(post.faqs)] : [])]} />
+      <JsonLd data={[articleSchema({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}`, image: post.image, datePublished: post.date }), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]), ...(post.faqs ? [faqSchema(post.faqs)] : [])]} />
       <article className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <nav className="flex items-center gap-1.5 text-sm text-muted-foreground mb-8 flex-wrap">
@@ -49,17 +65,31 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <header className="mb-8">
             <Badge variant="secondary" className="mb-4">{post.category}</Badge>
             <h1 className="text-3xl md:text-5xl font-bold font-display tracking-tight mb-6 leading-tight">{post.title}</h1>
-            <div className="flex items-center gap-4 text-sm">
-              <div className="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">{post.author.initials}</div>
-              <div><div className="font-semibold text-foreground">{post.author.name}</div><div className="text-muted-foreground flex items-center gap-2">{post.dateDisplay}<span>&bull;</span><span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span></div></div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span>{post.dateDisplay}</span>
+              <span>&bull;</span>
+              <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span>
             </div>
           </header>
           <div className="rounded-2xl overflow-hidden mb-10 border"><img src={post.image} alt={post.title} className="w-full h-auto object-cover" /></div>
           <ArticleRenderer blocks={post.content} />
-          <div className="mt-14 p-6 rounded-2xl border bg-muted/20 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg flex-shrink-0">{post.author.initials}</div>
-            <div><div className="font-bold">{post.author.name}</div><div className="text-sm text-muted-foreground mb-2">{post.author.role}, Knowledge Agents</div><p className="text-sm text-foreground/80">Writing about AI agents, customer experience, and the technology that powers Knowledge Agents.</p></div>
-          </div>
+          {postTopics.length > 0 && (
+            <div className="mt-12 pt-8 border-t">
+              <div className="text-sm font-semibold text-muted-foreground mb-3">Topics</div>
+              <div className="flex flex-wrap gap-2">
+                {postTopics.map((t) => (
+                  <Link
+                    key={t.slug}
+                    href={`/blog/topic/${t.slug}`}
+                    className="px-3.5 py-1.5 rounded-full text-sm font-medium border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+                  >
+                    {t.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+          <ArticleFooterCta />
         </div>
       </article>
       {related.length > 0 && (

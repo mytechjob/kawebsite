@@ -13,11 +13,11 @@ import { FUNNEL_FAQS } from "@/data/funnel";
 import { allKeywords, SCHEDULE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "The Knowledge Suite — Bar, Bubble & Page | Launch Your AI Agent Free",
+  title: "The Knowledge Bar — Turn Any Site Into an AI Application",
   description:
-    "Meet the Knowledge Suite: the Knowledge Bar turns any website or app into an AI application, the Knowledge Bubble puts a virtual agent on your site, and the Knowledge Page lets your team collaborate on content customers can talk to. Start free — live in 5 minutes.",
+    "Meet the Knowledge Suite: the Knowledge Bar turns any website or app into an AI application, the Knowledge Bubble puts a virtual agent on your site, and the Knowledge Page lets your team collaborate on content customers can talk to. Live in 5 minutes.",
   keywords: allKeywords("core", "build", "agentic"),
-  alternates: { canonical: "/original" },
+  alternates: { canonical: "/knowledgebar" },
 };
 
 /**
@@ -51,10 +51,10 @@ export default function Home() {
         <CTA
           title="The next visitor with a question is already on your site"
           subtitle="Give them an answer — and give yourself a lead. Train your first Knowledge Agent on your content and launch your Bar, Bubble, or Page in minutes."
-          primaryLabel="Start free — launch in 5 minutes"
+          primaryLabel="Get Started"
           secondaryLabel="Book a 1:1 walkthrough"
           secondaryHref={SCHEDULE_URL}
-          bullets={["Free plan, no credit card", "All three surfaces included", "Cancel anytime"]}
+          bullets={["14-day free trial, no credit card", "All three surfaces included", "Cancel anytime"]}
         />
       </main>
       <FunnelFooter />

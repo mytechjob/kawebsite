@@ -6,7 +6,7 @@ import { Check, Star } from "lucide-react";
 import { FunnelButton } from "./funnel-cta-button";
 
 const ROTATING = ["website", "web app", "help center", "product docs", "business"];
-const TRUST = ["No code required", "Free plan — no credit card", "Live in about 5 minutes"];
+const TRUST = ["No code required", "14-day free trial — no credit card", "Live in about 5 minutes"];
 
 /**
  * Funnel hero: one promise, one CTA. The rotating word makes the core

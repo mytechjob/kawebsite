@@ -35,7 +35,7 @@ export function StickyCTA() {
           <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-3">
             <div className="min-w-0">
               <p className="font-semibold text-sm sm:text-base truncate">
-                Your first Knowledge Agent is free.
+                Launch your first Knowledge Agent today.
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
                 Train it on your content and go live in about 5 minutes — no credit card.
@@ -44,7 +44,7 @@ export function StickyCTA() {
             <div className="flex items-center gap-2 shrink-0">
               <Link href={SIGNUP_URL} onClick={() => trackFunnelEvent("funnel_cta_click", "sticky_bar")}>
                 <Button className="font-semibold">
-                  Start free <ArrowRight className="ml-1 w-4 h-4" />
+                  Get Started <ArrowRight className="ml-1 w-4 h-4" />
                 </Button>
               </Link>
               <button

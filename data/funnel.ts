@@ -150,7 +150,7 @@ export const VALUE_STACK = [
   "Real actions: book meetings, create tickets, capture and route leads",
   "Answers in 80+ languages, grounded in your sources with citations",
   "Conversation analytics that show you exactly what customers want",
-  "Free plan to start — no credit card, cancel anytime",
+  "14-day free trial — no credit card, cancel anytime",
 ];
 
 /** Objection-handling FAQs specific to the funnel. */
@@ -173,7 +173,7 @@ export const FUNNEL_FAQS: Faq[] = [
   },
   {
     q: "How much does it cost?",
-    a: "You can start completely free, with no credit card required. Paid plans scale with your usage rather than your headcount — you're never charged per seat, and there are no confusing AI credits to track. See the pricing page for current plans and rates. Upgrade, downgrade, or cancel anytime.",
+    a: "Every plan starts with a 14-day free trial — no credit card required. After that, plans scale with your usage rather than your headcount, so you're never charged per seat and there are no confusing AI credits to track. See the pricing page for current plans and rates. Upgrade, downgrade, or cancel anytime.",
   },
   {
     q: "What happens right after I sign up?",

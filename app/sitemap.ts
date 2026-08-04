@@ -6,11 +6,13 @@ import { SOLUTIONS } from "@/data/solutions";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE.url;
 
-  // The `/original/*` pages are the previous site, kept for reference only.
-  // They're deliberately left out of the sitemap so they don't compete with
-  // their live replacements at `/`, `/pricing`, `/compare`, and `/features`.
+  // `/knowledgebar` is the Knowledge Suite product page and is indexed. Its
+  // sub-pages (`/knowledgebar/compare`, `/features`, `/solutions/*`) are kept
+  // out deliberately — they duplicate their live counterparts at `/compare`,
+  // `/features`, and `/solutions/*` and would compete with them in search.
   const staticPages = [
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
+    { path: "knowledgebar", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "platform", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "revenue-intelligence", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "pricing", priority: 0.9, changeFrequency: "weekly" as const },

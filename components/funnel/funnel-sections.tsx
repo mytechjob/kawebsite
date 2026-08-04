@@ -121,7 +121,7 @@ export function FunnelSteps() {
         </div>
 
         <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.3 }} className="text-center mt-12">
-          <FunnelButton location="steps" label="Start step 1 now — it's free" />
+          <FunnelButton location="steps" label="Get Started" />
         </motion.div>
       </div>
     </section>
@@ -184,7 +184,7 @@ export function FunnelOffer() {
             transition={{ duration: 0.5 }}
             className="p-8 rounded-2xl border bg-background shadow-sm"
           >
-            <h3 className="font-bold text-xl mb-6">Start free today and you get:</h3>
+            <h3 className="font-bold text-xl mb-6">Start today and you get:</h3>
             <ul className="space-y-4">
               {VALUE_STACK.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -196,7 +196,7 @@ export function FunnelOffer() {
               ))}
             </ul>
             <div className="mt-8">
-              <FunnelButton location="offer_free" label="Build your free agent" />
+              <FunnelButton location="offer_free" label="Get Started" />
             </div>
           </motion.div>
 
@@ -223,7 +223,7 @@ export function FunnelOffer() {
               ))}
             </ul>
             <div className="space-y-3">
-              <FunnelButton location="offer_pro" label="Start free, upgrade when ready" className="w-full" />
+              <FunnelButton location="offer_pro" label="Get Started" className="w-full" />
               <Link
                 href={SCHEDULE_URL}
                 onClick={() => trackFunnelEvent("funnel_cta_click", "offer_schedule")}
@@ -247,10 +247,9 @@ export function FunnelOffer() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <p className="text-sm leading-relaxed">
-            <strong className="font-semibold">Zero-risk start.</strong> The free plan needs no
-            credit card and never expires. Paid plans have no long-term contract — upgrade,
-            downgrade, or cancel anytime from your dashboard. Your data is encrypted and never used
-            to train foundation models.
+            <strong className="font-semibold">Zero-risk start.</strong> Your 14-day trial needs no
+            credit card. Plans have no long-term contract — upgrade, downgrade, or cancel anytime
+            from your dashboard. Your data is encrypted and never used to train foundation models.
           </p>
         </motion.div>
       </div>

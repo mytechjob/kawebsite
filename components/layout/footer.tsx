@@ -10,6 +10,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Platform", href: "/platform" },
       { label: "Revenue Intelligence", href: "/revenue-intelligence" },
       { label: "Features", href: "/features" },
+      { label: "Knowledge Bar", href: "/knowledgebar" },
     ],
   },
   {

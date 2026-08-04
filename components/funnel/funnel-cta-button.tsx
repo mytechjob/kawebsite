@@ -30,7 +30,7 @@ interface FunnelButtonProps extends Omit<ButtonProps, "asChild"> {
 export function FunnelButton({
   location,
   href = SIGNUP_URL,
-  label = "Start free — launch in 5 minutes",
+  label = "Get Started",
   showArrow = true,
   ...buttonProps
 }: FunnelButtonProps) {

@@ -143,7 +143,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
   {
     label: "Product",
     items: [
-      { label: "The Knowledge Suite", href: "/original", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
+      { label: "The Knowledge Suite", href: "/knowledgebar", description: "Knowledge Bar, Bubble & Page — three ways to deploy" },
       { label: "For business & enterprise", href: "/business", description: "The full platform tour for teams" },
       { label: "Features", href: "/features", description: "Everything in the platform" },
       { label: "How it works", href: "/business#how-it-works", description: "From content to live agent in 3 steps" },
@@ -156,7 +156,7 @@ export const MAIN_NAV: { label: string; href?: string; items?: NavItem[] }[] = [
     items: [
       { label: "Blog", href: "/blog", description: "Guides, playbooks, and product news" },
       { label: "What is a Knowledge Agent?", href: "/what-is-a-knowledge-agent", description: "The complete guide" },
-      { label: "Knowledge Agents vs. chatbots", href: "/original/compare", description: "How we're different" },
+      { label: "Knowledge Agents vs. chatbots", href: "/knowledgebar/compare", description: "How we're different" },
       { label: "About us", href: "/about", description: "Our mission and team" },
     ],
   },

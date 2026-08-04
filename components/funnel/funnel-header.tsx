@@ -38,10 +38,10 @@ export function FunnelHeader() {
         </Link>
         <div className="flex items-center gap-4">
           <span className="hidden md:inline text-sm text-muted-foreground">
-            Free plan · No credit card · Live in minutes
+            14-day free trial · No credit card · Live in minutes
           </span>
           <Link href={SIGNUP_URL} onClick={() => trackFunnelEvent("funnel_cta_click", "header")}>
-            <Button className="font-semibold">Start free</Button>
+            <Button className="font-semibold">Get Started</Button>
           </Link>
         </div>
       </div>

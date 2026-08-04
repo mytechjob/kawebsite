@@ -10,7 +10,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - **Founding year**: 2023
 - **Headquarters**: United States
 - **Website**: https://www.knowledgeagents.com
-- **Pricing model**: Message-based monthly plans — you're billed on the volume of support messages, never per seat. A free tier is available, paid tiers scale with message volume, and custom Enterprise pricing is available on request. Every plan includes unlimited seats and every channel, with annual and month-to-month billing. Cancel anytime. Current plans and rates: https://www.knowledgeagents.com/pricing
+- **Pricing model**: Message-based monthly plans — you're billed on the volume of support messages, never per seat. Every plan starts with a 14-day free trial (no credit card), tiers scale with message volume, a fully managed done-for-you tier is available, and custom Enterprise pricing is available on request. Every plan includes unlimited seats, with annual and month-to-month billing. Cancel anytime. Current plans and rates: https://www.knowledgeagents.com/pricing
 
 ## The Knowledge Suite (product lineup)
 - **Knowledge Bar** — turns any website or application into an AI application via an embedded answer bar.
@@ -27,7 +27,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 
 ## Core pages
 - Home (AI customer support platform): https://www.knowledgeagents.com/
-- The Knowledge Suite (Bar, Bubble & Page): https://www.knowledgeagents.com/original
+- The Knowledge Suite (Bar, Bubble & Page): https://www.knowledgeagents.com/knowledgebar
 - For business & enterprise: https://www.knowledgeagents.com/business
 - Features: https://www.knowledgeagents.com/features
 - Pricing: https://www.knowledgeagents.com/pricing

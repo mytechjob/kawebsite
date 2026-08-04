@@ -18,10 +18,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // The Knowledge Suite funnel moved from /launch to the home page, then to /original.
-      { source: "/launch", destination: "/original", permanent: true },
-      // Pricing is published in exactly one place, so the legacy plan page folds into it.
-      { source: "/original/pricing", destination: "/pricing", permanent: true },
+      // The Knowledge Suite funnel moved /launch → home → /original → /knowledgebar.
+      { source: "/launch", destination: "/knowledgebar", permanent: true },
+      { source: "/original", destination: "/knowledgebar", permanent: true },
+      { source: "/original/:path*", destination: "/knowledgebar/:path*", permanent: true },
+      // Pricing is published in exactly one place, so legacy plan pages fold into it.
+      { source: "/knowledgebar/pricing", destination: "/pricing", permanent: true },
     ];
   },
 };

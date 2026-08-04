@@ -21,7 +21,7 @@ export function DemoSection() {
       const q = userMsg.toLowerCase();
       let response = "Great question! A Knowledge Agent is trained on your content and answers like this — instantly and 24/7. It can also take actions like booking meetings, creating tickets, and checking orders.";
       if (q.includes("price") || q.includes("pricing") || q.includes("cost") || q.includes("plan")) {
-        response = "We keep pricing simple — no confusing AI credits. Starter is $49/mo, Professional $149/mo, Business $399/mo, and Enterprise is custom. Want me to help you pick the right one?";
+        response = "We keep pricing simple — you're billed on message volume, never per seat, and there's a free tier to start. Every plan includes unlimited seats and every channel. You'll find the current plans and rates on our pricing page — want me to walk you through which one fits?";
       } else if (q.includes("pdf") || q.includes("train") || q.includes("data") || q.includes("upload")) {
         response = "You can train me on PDF, DOCX, TXT, and Markdown files, pasted text, or by crawling your website and help center. I use Retrieval-Augmented Generation, so answers stay grounded in your content with citations.";
       } else if (q.includes("action") || q.includes("book") || q.includes("ticket") || q.includes("do")) {

@@ -12,7 +12,6 @@ import { InternalExternal } from "@/components/sections/internal-external";
 import { Integrations } from "@/components/sections/integrations";
 import { Testimonials } from "@/components/sections/testimonials";
 import { RiskReversal } from "@/components/sections/risk-reversal";
-import { Pricing } from "@/components/sections/pricing";
 import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
 import { JsonLd, faqSchema, howToSchema } from "@/lib/metadata";
@@ -44,7 +43,6 @@ export default function BusinessPage() {
       <Integrations />
       <Testimonials />
       <RiskReversal />
-      <Pricing />
       <FAQ subheading="Everything you need to know about building AI agents with Knowledge Agents." />
       <CTA title="Your business already has the knowledge. Now give it a voice." subtitle="Create an AI agent that answers questions, supports customers, and captures leads around the clock." primaryLabel="Hire your AI employee" secondaryLabel="Book a demo" secondaryHref="/contact" />
     </PageLayout>

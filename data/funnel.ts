@@ -173,7 +173,7 @@ export const FUNNEL_FAQS: Faq[] = [
   },
   {
     q: "How much does it cost?",
-    a: "You can start completely free — the Hobby plan includes 10 customer conversations a month with no credit card required. Paid plans start at $49/mo and scale by conversation volume, not confusing AI credits. Upgrade, downgrade, or cancel anytime.",
+    a: "You can start completely free, with no credit card required. Paid plans scale with your usage rather than your headcount — you're never charged per seat, and there are no confusing AI credits to track. See the pricing page for current plans and rates. Upgrade, downgrade, or cancel anytime.",
   },
   {
     q: "What happens right after I sign up?",

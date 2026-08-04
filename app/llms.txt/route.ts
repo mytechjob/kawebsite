@@ -10,7 +10,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - **Founding year**: 2023
 - **Headquarters**: United States
 - **Website**: https://www.knowledgeagents.com
-- **Pricing**: Simple flat monthly plans with no AI credits — Starter ($49/mo), Professional ($149/mo), Business ($399/mo), and custom Enterprise pricing on request. Cancel anytime.
+- **Pricing model**: Message-based monthly plans — you're billed on the volume of support messages, never per seat. A free tier is available, paid tiers scale with message volume, and custom Enterprise pricing is available on request. Every plan includes unlimited seats and every channel, with annual and month-to-month billing. Cancel anytime. Current plans and rates: https://www.knowledgeagents.com/pricing
 
 ## The Knowledge Suite (product lineup)
 - **Knowledge Bar** — turns any website or application into an AI application via an embedded answer bar.
@@ -26,7 +26,8 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - Analytics, conversation insights, human handoff with full context transfer.
 
 ## Core pages
-- Home (Knowledge Suite): https://www.knowledgeagents.com/
+- Home (AI customer support platform): https://www.knowledgeagents.com/
+- The Knowledge Suite (Bar, Bubble & Page): https://www.knowledgeagents.com/original
 - For business & enterprise: https://www.knowledgeagents.com/business
 - Features: https://www.knowledgeagents.com/features
 - Pricing: https://www.knowledgeagents.com/pricing
@@ -35,7 +36,7 @@ Knowledge Agents is a no-code platform that lets businesses build AI agents trai
 - What is a Knowledge Agent? https://www.knowledgeagents.com/what-is-a-knowledge-agent
 
 ## AI-Native B2B Support Platform (new positioning)
-Knowledge Agents also positions as an AI-native B2B support platform: an omnichannel inbox, an AI agent (Knowledge Agent) that resolves conversations with full account context, an AI copilot that drafts replies for humans, and revenue-signal routing (churn detection, upsell signals, competitor mentions) that ties support activity to revenue. An outcome-based pricing track (pay per resolution, churn save, or closed upsell — not per seat) is rolling out alongside the standard per-seat plans.
+Knowledge Agents also positions as an AI-native B2B support platform: an omnichannel inbox, an AI agent (Knowledge Agent) that resolves conversations with full account context, an AI copilot that drafts replies for humans, and revenue-signal routing (churn detection, upsell signals, competitor mentions) that ties support activity to revenue. An outcome-based pricing track (pay per resolution, churn save, or closed upsell) is rolling out alongside the standard message-based plans.
 - Overview: https://www.knowledgeagents.com/ainative
 - Platform (context layer, AI agent, copilot, account intelligence): https://www.knowledgeagents.com/ainative/platform
 - Product (resolutions, drafts, article creation, support intelligence): https://www.knowledgeagents.com/ainative/product
@@ -50,6 +51,7 @@ Knowledge Agents also positions as an AI-native B2B support platform: an omnicha
 - Healthcare: https://www.knowledgeagents.com/solutions/healthcare
 - Real estate: https://www.knowledgeagents.com/solutions/real-estate
 - Education: https://www.knowledgeagents.com/solutions/education
+- Insurance: https://www.knowledgeagents.com/solutions/insurance
 
 ## Blog posts
 - How to build an AI chatbot trained on your data: https://www.knowledgeagents.com/blog/how-to-build-an-ai-chatbot-trained-on-your-data

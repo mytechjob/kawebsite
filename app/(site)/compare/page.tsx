@@ -25,7 +25,7 @@ const rows: { label: string; values: [Mark | string, Mark | string, Mark | strin
   { label: "Automatic article creation from resolutions", values: ["yes", "no", "partial"] },
   { label: "Predictable message-based pricing", values: ["yes", "Per-seat", "Per-usage"] },
   { label: "Time to see resolution impact", values: ["Weeks", "Months", "Weeks"] },
-  { label: "Cost as conversation volume grows", values: ["$300/mo + $25/1,000 msgs", "Scales with seats", "Scales with usage"] },
+  { label: "Cost as conversation volume grows", values: ["Scales with messages, not seats", "Scales with seats", "Scales with usage"] },
 ];
 
 const FAQS = [

@@ -16,9 +16,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // The Knowledge Suite funnel moved from /launch to the home page.
   async redirects() {
-    return [{ source: "/launch", destination: "/", permanent: true }];
+    return [
+      // The Knowledge Suite funnel moved from /launch to the home page, then to /original.
+      { source: "/launch", destination: "/original", permanent: true },
+      // Pricing is published in exactly one place, so the legacy plan page folds into it.
+      { source: "/original/pricing", destination: "/pricing", permanent: true },
+    ];
   },
 };
 

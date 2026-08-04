@@ -70,9 +70,9 @@ const ENTERPRISE_ITEMS = [
 
 const FAQS = [
   { q: "Is there a free plan?", a: "Yes — Hobby is free forever, no credit card required, for up to 200 messages a month. Upgrade to Starter, Professional, or Growth whenever you outgrow it." },
-  { q: "What's included in the $300 Growth plan?", a: "Up to 10,000 messages per month, unlimited seats, every channel, the full context layer, and complete revenue intelligence with ROI reporting. It's one flat price — you're never charged per seat." },
+  { q: "What's included in the Growth plan?", a: "Up to 10,000 messages per month, unlimited seats, every channel, the full context layer, and complete revenue intelligence with ROI reporting. It's one flat price — you're never charged per seat." },
   { q: "What counts as a message?", a: "A message is any single message sent as part of a support conversation, whether from the AI or your team. A typical support conversation runs about 20 messages, so your plan's message allotment covers roughly that many full conversations." },
-  { q: "What happens if I go over my plan's included messages?", a: "Overage is billed per 1,000 additional messages beyond your plan's included allotment — $50 on Starter, $37.50 on Professional, $25 on Growth. Use the estimator above to see a typical monthly total for Growth's volume." },
+  { q: "What happens if I go over my plan's included messages?", a: "You're billed per 1,000 additional messages beyond your plan's included allotment, at the rate listed on your plan — on Growth that's $25 per 1,000. Use the estimator above to see a typical monthly total." },
   { q: "Do you offer Enterprise pricing?", a: "Yes. High-volume teams get lower per-message rates plus SSO/SAML, a security review, an uptime SLA, and a dedicated success manager. Book an appointment and we'll build a plan around your volume." },
   { q: "What's the difference between annual and monthly billing?", a: "Annual plans are billed once for the year at the rates shown by default. Month-to-month billing costs 15% more per month for the same plan — use the toggle above the plans to compare." },
   { q: "Can I cancel anytime?", a: "Monthly plans are month-to-month with no long-term commitment — cancel whenever you like. Annual plans run for the twelve-month term you prepaid." },
@@ -89,7 +89,7 @@ export default function NewPricingPage() {
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">◆ Simple, message-based pricing</span>
           <h1 className="text-4xl md:text-5xl font-bold font-display tracking-tight mt-2 mb-5">Plans that scale with your message volume.</h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Start free on Hobby — up to 200 messages a month, no credit card. Need more room? Billed annually, Starter is <b className="text-foreground">$35/month for 700 messages</b>, Professional is <b className="text-foreground">$99/month for 2,000 messages</b>, and Growth is <b className="text-foreground">$300/month for 10,000 messages</b>. Prefer month-to-month? Add 15%. Bigger volume? We have Enterprise plans.
+            Every plan includes the whole platform — every channel, the full context layer, and unlimited seats. You&apos;re billed on the conversations your customers actually have, never on how many people you hire, so your costs track the value you&apos;re getting instead of the size of your team.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start for free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>

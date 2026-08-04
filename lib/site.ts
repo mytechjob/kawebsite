@@ -130,7 +130,7 @@ export const NEW_NAV: NewNavEntry[] = [
   { label: "Home", href: "/", description: "Support → Revenue" },
   { label: "Platform", href: "/platform", description: "Context layer, agents & copilots" },
   { label: "Revenue Intelligence", href: "/revenue-intelligence", description: "Churn, upsell & competitor signals" },
-  { label: "Pricing", href: "/pricing", description: "$300/mo · 10,000 messages included" },
+  { label: "Pricing", href: "/pricing", description: "Plans that scale with your message volume" },
   { label: "Compare", href: "/compare", description: "vs. legacy ticketing platforms" },
   { label: "Solutions", items: SOLUTIONS_NAV },
 ];
@@ -172,106 +172,9 @@ export const SIGNIN_URL = "https://app.knowledgeagents.com/v2/signin";
 /** Where the Enterprise / "talk to us" CTA sends people — the Google appointment scheduling page. */
 export const SCHEDULE_URL = "https://calendar.app.google/4dDonNoV9np8WuweA";
 
-/** Single source of truth for plans — used by pricing section, page, and JSON-LD. */
-export type Plan = {
-  name: string;
-  price: string;
-  priceValue: number;
-  period?: string;
-  description: string;
-  features: string[];
-  cta: string;
-  href: string;
-  popular?: boolean;
-  highlightFeature?: string;
-  /** Render the description as the focal copy and skip the checkbox feature list (used for the Full Service plan). */
-  hideFeatures?: boolean;
-};
-
-export const PLANS: Plan[] = [
-  {
-    name: "Hobby",
-    price: "$0",
-    priceValue: 0,
-    period: "/mo",
-    description: "Try the platform and ship your first AI employee for free.",
-    highlightFeature: "Best for trying things out",
-    features: [
-      "10 customer conversations / mo",
-      "1 Knowledge Agent",
-      "Training allowed on 1 file",
-      "Website chat widget & chat page",
-      "Lead capture forms",
-      "Community support",
-    ],
-    cta: "Get started",
-    href: SIGNUP_URL,
-  },
-  {
-    name: "Starter",
-    price: "$49",
-    priceValue: 49,
-    period: "/mo",
-    description: "For small websites and solo founders launching their first AI employee.",
-    highlightFeature: "Best for getting started",
-    features: [
-      "100 customer conversations / mo",
-      "10 Knowledge Agents",
-      "Train on files & website content",
-      "Website chat widget & chat page",
-      "Lead capture forms",
-      "Email support",
-    ],
-    cta: "Get started",
-    href: SIGNUP_URL,
-  },
-  {
-    name: "Professional",
-    price: "$149",
-    priceValue: 149,
-    period: "/mo",
-    description: "For growing businesses that want agents to support customers and take action.",
-    highlightFeature: "Most popular",
-    popular: true,
-    features: [
-      "500 customer conversations / mo",
-      "Unlimited Knowledge Agents",
-      "Everything in Starter",
-      "Advanced actions & integrations",
-      "Human handoff & live takeover",
-      "Conversation analytics & gap insights",
-      "Priority support",
-    ],
-    cta: "Get started",
-    href: SIGNUP_URL,
-  },
-  {
-    name: "Business",
-    price: "$399",
-    priceValue: 399,
-    period: "/mo",
-    description: "For multi-agent teams running customer-facing and internal agents at scale.",
-    highlightFeature: "Best for teams",
-    features: [
-      "1,500 customer conversations / mo",
-      "Unlimited Knowledge Agents",
-      "Everything in Professional",
-      "Custom actions (your APIs)",
-      "White-label & custom domains",
-      "Onboarding & solution engineering",
-    ],
-    cta: "Get started",
-    href: SIGNUP_URL,
-  },
-  {
-    name: "Full Service Plans",
-    price: "Custom",
-    priceValue: 0,
-    description: "Want us to set everything up for you, or need an Enterprise plan? Schedule time to speak with us.",
-    highlightFeature: "Best for scale & security",
-    features: [],
-    hideFeatures: true,
-    cta: "Schedule Time",
-    href: SCHEDULE_URL,
-  },
-];
+/*
+ * The legacy per-seat PLANS array lived here and rendered on /business and the
+ * old pricing page. Prices are now published in exactly one place — the plan
+ * cards in app/(site)/pricing/page.tsx — so plans can be revised without
+ * hunting for stale copies across the site.
+ */

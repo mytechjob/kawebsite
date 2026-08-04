@@ -30,18 +30,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <JsonLd
-        data={[
-          faqSchema(FUNNEL_FAQS),
-          productSchema({
-            name: "The Knowledge Suite (Knowledge Bar, Knowledge Bubble, Knowledge Page)",
-            description:
-              "Three ways to deploy an AI agent trained on your business: an answer bar for any website or app, a virtual agent your visitors talk to, and a collaborative AI page your team publishes.",
-            lowPrice: "0",
-            highPrice: "399",
-          }),
-        ]}
-      />
+      {/* Pricing lives only on /pricing, so this page asserts no price range in its structured data. */}
+      <JsonLd data={[faqSchema(FUNNEL_FAQS)]} />
       <FunnelHeader />
       <main className="flex-1">
         <FunnelHero />

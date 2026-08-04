@@ -288,7 +288,7 @@ export const HOME_FAQS: Faq[] = [
 export const PRICING_FAQS: Faq[] = [
   {
     q: "How does pricing work — are there confusing AI credits?",
-    a: "No. You simply pick a plan based on how many customer conversations you need each month: Hobby (10, free), Starter (100, $49/mo), Professional (500, $149/mo), and Business (1,500, $399/mo), with custom volume on Enterprise. No per-message credits to track or top up.",
+    a: "No. You pick a plan based on the message volume you need each month, with a free tier to start and custom volume available on Enterprise. There are no per-message credits to track or top up. See the pricing page for current plans and rates.",
   },
   {
     q: "Is there a free plan?",

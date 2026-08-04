@@ -89,7 +89,7 @@ export default function NewHomePage() {
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> 14-day free trial, no card</span>
-              <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> Then $300/mo · 10,000 messages included</span>
+              <span className="flex items-center gap-1.5"><i className="w-1.5 h-1.5 rounded-full bg-primary" /> Unlimited seats on every plan</span>
             </div>
           </div>
 

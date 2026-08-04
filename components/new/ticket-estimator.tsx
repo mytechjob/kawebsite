@@ -2,14 +2,15 @@
 
 import { useMemo, useState } from "react";
 
-const INCLUDED = 10_000;
+/* Modelled on the Scale plan — the tier most teams comparing volume land on. */
+const INCLUDED = 12_000;
 const OVERAGE_RATE_PER_1K = 25;
-const BASE_PRICE = 300;
+const BASE_PRICE = 299;
 
 const fmt = (n: number) => `$${n.toLocaleString("en-US", { maximumFractionDigits: 2 })}`;
 
 export function TicketEstimator() {
-  const [messages, setMessages] = useState(15_000);
+  const [messages, setMessages] = useState(18_000);
 
   const { over, overCost, total } = useMemo(() => {
     const over = Math.max(0, messages - INCLUDED);
@@ -40,7 +41,7 @@ export function TicketEstimator() {
       <div className="grid grid-cols-3 gap-3.5 mt-6 text-center">
         <div>
           <div className="font-mono text-xl font-semibold">{fmt(BASE_PRICE)}</div>
-          <div className="text-xs text-muted-foreground mt-1">Base (10,000 incl.)</div>
+          <div className="text-xs text-muted-foreground mt-1">Scale base (12,000 incl.)</div>
         </div>
         <div>
           <div className="font-mono text-xl font-semibold text-primary">{fmt(overCost)}</div>

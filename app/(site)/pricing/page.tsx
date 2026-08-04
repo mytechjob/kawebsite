@@ -11,54 +11,105 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = pageMetadata({
   title: "Customer Support AI Pricing",
-  description: "Compare Knowledge Agents plans for AI-powered customer support, from a free Hobby plan to message-based Starter, Professional, and Growth plans, plus custom Enterprise options.",
+  description: "Message-based plans for AI-powered customer support with unlimited seats on every tier — Starter, Growth, and Scale for self-serve teams, plus Fully Managed and custom Enterprise options.",
   path: "/pricing",
   keywords: ["AI customer support pricing", "AI help desk pricing", "message based support pricing", "customer service AI plans"],
 });
 
-/** Prices below are the monthly-equivalent rate when billed annually; the toggle adds 15% for month-to-month. */
+/**
+ * Prices are the annual-contract rate; the monthly toggle adds 15%.
+ * Tiers differentiate on five axes that map to how a support team actually
+ * grows: message volume, channel coverage, depth of account context, how much
+ * revenue intelligence is switched on, and how much of the work we do for you.
+ * Every plan includes unlimited seats — you're never charged per head.
+ */
 const PLANS: Plan[] = [
   {
-    label: "Hobby",
-    annualPrice: 0,
-    description: "Try the platform for free, no credit card. See real resolutions on your own knowledge base before you pay a cent.",
-    features: ["200 messages/mo included", "14-day free trial", "Full context layer & every channel", "Community support"],
-    cta: "Start free",
-    href: SIGNUP_URL,
-  },
-  {
     label: "Starter",
-    annualPrice: 35,
-    description: "Includes 700 messages every month — a low-cost way to put a real AI agent in front of customers.",
-    features: ["700 messages/mo included", "14-day free trial", "Every channel, small teams", "Community support"],
-    cta: "Start free trial",
-    href: SIGNUP_URL,
-  },
-  {
-    label: "Professional",
-    annualPrice: 99,
-    description: "Includes 2,000 messages every month.",
-    features: ["2,000 messages/mo included", "14-day free trial", "Every channel, growing teams", "Core revenue-signal routing"],
+    annualPrice: 79,
+    description: "Put a real AI agent in front of customers on the channels you already run.",
+    features: [
+      "2,000 messages/mo included",
+      "Chat & email channels",
+      "Train on files, website & help center",
+      "Confidence-gated AI resolution",
+      "Unlimited seats",
+      "Conversation analytics",
+      "Email support",
+      "14-day free trial",
+    ],
     cta: "Start free trial",
     href: SIGNUP_URL,
   },
   {
     label: "Growth · most popular",
-    annualPrice: 300,
-    description: "Includes up to 10,000 messages every month. Above that, it's just $25 per 1,000 additional messages — never per seat.",
-    features: ["10,000 messages/mo included", "Unlimited seats, every channel", "Full revenue intelligence & ROI reporting"],
+    annualPrice: 149,
+    description: "Add full account context and start catching the revenue signals inside your conversations.",
+    featuresLabel: "Everything in Starter, plus:",
+    features: [
+      "5,000 messages/mo included",
+      "Every channel — in-app, Slack & WhatsApp",
+      "Full account context (CRM, billing & usage)",
+      "AI copilot drafts for your team",
+      "Churn & upsell signal detection",
+      "Automatic article creation from resolutions",
+      "Priority email support",
+    ],
     cta: "Start free trial",
     href: SIGNUP_URL,
     featured: true,
   },
   {
+    label: "Scale",
+    annualPrice: 299,
+    description: "For teams routing revenue signals across departments and running agents on their own systems.",
+    featuresLabel: "Everything in Growth, plus:",
+    features: [
+      "12,000 messages/mo included",
+      "Voice channel",
+      "Custom actions on your own APIs",
+      "Full signal routing to CSM, AE & product",
+      "Dollar-tracked ROI reporting",
+      "White-label & custom domain",
+      "SSO / SAML & audit logs",
+      "Priority support, 4-hour response",
+    ],
+    cta: "Start free trial",
+    href: SIGNUP_URL,
+  },
+  {
+    label: "Fully Managed",
+    annualPrice: 2500,
+    description: "We run it for you. Our team builds, tunes, and maintains your agents so your people never touch the tooling.",
+    featuresLabel: "Everything in Scale, plus:",
+    features: [
+      "50,000 messages/mo included",
+      "Dedicated success manager",
+      "We build, tune & maintain your agents",
+      "Monthly knowledge-base curation & gap closure",
+      "Custom integration engineering",
+      "Quarterly business reviews with ROI reporting",
+      "Uptime SLA & priority incident response",
+    ],
+    cta: "Book a call",
+    href: SCHEDULE_URL,
+  },
+  {
     label: "Enterprise",
     annualPrice: null,
     customPrice: "Custom",
-    description: "For high-volume teams that need volume message rates, security review, and a guaranteed SLA.",
-    features: ["Volume message pricing", "SSO / SAML & security review", "Uptime SLA & priority support", "Dedicated success manager"],
+    description: "For high-volume and regulated teams that need bespoke terms, security review, and their own infrastructure.",
+    featuresLabel: "Everything in Fully Managed, plus:",
+    features: [
+      "Volume message pricing",
+      "Security review, DPA & custom data retention",
+      "Multi-workspace & multi-brand management",
+      "Dedicated infrastructure options",
+      "Custom contract & procurement support",
+    ],
     cta: "Book an appointment",
     href: SCHEDULE_URL,
+    wide: true,
   },
 ];
 
@@ -69,12 +120,13 @@ const ENTERPRISE_ITEMS = [
 ];
 
 const FAQS = [
-  { q: "Is there a free plan?", a: "Yes — Hobby is free forever, no credit card required, for up to 200 messages a month. Upgrade to Starter, Professional, or Growth whenever you outgrow it." },
-  { q: "What's included in the Growth plan?", a: "Up to 10,000 messages per month, unlimited seats, every channel, the full context layer, and complete revenue intelligence with ROI reporting. It's one flat price — you're never charged per seat." },
-  { q: "What counts as a message?", a: "A message is any single message sent as part of a support conversation, whether from the AI or your team. A typical support conversation runs about 20 messages, so your plan's message allotment covers roughly that many full conversations." },
-  { q: "What happens if I go over my plan's included messages?", a: "You're billed per 1,000 additional messages beyond your plan's included allotment, at the rate listed on your plan — on Growth that's $25 per 1,000. Use the estimator above to see a typical monthly total." },
-  { q: "Do you offer Enterprise pricing?", a: "Yes. High-volume teams get lower per-message rates plus SSO/SAML, a security review, an uptime SLA, and a dedicated success manager. Book an appointment and we'll build a plan around your volume." },
-  { q: "What's the difference between annual and monthly billing?", a: "Annual plans are billed once for the year at the rates shown by default. Month-to-month billing costs 15% more per month for the same plan — use the toggle above the plans to compare." },
+  { q: "Can I try it before paying?", a: "Yes. Every plan starts with a 14-day free trial of the full platform — no credit card required. You'll see real resolutions on your own knowledge base before you're charged anything." },
+  { q: "Which plan should I start on?", a: "Starter suits teams putting an AI agent on chat and email for the first time. Move to Growth when you want replies enriched with CRM and billing context and want churn and upsell signals surfaced. Choose Scale when you're routing those signals to CSMs and account execs and running actions against your own APIs." },
+  { q: "What counts as a message?", a: "A message is any single message sent as part of a support conversation, whether from the AI or your team. A typical support conversation runs about 20 messages, so a 2,000-message plan covers roughly 100 full conversations a month." },
+  { q: "What happens if I go over my plan's included messages?", a: "You're billed per 1,000 additional messages beyond your plan's allotment, at the rate listed on your plan — the rate drops as you move up tiers. Nothing stops working and no conversation is ever cut off mid-thread." },
+  { q: "What does Fully Managed actually include?", a: "Our team does the work: we build and tune your agents, curate your knowledge base every month and close the gaps we find, engineer your custom integrations, and review results with you quarterly. You get a dedicated success manager and an uptime SLA. It's for teams that want the outcome without staffing the tooling." },
+  { q: "Am I charged per seat?", a: "Never. Every plan includes unlimited seats, so bringing your whole support, success, and sales teams into the platform costs nothing extra. You're billed on message volume alone." },
+  { q: "What's the difference between annual and monthly billing?", a: "The prices on the cards are the rate on an annual contract. Paying month-to-month instead adds 15% — use the toggle above the plans to compare the two." },
   { q: "Can I cancel anytime?", a: "Monthly plans are month-to-month with no long-term commitment — cancel whenever you like. Annual plans run for the twelve-month term you prepaid." },
 ];
 
@@ -89,10 +141,10 @@ export default function NewPricingPage() {
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">◆ Simple, message-based pricing</span>
           <h1 className="text-4xl md:text-5xl font-bold font-display tracking-tight mt-2 mb-5">Plans that scale with your message volume.</h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Every plan includes the whole platform — every channel, the full context layer, and unlimited seats. You&apos;re billed on the conversations your customers actually have, never on how many people you hire, so your costs track the value you&apos;re getting instead of the size of your team.
+            Every plan includes unlimited seats, so bringing your whole support, success, and sales teams in costs nothing extra. You&apos;re billed on the messages your customers actually send — never on how many people you hire — so your costs track the value you&apos;re getting instead of the size of your team.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start for free <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+            <Link href={SIGNUP_URL}><Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">Start your free trial <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
             <Link href={SCHEDULE_URL}><Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">Book an Enterprise call</Button></Link>
           </div>
         </div>
@@ -112,7 +164,7 @@ export default function NewPricingPage() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Estimate your bill</span>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">What will you actually pay?</h2>
-            <p className="text-muted-foreground text-lg">Drag to your expected monthly message volume. The first 10,000 are included in the $300 Growth base.</p>
+            <p className="text-muted-foreground text-lg">Drag to your expected monthly message volume. This models the Scale plan, where the first 12,000 messages are included.</p>
           </div>
           <TicketEstimator />
           <p className="text-center text-sm text-muted-foreground mt-6 max-w-md mx-auto">Estimate only. Enterprise volume rates reduce the per-message cost above high message counts.</p>
@@ -148,12 +200,12 @@ export default function NewPricingPage() {
       <FAQ faqs={FAQS} heading="Pricing FAQ" subheading="The questions buyers actually ask." />
 
       <CTA
-        title="Start free today."
-        subtitle="Connect your knowledge base and see real resolutions on Hobby — free forever, no credit card. Upgrade whenever you're ready."
-        primaryLabel="Start for free"
+        title="Start your free trial today."
+        subtitle="Connect your knowledge base and see real resolutions on your own content — 14 days free, no credit card. Pick a plan only once you've seen it work."
+        primaryLabel="Start free trial"
         secondaryLabel="Talk to sales"
         secondaryHref={SCHEDULE_URL}
-        bullets={["No credit card required", "Cancel anytime"]}
+        bullets={["14-day free trial", "No credit card required", "Cancel anytime"]}
       />
     </>
   );

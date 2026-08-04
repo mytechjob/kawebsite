@@ -291,12 +291,12 @@ export const PRICING_FAQS: Faq[] = [
     a: "No. You pick a plan based on the message volume you need each month, with a free tier to start and custom volume available on Enterprise. There are no per-message credits to track or top up. See the pricing page for current plans and rates.",
   },
   {
-    q: "Is there a free plan?",
-    a: "Yes. The Hobby plan is free forever and includes 10 customer conversations a month so you can build your agent, upload your content, and see it working before you upgrade. There's no long-term contract, and you can cancel anytime.",
+    q: "Can I try it before paying?",
+    a: "Yes. Every plan starts with a 14-day free trial of the full platform, no credit card required, so you can build your agent, upload your content, and see it working before you're charged. There's no long-term contract, and you can cancel anytime.",
   },
   {
     q: "Which plan is right for me?",
-    a: "Hobby is great for testing the platform for free. Starter suits a single website or solo founder. Professional fits growing businesses that want agents to take action, hand off to humans, and surface analytics. Business is for teams running multiple customer-facing and internal agents. Enterprise adds SSO, custom data controls, and a dedicated SLA.",
+    a: "Start where your volume is today and move up as it grows — the tiers differ by included message volume, channel coverage, how deeply the agent is wired into your CRM and billing data, and how much revenue intelligence is switched on. Teams that would rather not run the tooling at all can have our team manage it end to end. See the pricing page for the current lineup.",
   },
   {
     q: "Can I change or cancel my plan anytime?",

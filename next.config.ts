@@ -16,6 +16,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      // `/recommend` is a self-contained standalone landing page with its own
+      // <head>, fonts, and styles, so it's served as a static HTML file from
+      // /public rather than through the app shell. The rewrite keeps the URL
+      // clean while the file stays byte-for-byte what it is on disk.
+      { source: "/recommend", destination: "/recommend.html" },
+    ];
+  },
   async redirects() {
     return [
       // The Knowledge Suite funnel moved /launch → home → /original → /knowledgebar.

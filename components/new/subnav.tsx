@@ -6,12 +6,17 @@ import { ChevronDown } from "lucide-react";
 import { NEW_NAV } from "@/lib/site";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-/** Main site nav pills — embedded directly in the top navbar, to the left of the CTA. */
+/**
+ * Main site nav pills — embedded directly in the top navbar, to the left of
+ * the CTA. The same element is reused inside the collapsed mobile panel, so it
+ * wraps onto multiple lines below `xl` and only becomes a single scrollable
+ * row at `xl`, where the navbar actually renders it inline.
+ */
 export function NewNavPills() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
+    <nav className="flex flex-wrap items-center gap-1 xl:flex-nowrap xl:overflow-x-auto xl:scrollbar-hide">
       {NEW_NAV.map((item) => {
         if (item.items) {
           const active = item.items.some((sub) => sub.href === pathname);

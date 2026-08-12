@@ -101,18 +101,23 @@ export function Navbar({ navContent }: { navContent?: React.ReactNode }) {
           <Link href="/" className="flex shrink-0 items-center gap-2 font-display text-xl font-bold">
             <img src="/logo-trans.webp" alt="Knowledge Agents logo" className="h-12 w-auto sm:h-14" />
           </Link>
-          <div className="hidden min-w-0 flex-1 lg:block">{navContent}</div>
+          {/*
+            Pills go inline only from `xl`. Below that the `container` caps at
+            1024px, which leaves too little room between the logo and the CTA
+            cluster — the strip overflowed and the last item was unreachable.
+          */}
+          <div className="hidden min-w-0 flex-1 xl:block">{navContent}</div>
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
             <ThemeToggle />
             <Link href={SIGNIN_URL} className="hidden text-sm font-medium transition-colors hover:text-primary sm:inline">Sign in</Link>
             <Link href={SIGNUP_URL}><Button size="sm" className="sm:h-9 sm:px-4">Get Started</Button></Link>
-            <button type="button" className="p-2 lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" aria-expanded={isOpen}>
+            <button type="button" className="p-2 xl:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" aria-expanded={isOpen}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
         {isOpen && (
-          <div className="border-t bg-background p-4 lg:hidden">
+          <div className="border-t bg-background p-4 xl:hidden">
             {navContent}
             <Link href={SIGNIN_URL} className="mt-4 block sm:hidden"><Button variant="ghost" className="w-full">Sign in</Button></Link>
           </div>

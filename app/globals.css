@@ -136,3 +136,17 @@
     @apply font-display tracking-tight;
   }
 }
+
+/**
+ * Hides the scrollbar on horizontally-scrollable strips (the top nav pills and
+ * the section sub-navs) while keeping them scrollable. Tailwind v4 has no
+ * built-in equivalent, and the `tailwind-scrollbar-hide` plugin isn't
+ * installed — without this the strips render a visible scroll track.
+ */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
